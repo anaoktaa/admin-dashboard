@@ -14,9 +14,10 @@ import { MenuUnfoldOutlined, GiftOutlined, SettingOutlined,
 
 import { selectFoldDrawer, selectMegaMenuToggle, selectSettingHeaderToggle, 
          selectGridDashboardToggle, selectNotifHeaderToggle, selectLangHeaderToggle,
-         selectActiveUserHeaderToggle } from '../../redux/application/application.selectors';
+         selectActiveUserHeaderToggle, selectProfileHeaderToggle } from '../../redux/application/application.selectors';
 import { setFoldDrawer, setMegaMenuToggle, setSettingHeaderToggle, setGridDashboardToggle,
-         setNotifHeaderToggle, setLangHeaderToggle, setActiveUserHeaderToggle } from '../../redux/application/application.actions';
+         setNotifHeaderToggle, setLangHeaderToggle, setActiveUserHeaderToggle,
+         setProfileHeaderToggle } from '../../redux/application/application.actions';
 
 import withWindowResize from '../with-window-resize/with-window-resize.component';
 import MegaMenu from '../mega-menu/mega-menu.component';
@@ -26,13 +27,15 @@ import GridMenu from '../grid-menu/grid-menu.component';
 import NotifHeader from '../notif-header/notif-header.component';
 import LangHeader from '../lang-header/lang-header.component';
 import ActiveUserHeader from '../active-user-header/active-user-header.component';
+import ProfileHeader from '../profile-header/profile-header.component';
 
 const { Text } = Typography;
 
 const CustomHeader = ({ foldDrawer, setFoldDrawer, megaMenuToggle, setMegaMenuToggle, actualSize,
                         settingMenuToggle, setSettingHeaderToggle, setGridDashboardToggle,
                         gridMenuToggle, setNotifHeaderToggle, notifMenuToggle, setLangHeaderToggle,
-                        langMenuToggle, setActiveUserHeaderToggle, activeUserMenuToggle
+                        langMenuToggle, setActiveUserHeaderToggle, activeUserMenuToggle,
+                        setProfileHeaderToggle, profileMenuToggle
                      }) => {
     
     const refMegaMenu = useRef(null);
@@ -41,6 +44,7 @@ const CustomHeader = ({ foldDrawer, setFoldDrawer, megaMenuToggle, setMegaMenuTo
     const refNotifMenu = useRef(null);
     const refLangMenu = useRef(null);
     const refActiveUserMenu = useRef(null);
+    const refProfileMenu = useRef(null);
 
     const [showInputSearch, setShowInputSearch] = useState(false);
 
@@ -91,7 +95,11 @@ const CustomHeader = ({ foldDrawer, setFoldDrawer, megaMenuToggle, setMegaMenuTo
          if (refActiveUserMenu.current && !refActiveUserMenu.current.contains(event.target) && activeUserMenuToggle) {
             setActiveUserHeaderToggle(false);
         }
-
+        
+        //Click outside untuk profile menu
+        if (refProfileMenu.current && !refProfileMenu.current.contains(event.target) && profileMenuToggle) {
+            setProfileHeaderToggle(false);
+        }
         // if (refLangMenu.current && !refLangMenu.current.contains(event.target) ) {
         //     console.log('ini diluar')
         // }
@@ -114,6 +122,10 @@ const CustomHeader = ({ foldDrawer, setFoldDrawer, megaMenuToggle, setMegaMenuTo
 
     const handleLangMenu = () => {
         setLangHeaderToggle(!langMenuToggle);
+    }
+
+    const handleProfileMenu = () => {
+        setProfileHeaderToggle(!profileMenuToggle);
     }
 
     const handleActiveUserMenu = () => {
@@ -176,9 +188,10 @@ const CustomHeader = ({ foldDrawer, setFoldDrawer, megaMenuToggle, setMegaMenuTo
                             <Avatar onClick={handleActiveUserMenu} size={40} className='user-header-avatar'><RocketOutlined /></Avatar>
                             <ActiveUserHeader show={activeUserMenuToggle}/>
                         </div>
-                        <div className='header-avatar-wrap'>
-                            <Avatar size={40} className='profile-header-avatar' src="https://images.unsplash.com/photo-1551069613-1904dbdcda11?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=356&q=80" />
+                        <div ref={refProfileMenu} className='header-avatar-wrap'>
+                            <Avatar onClick={handleProfileMenu} size={40} className='profile-header-avatar' src="https://images.unsplash.com/photo-1551069613-1904dbdcda11?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=356&q=80" />
                             <DownOutlined className='profile-down-icon'/>
+                            <ProfileHeader show={profileMenuToggle}/>
                         </div>
                         <div className='header-avatar-wrap-column'>
                             <p className='profile-name'>Ana Mariana Simalatupang Ana Mariana Simalatupang Ana Mariana Simalatupang</p>
@@ -209,7 +222,8 @@ const mapStateToProps = createStructuredSelector({
     gridMenuToggle: selectGridDashboardToggle,
     notifMenuToggle: selectNotifHeaderToggle,
     langMenuToggle: selectLangHeaderToggle,
-    activeUserMenuToggle: selectActiveUserHeaderToggle
+    activeUserMenuToggle: selectActiveUserHeaderToggle,
+    profileMenuToggle: selectProfileHeaderToggle
 });
   
 const mapDispatchToProps = dispatch => ({
@@ -219,7 +233,8 @@ const mapDispatchToProps = dispatch => ({
     setGridDashboardToggle: (val) => dispatch(setGridDashboardToggle(val)),
     setNotifHeaderToggle: (val) => dispatch(setNotifHeaderToggle(val)),
     setLangHeaderToggle: (val) => dispatch(setLangHeaderToggle(val)),
-    setActiveUserHeaderToggle: (val) => dispatch(setActiveUserHeaderToggle(val))
+    setActiveUserHeaderToggle: (val) => dispatch(setActiveUserHeaderToggle(val)),
+    setProfileHeaderToggle: (val) => dispatch(setProfileHeaderToggle(val))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withWindowResize(CustomHeader));
