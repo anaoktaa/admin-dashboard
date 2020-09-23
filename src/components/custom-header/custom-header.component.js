@@ -1,23 +1,46 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Avatar, Typography } from 'antd';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
+import { Typography, Avatar } from 'antd';
 
 import admindash from '../../assets/logo/admin-dash.png';
+import german from '../../assets/logo/german.png';
 import './custom-header.styles.css';
+import '../../App.css';
 
-import { MenuUnfoldOutlined, SearchOutlined, GiftOutlined, SettingOutlined,
-         MenuOutlined, MoreOutlined, ContactsOutlined, ContainerOutlined,
-         PictureOutlined, DashboardOutlined } from '@ant-design/icons';
+import { MenuUnfoldOutlined, GiftOutlined, SettingOutlined,
+         MenuOutlined, MoreOutlined, AppstoreOutlined,
+         BellOutlined, RocketOutlined, DownOutlined } from '@ant-design/icons';
 
-import { selectFoldDrawer, selectMegaMenuToggle } from '../../redux/application/application.selectors';
-import { setFoldDrawer, setMegaMenuToggle } from '../../redux/application/application.actions';
+import { selectFoldDrawer, selectMegaMenuToggle, selectSettingHeaderToggle, 
+         selectGridDashboardToggle, selectNotifHeaderToggle, selectLangHeaderToggle,
+         selectActiveUserHeaderToggle } from '../../redux/application/application.selectors';
+import { setFoldDrawer, setMegaMenuToggle, setSettingHeaderToggle, setGridDashboardToggle,
+         setNotifHeaderToggle, setLangHeaderToggle, setActiveUserHeaderToggle } from '../../redux/application/application.actions';
 
-const { Text, Title } = Typography;
+import withWindowResize from '../with-window-resize/with-window-resize.component';
+import MegaMenu from '../mega-menu/mega-menu.component';
+import SettingHeader from '../setting-header/setting-header.component';
+import SearchHeader from '../search-header/search-header.component';
+import GridMenu from '../grid-menu/grid-menu.component';
+import NotifHeader from '../notif-header/notif-header.component';
+import LangHeader from '../lang-header/lang-header.component';
+import ActiveUserHeader from '../active-user-header/active-user-header.component';
 
-const CustomHeader = ({ foldDrawer, setFoldDrawer, megaMenuToggle, setMegaMenuToggle }) => {
+const { Text } = Typography;
+
+const CustomHeader = ({ foldDrawer, setFoldDrawer, megaMenuToggle, setMegaMenuToggle, actualSize,
+                        settingMenuToggle, setSettingHeaderToggle, setGridDashboardToggle,
+                        gridMenuToggle, setNotifHeaderToggle, notifMenuToggle, setLangHeaderToggle,
+                        langMenuToggle, setActiveUserHeaderToggle, activeUserMenuToggle
+                     }) => {
     
-    const refdul = useRef(null);
+    const refMegaMenu = useRef(null);
+    const refSettingMenu = useRef(null);
+    const refGridMenu = useRef(null);
+    const refNotifMenu = useRef(null);
+    const refLangMenu = useRef(null);
+    const refActiveUserMenu = useRef(null);
 
     const [showInputSearch, setShowInputSearch] = useState(false);
 
@@ -38,13 +61,64 @@ const CustomHeader = ({ foldDrawer, setFoldDrawer, megaMenuToggle, setMegaMenuTo
     }
 
     const handleClickOutside = event => {
-        if (refdul.current && !refdul.current.contains(event.target)) {
+
+        //Click outside untuk mega menu
+        if (refMegaMenu.current && !refMegaMenu.current.contains(event.target) && megaMenuToggle) {
             setMegaMenuToggle(false);
         }
-        else {
-            console.log('didalam')
+
+        //Click outside untuk setting menu
+        if (refSettingMenu.current && !refSettingMenu.current.contains(event.target) && settingMenuToggle) {
+            setSettingHeaderToggle(false);
         }
+
+        //Click outside untuk grid menu
+        if (refGridMenu.current && !refGridMenu.current.contains(event.target) && gridMenuToggle) {
+            setGridDashboardToggle(false);
+        }
+
+        //Click outside untuk notif menu
+        if (refNotifMenu.current && !refNotifMenu.current.contains(event.target) && notifMenuToggle) {
+            setNotifHeaderToggle(false);
+        }
+
+        //Click outside untuk lang menu
+        if (refLangMenu.current && !refLangMenu.current.contains(event.target) && langMenuToggle) {
+            setLangHeaderToggle(false);
+        }
+
+         //Click outside untuk active user menu
+         if (refActiveUserMenu.current && !refActiveUserMenu.current.contains(event.target) && activeUserMenuToggle) {
+            setActiveUserHeaderToggle(false);
+        }
+
+        // if (refLangMenu.current && !refLangMenu.current.contains(event.target) ) {
+        //     console.log('ini diluar')
+        // }
+        // else {
+        //     console.log('ini didalam')
+        // }
     };
+
+    const handleSettingMenu = () => {
+        setSettingHeaderToggle(!settingMenuToggle);
+    }
+
+    const handleGridMenu = () => {
+        setGridDashboardToggle(!gridMenuToggle);
+    }
+
+    const handleNotifMenu = () => {
+        setNotifHeaderToggle(!notifMenuToggle);
+    }
+
+    const handleLangMenu = () => {
+        setLangHeaderToggle(!langMenuToggle);
+    }
+
+    const handleActiveUserMenu = () => {
+        setActiveUserHeaderToggle(!activeUserMenuToggle);
+    }
 
     useEffect(() => {
         document.addEventListener("click", handleClickOutside, true);
@@ -54,6 +128,9 @@ const CustomHeader = ({ foldDrawer, setFoldDrawer, megaMenuToggle, setMegaMenuTo
     });
 
     const handleFoldDrawer = () => {
+        if (showInputSearch && actualSize.width <= 1024) {
+            setShowInputSearch(!showInputSearch);
+        }
         setFoldDrawer();
     }
 
@@ -63,71 +140,50 @@ const CustomHeader = ({ foldDrawer, setFoldDrawer, megaMenuToggle, setMegaMenuTo
                 <div className='flex-space-center'>
                     <div className='header-left-menu'>
                         <MenuUnfoldOutlined onClick={handleFoldDrawer} className='header-menu-fold-icon' />
-                        <div className='header-search-input-container'>
-                            <input type='text' placeholder='Type to search' className={`header-search-input ${showInputSearch ? 'header-search-input-open' : ''}`} />
-                            <Avatar onClick={handleShowInputSearch} className={`header-search-button ${showInputSearch ? 'header-search-rotate' : ''}`} size={42}><SearchOutlined /></Avatar>
-                        </div>
-                        <div ref={refdul} className='header-link-wrapper'>
+                        <SearchHeader
+                            showInputSearch={showInputSearch}
+                            handleShowInputSearch={handleShowInputSearch}
+                        />
+                        <div ref={refMegaMenu} className='header-link-wrapper'>
                             <Text onClick={handleMegaMenu} className={`header-link-menu ${!foldDrawer || showInputSearch ? 'header-link-menu-hidden' : ''}`} ><GiftOutlined /> Mega Menu</Text>
-                            <div className={`mega-menu-container ${megaMenuToggle? 'mmc-show' : 'mmc-hidden'}`}>
-                                <div className='mega-menu-tooltip'/>
-                                <div className='mega-menu-content'>
-                                    <div className='mega-menu-overview'>
-                                        <Title level={5}>Overview</Title>
-                                        <div className='mega-menu-content-wrap'>
-                                            <a href='#'><ContactsOutlined className='mega-menu-icon' />Contacts</a>
-                                        </div>
-                                        <div className='mega-menu-content-wrap'>
-                                            <a href='#'><ContainerOutlined className='mega-menu-icon'/>Incidents</a>
-                                        </div>
-                                        <div className='mega-menu-content-wrap'>
-                                            <a href='#'><PictureOutlined className='mega-menu-icon'/>Companies</a>
-                                        </div>
-                                        <div className='mega-menu-content-wrap'>
-                                            <a href='#'><DashboardOutlined className='mega-menu-icon'/>Dashboard</a>
-                                        </div>
-                                    </div>
-                                    <div className='mega-menu-overview'>
-                                        <Title level={5}>Favourites</Title>
-                                        <div className='mega-menu-content-wrap'>
-                                            <a href='#'>Report Conversions</a>
-                                        </div>
-                                        <div className='mega-menu-content-wrap'>
-                                            <a href='#'>Quick Start</a>
-                                        </div>
-                                        <div className='mega-menu-content-wrap'>
-                                            <a href='#'>Users & Groups</a>
-                                        </div>
-                                        <div className='mega-menu-content-wrap'>
-                                            <a href='#'>Properties</a>
-                                        </div>
-                                    </div>
-                                    <div className='mega-menu-overview'>
-                                        <Title level={5}>Sales & Marketing</Title>
-                                        <div className='mega-menu-content-wrap'>
-                                            <a href='#'>Resource Groups</a>
-                                        </div>
-                                        <div className='mega-menu-content-wrap'>
-                                            <a href='#'>Goal Metrics</a>
-                                        </div>
-                                        <div className='mega-menu-content-wrap'>
-                                            <a href='#'>Campaign</a>
-                                        </div>
-                                        <div className='mega-menu-content-wrap'>
-                                            <a href='#'>Queues</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
+                            <MegaMenu show={megaMenuToggle} />
                         </div>
  
-                        <div className='header-link-wrapper'>
-                            <Text className={`header-link-menu ${!foldDrawer || showInputSearch ? 'header-link-menu-hidden' : ''}`} ><SettingOutlined /> Settings</Text>
+                        <div ref={refSettingMenu} className='header-link-wrapper'>
+                            <Text onClick={handleSettingMenu} className={`header-link-menu ${!foldDrawer || showInputSearch ? 'header-link-menu-hidden' : ''}`} ><SettingOutlined /> Settings</Text>
+                            <SettingHeader show={settingMenuToggle}/>
                         </div>
                     </div>
                     <div className='header-right-menu'>
-                        ini right
+                        <div ref={refGridMenu} className='header-avatar-wrap'>
+                            <Avatar onClick={handleGridMenu} className='grid-header-avatar' size={40}><AppstoreOutlined /></Avatar>
+                            <GridMenu show={gridMenuToggle}/>
+                        </div>
+                        <div ref={refNotifMenu} className='header-avatar-wrap'>
+                            <div onClick={handleNotifMenu} className='notif-header-wrapper'>
+                                <Avatar className='notif-header-avatar' size={40}>
+                                    <BellOutlined />
+                                </Avatar>
+                                <div className='notif-badge'/>
+                            </div>
+                            <NotifHeader show={notifMenuToggle}/>
+                        </div>
+                        <div ref={refLangMenu} className='header-avatar-wrap'>
+                            <Avatar onClick={handleLangMenu} size={40} className='lang-header-avatar' icon={<img src={german} alt='lang' style={{width: '65%', height: '65%'}}/>} />
+                            <LangHeader show={langMenuToggle}/>
+                        </div>
+                        <div ref={refActiveUserMenu} className='header-avatar-wrap'>
+                            <Avatar onClick={handleActiveUserMenu} size={40} className='user-header-avatar'><RocketOutlined /></Avatar>
+                            <ActiveUserHeader show={activeUserMenuToggle}/>
+                        </div>
+                        <div className='header-avatar-wrap'>
+                            <Avatar size={40} className='profile-header-avatar' src="https://images.unsplash.com/photo-1551069613-1904dbdcda11?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=356&q=80" />
+                            <DownOutlined className='profile-down-icon'/>
+                        </div>
+                        <div className='header-avatar-wrap-column'>
+                            <p className='profile-name'>Ana Mariana Simalatupang Ana Mariana Simalatupang Ana Mariana Simalatupang</p>
+                            <p className='profile-position'>Software Engineer</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -148,12 +204,22 @@ const CustomHeader = ({ foldDrawer, setFoldDrawer, megaMenuToggle, setMegaMenuTo
 
 const mapStateToProps = createStructuredSelector({
     foldDrawer: selectFoldDrawer,
-    megaMenuToggle: selectMegaMenuToggle
+    megaMenuToggle: selectMegaMenuToggle,
+    settingMenuToggle: selectSettingHeaderToggle,
+    gridMenuToggle: selectGridDashboardToggle,
+    notifMenuToggle: selectNotifHeaderToggle,
+    langMenuToggle: selectLangHeaderToggle,
+    activeUserMenuToggle: selectActiveUserHeaderToggle
 });
   
 const mapDispatchToProps = dispatch => ({
     setFoldDrawer: () => dispatch(setFoldDrawer()),
-    setMegaMenuToggle: (val) => dispatch(setMegaMenuToggle(val))
+    setMegaMenuToggle: (val) => dispatch(setMegaMenuToggle(val)),
+    setSettingHeaderToggle: (val) => dispatch(setSettingHeaderToggle(val)),
+    setGridDashboardToggle: (val) => dispatch(setGridDashboardToggle(val)),
+    setNotifHeaderToggle: (val) => dispatch(setNotifHeaderToggle(val)),
+    setLangHeaderToggle: (val) => dispatch(setLangHeaderToggle(val)),
+    setActiveUserHeaderToggle: (val) => dispatch(setActiveUserHeaderToggle(val))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(CustomHeader);
+export default connect(mapStateToProps, mapDispatchToProps)(withWindowResize(CustomHeader));

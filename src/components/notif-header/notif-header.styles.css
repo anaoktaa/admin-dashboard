@@ -1,0 +1,40 @@
+.header-notif-menu {
+    position: absolute;
+    width: 280px;
+    top: 35px;
+    right: 0;
+    overflow: hidden;
+    transition: all .8s;
+}
+
+.hnm-show {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(20px);
+}
+
+.hnm-close {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.header-notif-menu-header {
+    height: 100px;
+    background-image: url('https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80');
+}
+
+.header-notif-menu-overlay {
+    position: absolute;
+    background-color: #00000096;
+}
+
+
+.header-notif-menu-body {
+    height: 200px;
+    width: 100%;
+    overflow-y: auto;
+    padding: 15px 10px 0;
+    text-align: left;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}

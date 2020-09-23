@@ -5,6 +5,7 @@ body {
 :root {
     --header-height: 64px;
     --primary-color: #545cd8;
+    --danger-color: #d92550;
   }
 
 .flex-space-center  {
@@ -64,6 +65,54 @@ a {
 
 /* set button(top and bottom of the scrollbar) */
 .scrollbar::-webkit-scrollbar-button {display:none}
+
+/*Styles for card*/
+.card-container {
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0.46875rem 2.1875rem rgba(8,10,37,.03), 0 0.9375rem 1.40625rem rgba(8,10,37,.03), 0 0.25rem 0.53125rem rgba(8,10,37,.05), 0 0.125rem 0.1875rem rgba(8,10,37,.03);
+}
+
+.card-header-container {
+    width: 100%;
+    box-sizing: border-box;
+    background-position: center;
+    position: relative;
+}
+
+.card-header-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+}
+
+.card-header-title {
+    color: white;
+    margin-bottom: 6px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.4;
+}
+
+.card-header-desc {
+    font-size: 15px;
+    color: #ffffffdb;
+    margin-bottom: 6px;
+}
+
+.capitalize-color {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+/*end styles for card*/
+
 
 @media screen and (max-width: 768px) {
     .content-container {
