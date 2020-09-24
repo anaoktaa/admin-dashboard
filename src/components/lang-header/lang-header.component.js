@@ -2,6 +2,7 @@ import React from 'react';
 import { Menu } from 'antd';
 
 import './lang-header.styles.css';
+import '../right-menu-header/right-menu-header.styles.css';
 import '../../App.css';
 
 import germany from '../../assets/flag/germany.png';
@@ -11,7 +12,7 @@ import usa from '../../assets/flag/usa.png';
 
 const LangHeader = ({ show }) => {
     return (
-        <div className={`card-container header-lang-menu ${show? 'hlc-show' : 'hlc-close'}`}>
+        <div className={`floating-menu card-container header-lang-menu ${show? 'floating-menu-show' : 'floating-menu-close'}`}>
             <div className='card-header-container header-lang-menu-header'>
                 <div className='card-header-overlay header-lang-menu-overlay'>
                     <p className='card-header-desc'>

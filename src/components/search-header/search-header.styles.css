@@ -1,0 +1,42 @@
+
+.header-menu-fold-icon {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.header-search-input-container {
+    position: relative;
+    width: fit-content;
+    /* background-color: yellowgreen; */
+}
+
+.header-search-button {
+    background-color: #e9ebf8;
+    color: #545cd8;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    z-index: 1200;
+    transform: rotate(-270deg);
+    transition: all 0.5s;
+}
+
+.header-search-rotate {
+    transform: rotate(0deg);
+}
+
+.header-search-input {
+    height: 42px;
+    width: 0;
+    background-color: #edeeef9e;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    padding: 2px 20px;
+    box-sizing: border-box;
+    transition: all 0.5s;
+}
+
+.header-search-input-open  {
+    width: 280px;
+}

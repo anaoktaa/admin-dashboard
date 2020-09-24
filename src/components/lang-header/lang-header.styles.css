@@ -1,26 +1,10 @@
 .header-lang-menu {
-    position: absolute;
-    top: 35px;
     width: 290px;
-    right: 0;
-    overflow: hidden;
-    transition: all .8s;
 }
 
 .header-lang-menu-header {
     height: 60px;
     background-image: url('https://images.unsplash.com/photo-1502899576159-f224dc2349fa?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1400&q=80');
-}
-
-.hlc-show {
-    visibility: visible;
-    opacity: 1;
-    transform: translateY(20px);
-}
-
-.hlc-close {
-    visibility: hidden;
-    opacity: 0;
 }
 
 .header-lang-menu-overlay {

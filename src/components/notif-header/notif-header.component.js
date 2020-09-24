@@ -3,11 +3,12 @@ import { Timeline } from 'antd';
 import { ClockCircleOutlined } from '@ant-design/icons';
 
 import './notif-header.styles.css';
+import '../right-menu-header/right-menu-header.styles.css';
 import '../../App.css';
 
 const NotifHeader = ({ show }) => {
     return (
-        <div className={`card-container header-notif-menu ${show? 'hnm-show' : 'hnm-close'}`}>
+        <div className={`floating-menu card-container header-notif-menu ${show? 'floating-menu-show' : 'floating-menu-close'}`}>
             <div className='card-header-container header-notif-menu-header'>
                 <div className='card-header-overlay header-notif-menu-overlay'>
                     <p className='card-header-title'>Notifications</p>

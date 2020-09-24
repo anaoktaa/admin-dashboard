@@ -3,13 +3,14 @@ import { Typography, Button  } from 'antd';
 import { UserOutlined, SettingOutlined } from '@ant-design/icons';
 
 import './active-user-header.styles.css';
+import '../right-menu-header/right-menu-header.styles.css';
 import '../../App.css';
 
 const { Title, Text } = Typography;
 
 const ActiveUserHeader = ({ show })=> {
     return (
-        <div className={`card-container header-active-user-menu ${show? 'hcu-show': 'hcu-hidden'} `}>
+        <div className={`floating-menu card-container header-active-user-menu ${show? 'floating-menu-show': 'floating-menu-close'} `}>
             <div className='card-header-container header-active-user-menu-header'>
                 <div className='card-header-overlay header-active-user-menu-overlay'>
                     <p className='card-header-title'>Users Online</p>

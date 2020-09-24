@@ -1,21 +1,5 @@
 .header-notif-menu {
-    position: absolute;
     width: 280px;
-    top: 35px;
-    right: 0;
-    overflow: hidden;
-    transition: all .8s;
-}
-
-.hnm-show {
-    visibility: visible;
-    opacity: 1;
-    transform: translateY(20px);
-}
-
-.hnm-close {
-    visibility: hidden;
-    opacity: 0;
 }
 
 .header-notif-menu-header {

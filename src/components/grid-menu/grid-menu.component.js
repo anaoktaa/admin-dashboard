@@ -5,10 +5,11 @@ import { RocketOutlined, FundProjectionScreenOutlined, SettingOutlined,
          ReconciliationOutlined, SafetyCertificateOutlined, PhoneOutlined } from '@ant-design/icons';
 
 import './grid-menu.styles.css';
+import '../right-menu-header/right-menu-header.styles.css';
 
 const GridMenu = ({ show }) => {
     return (
-        <div className={`card-container header-grid-menu ${show? 'hgd-show' : 'hgd-close'}`}>
+        <div className={`floating-menu card-container header-grid-menu ${show? 'floating-menu-show' : 'floating-menu-close'}`}>
             <div className='card-header-container header-grid-menu-header'>
                 <div className='card-header-overlay header-grid-menu-overlay'>
                     <p className='card-header-title'>Grid Dashboard</p>

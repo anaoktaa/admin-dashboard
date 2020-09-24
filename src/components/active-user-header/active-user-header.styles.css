@@ -1,21 +1,5 @@
 .header-active-user-menu {
-    position: absolute;
-    top: 35px;
     width: 290px;
-    right: 0;
-    overflow: hidden;
-    transition: all .8s;
-}
-
-.hcu-show {
-    visibility: visible;
-    opacity: 1;
-    transform: translateY(20px);
-}
-
-.hcu-hidden {
-    visibility: hidden;
-    opacity: 0;
 }
 
 .header-active-user-menu-header {

@@ -3,11 +3,12 @@ import { Avatar, Button } from 'antd';
 import { MessageOutlined, TagOutlined } from '@ant-design/icons';
 
 import './profile-header.styles.css';
+import '../right-menu-header/right-menu-header.styles.css';
 import '../../App.css';
 
 const ProfileHeader = ({ show }) => {
     return (
-        <div className={`card-container header-profile-menu ${show ? 'phc-show' : 'phc-close'}`}>
+        <div className={`floating-menu card-container header-profile-menu ${show ? 'floating-menu-show' : 'floating-menu-close'}`}>
             <div className='card-header-container header-profile-menu-header'>
                 <div className='card-header-overlay header-profile-menu-overlay'>
                     <Avatar size={40} src="https://images.unsplash.com/photo-1551069613-1904dbdcda11?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=356&q=80" />

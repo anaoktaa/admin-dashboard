@@ -3,6 +3,8 @@ import { Avatar } from 'antd';
 
 import { SearchOutlined } from '@ant-design/icons';
 
+import './search-header.styles.css';
+
 const SearchHeader = ({ showInputSearch, handleShowInputSearch }) => {
     return (
         <div className='header-search-input-container'>
