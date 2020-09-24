@@ -8,6 +8,7 @@ import './App.css';
 
 import CustomHeader from './components/custom-header/custom-header.component';
 import CustomDrawer from './components/custom-drawer/custom-drawer.component';
+import FloatingMenuHeader from './components/floating-menu-header/floating-menu-header.component';
 
 import { selectFoldDrawer } from './redux/application/application.selectors';
 
@@ -16,6 +17,7 @@ const App = ({ foldDrawer }) => {
         <div className='app'>
             <CustomDrawer />
             <CustomHeader/>
+            <FloatingMenuHeader/>
             {/* <div className={`content-container ${foldDrawer ? 'content-fold-close' : 'content-fold-open'}`}>
                 <button>Fold Drawer</button>
                 <h1>

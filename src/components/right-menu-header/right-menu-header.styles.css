@@ -116,7 +116,7 @@
 .floating-menu-show {
     visibility: visible;
     opacity: 1;
-    transform: translateY(20px);
+    transform: translate(-50%, 20px);
 }
 
 .floating-menu-close {
@@ -134,9 +134,26 @@
         justify-content: flex-end;
         align-items: center;
     }
-
     
     .header-avatar-wrap-column {
         display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header-right-menu {
+        width: 100%;
+    }
+
+    .header-avatar-wrap {
+        position: static;
+    }
+
+    .floating-menu {
+        position: fixed;
+        left: 50%;
+        transform: translate(-50%, 0);
+        z-index: 3200;
+        top: 160px;
     }
 }
