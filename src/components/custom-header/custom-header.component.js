@@ -8,7 +8,7 @@ import './custom-header.styles.css';
 import '../../App.css';
 
 import { MenuUnfoldOutlined, GiftOutlined, SettingOutlined,
-         MenuOutlined, MoreOutlined } from '@ant-design/icons';
+         MenuOutlined, MoreOutlined, MenuFoldOutlined } from '@ant-design/icons';
 
 import { selectFoldDrawer, selectMegaMenuToggle, selectSettingHeaderToggle, selectFloatingHeaderTools } from '../../redux/application/application.selectors';
 import { setFoldDrawer, setMegaMenuToggle, setSettingHeaderToggle, setFloatingHeaderTools } from '../../redux/application/application.actions';
@@ -88,7 +88,13 @@ const CustomHeader = ({ foldDrawer, setFoldDrawer, megaMenuToggle, setMegaMenuTo
             <div className='desktop-header-view'>
                 <div className='flex-space-center'>
                     <div className='header-left-menu'>
-                        <MenuUnfoldOutlined onClick={handleFoldDrawer} className='header-menu-fold-icon' />
+                        {
+                            foldDrawer?
+                            <MenuUnfoldOutlined onClick={handleFoldDrawer} className='header-menu-fold-icon' />
+                            :
+                            <MenuFoldOutlined onClick={handleFoldDrawer} className='header-menu-fold-icon' />
+                        }
+                        
                         <SearchHeader
                             showInputSearch={showInputSearch}
                             handleShowInputSearch={handleShowInputSearch}
