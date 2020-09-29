@@ -10,10 +10,8 @@ import './right-menu-header.styles.css';
 
 import { AppstoreOutlined, BellOutlined, RocketOutlined, DownOutlined } from '@ant-design/icons';
 
-import { selectSettingHeaderToggle, selectGridDashboardToggle, selectNotifHeaderToggle,
-         selectLangHeaderToggle, selectActiveUserHeaderToggle, selectProfileHeaderToggle } from '../../redux/application/application.selectors';
-import { setSettingHeaderToggle, setGridDashboardToggle,
-         setNotifHeaderToggle, setLangHeaderToggle, setActiveUserHeaderToggle,
+import { selectGridDashboardToggle, selectNotifHeaderToggle, selectLangHeaderToggle, selectActiveUserHeaderToggle, selectProfileHeaderToggle } from '../../redux/application/application.selectors';
+import { setGridDashboardToggle, setNotifHeaderToggle, setLangHeaderToggle, setActiveUserHeaderToggle,
          setProfileHeaderToggle } from '../../redux/application/application.actions';
 
 import GridMenu from '../grid-menu/grid-menu.component';

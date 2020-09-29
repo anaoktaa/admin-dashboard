@@ -41,7 +41,7 @@ const CustomDrawer = ({ foldDrawer, actualSize }) => {
                     width='280'
                     placement="left"
                     closable={false}
-                    visible={!foldDrawer && (actualSize.width <= 768 )}
+                    visible={!foldDrawer && (actualSize.width <= 986 )}
                 >
                     <div style={{paddingTop: '20px'}}>
                         <DrawerMenu/>

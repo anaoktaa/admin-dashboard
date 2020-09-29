@@ -25,15 +25,28 @@
     display: none;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 986px) {
     .floating-menu-container {
         position: fixed;
-        top: 90px;
-        left: 0;
-        right: 0;
+        top: 70px;
+        width: fit-content;
         z-index: 2100;
         display: flex;
         justify-content: center;
+        left: 50%;
+        transform: translate(-50%, 0);
+        transition: all .8s;
+    }
+
+    .show-floating-menu {
+        visibility: visible;
+        opacity: 1;
+        transform: translate(-50%, 20px);
+    }
+
+    .close-floating-menu {
+        visibility: hidden;
+        opacity: 0;
     }
 }
 

@@ -111,12 +111,13 @@
     right: 0;
     overflow-x: hidden;
     transition: all .8s;
+    z-index: 4100;
 }
 
 .floating-menu-show {
     visibility: visible;
     opacity: 1;
-    transform: translate(-50%, 20px);
+    transform: translateY(20px);
 }
 
 .floating-menu-close {
@@ -140,7 +141,7 @@
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 986px) {
     .header-right-menu {
         width: 100%;
     }
@@ -154,6 +155,17 @@
         left: 50%;
         transform: translate(-50%, 0);
         z-index: 3200;
-        top: 160px;
+        top: 60px;
+    }
+
+    .floating-menu-show {
+        visibility: visible;
+        opacity: 1;
+        transform: translate(-50%, 20px);
+    }
+    
+    .floating-menu-close {
+        visibility: hidden;
+        opacity: 0;
     }
 }

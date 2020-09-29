@@ -103,7 +103,7 @@
     }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 986px) {
 
     .header-styles-container {  
         z-index: 1400;

@@ -10,8 +10,8 @@ import '../../App.css';
 import { MenuUnfoldOutlined, GiftOutlined, SettingOutlined,
          MenuOutlined, MoreOutlined } from '@ant-design/icons';
 
-import { selectFoldDrawer, selectMegaMenuToggle, selectSettingHeaderToggle } from '../../redux/application/application.selectors';
-import { setFoldDrawer, setMegaMenuToggle, setSettingHeaderToggle } from '../../redux/application/application.actions';
+import { selectFoldDrawer, selectMegaMenuToggle, selectSettingHeaderToggle, selectFloatingHeaderTools } from '../../redux/application/application.selectors';
+import { setFoldDrawer, setMegaMenuToggle, setSettingHeaderToggle, setFloatingHeaderTools } from '../../redux/application/application.actions';
 
 import withWindowResize from '../with-window-resize/with-window-resize.component';
 import MegaMenu from '../mega-menu/mega-menu.component';
@@ -22,7 +22,8 @@ import RightMenuHeader from '../right-menu-header/right-menu-header.component';
 const { Text } = Typography;
 
 const CustomHeader = ({ foldDrawer, setFoldDrawer, megaMenuToggle, setMegaMenuToggle,
-                        actualSize, settingMenuToggle, setSettingHeaderToggle
+                        actualSize, settingMenuToggle, setSettingHeaderToggle,
+                        setFloatingHeaderTools, floatingHeader
                      }) => {
     
     const refMegaMenu = useRef(null);
@@ -78,6 +79,10 @@ const CustomHeader = ({ foldDrawer, setFoldDrawer, megaMenuToggle, setMegaMenuTo
         setFoldDrawer();
     }
 
+    const handleFloatingHeaderTool = () => {
+        setFloatingHeaderTools(!floatingHeader);
+    }
+
     return (
         <div className={`header-styles-container  ${foldDrawer ? 'header-styles-drawer-open ' : 'header-styles-drawer-close '}`}>
             <div className='desktop-header-view'>
@@ -107,7 +112,7 @@ const CustomHeader = ({ foldDrawer, setFoldDrawer, megaMenuToggle, setMegaMenuTo
                     <div>
                         <img src={admindash} alt='admin-dash' width='100%' height='100%' />
                     </div>
-                    <div className='more-outline-wrapper'>
+                    <div onClick={handleFloatingHeaderTool} className='more-outline-wrapper'>
                         <MoreOutlined className='header-menu-more-outlined-icon' />
                     </div>
                 </div>
@@ -120,12 +125,14 @@ const mapStateToProps = createStructuredSelector({
     settingMenuToggle: selectSettingHeaderToggle,
     foldDrawer: selectFoldDrawer,
     megaMenuToggle: selectMegaMenuToggle,
+    floatingHeader: selectFloatingHeaderTools
 });
   
 const mapDispatchToProps = dispatch => ({
     setSettingHeaderToggle: (val) => dispatch(setSettingHeaderToggle(val)),
     setFoldDrawer: () => dispatch(setFoldDrawer()),
     setMegaMenuToggle: (val) => dispatch(setMegaMenuToggle(val)),
+    setFloatingHeaderTools: (val) => dispatch(setFloatingHeaderTools(val))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(withWindowResize(CustomHeader));
