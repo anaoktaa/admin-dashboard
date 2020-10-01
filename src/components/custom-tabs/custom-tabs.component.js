@@ -13,7 +13,7 @@ const CustomTabs = () => {
                 <h2>Makanan ini sungguh enak sekali laah</h2>
             </CustomTabPanel>
             <CustomTabPanel data-key='2' title='Minuman'>
-
+                <h3>Kalo ini isi tab k2  ishh gak tau gimana yaa</h3>
             </CustomTabPanel>
             <CustomTabPanel data-key='3' title='Hmmm enakk lah'>
 

@@ -14,6 +14,7 @@ const CustomTabsWrapper = ({ children, ...props }) => {
         let allWidth = 0;
         while (!findActivePanel) {
             if (nodes[initial].classList.length > 1) {
+                setActiveKey(initial);
                 findActivePanel = true;                
             }
             allWidth = allWidth + nodes[initial].offsetWidth;
@@ -58,7 +59,7 @@ const CustomTabsWrapper = ({ children, ...props }) => {
         //Finding width
         findActualLeft(nodes, li);
     }
-  
+
     return (
         <div>
             <ul 
@@ -70,6 +71,15 @@ const CustomTabsWrapper = ({ children, ...props }) => {
                 {children}
                 <div style={{width: `${width}px`, left: `${left}px`}} className='tab-active-overlay'></div>
             </ul>
+            {children.map((item, index) => {
+                if (Number(index) === Number(activeKey)) {
+                    return (
+                        <div>
+                            {item.props.children}
+                        </div>
+                    )
+                }
+            })}
         </div>
     )
 };
