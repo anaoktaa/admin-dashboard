@@ -1,0 +1,97 @@
+
+/*Styles for app theme*/
+.app-theme-container {
+    background: hsla(0,0%,100%,.55);
+    padding: 30px 20px;
+    display: grid;
+    height: 120px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.bg-icon-gradient-ripple {
+    box-shadow: 0 0.46875rem 2.1875rem rgba(8,10,37,.03), 0 0.9375rem 1.40625rem rgba(8,10,37,.03), 0 0.25rem 0.53125rem rgba(8,10,37,.05), 0 0.125rem 0.1875rem rgba(8,10,37,.03);
+    background-color: white;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+.app-theme-icon-wrapper {
+    width: 7%;
+}
+
+.app-theme-title-main {
+    color: gray;
+    margin-bottom: 6px;
+    padding: 0;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+.app-theme-breadcrumb-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    width: 33%;
+}
+
+.slash-breadcrumb-link {
+    margin: 0 5px;
+}
+
+.app-theme-text-container {
+    padding-left: 20px;
+    width: 60%;
+    box-sizing: border-box;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .app-theme-icon-wrapper {
+        width: 10%;
+    }
+    
+    .app-theme-text-container {
+        width: 65%;
+        padding-right: 20px;
+    }
+
+    .app-theme-breadcrumb-container {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 986px) {
+    .bg-icon-gradient-ripple {
+        display: none;
+    }
+
+    .app-theme-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 30px 10px;
+        height: 150px;
+    }
+
+    .app-theme-text-container {
+        margin-bottom: 10px;
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .app-theme-breadcrumb-container {
+        width: 100%;
+        justify-content: center;
+    }
+}

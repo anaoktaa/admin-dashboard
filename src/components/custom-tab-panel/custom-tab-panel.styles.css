@@ -1,0 +1,20 @@
+
+.tab-panel {
+    padding: 8px 20px;
+    color: #30336b;
+    border-radius: 5px;
+    cursor: pointer;
+    /* position: relative;
+    top: 0; */
+    z-index: 100;
+}
+
+.tab-panel:hover {
+    color: var(--primary-color);
+}
+
+.tab-panel-active {
+    left: 0;
+    cursor: default;
+    color: white !important;
+}
