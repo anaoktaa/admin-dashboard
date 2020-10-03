@@ -70,7 +70,7 @@ const LoginPage = () => {
                                 name="username"
                                 rules={[{ required: true, message: 'Please input your username!' }]}
                             >
-                                <Input />
+                                <Input placeholder='Your username'/>
                             </Form.Item>
                         </div>
                         <div className='login-page-from-part '>
@@ -79,7 +79,7 @@ const LoginPage = () => {
                                 name="password"
                                 rules={[{ required: true, message: 'Please input your password!' }]}
                             >
-                                <Input.Password/>
+                                <Input.Password placeholder='Your password'/>
                             </Form.Item>
                         </div>
                         <div className='login-page-from-part '>

@@ -150,3 +150,28 @@
     justify-content: flex-end;
     align-items: center;
 }
+
+@media screen and (max-width: 986px) {
+    .login-page-container {
+        flex-direction: column;
+        height: 100vh;
+    }
+    
+    .login-page-image-slider {
+        display: none;
+    }
+    
+    .login-page-form {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+}
+
+
+@media screen and (max-width: 425px) {
+    .flex-end {
+        grid-template-columns: auto;
+        justify-content: flex-start;
+    }
+}
