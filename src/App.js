@@ -6,6 +6,8 @@ import 'antd/dist/antd.less';
 import './ant-design.styles.css';
 import './App.css';
 
+import LoginPage from './pages/login/login.component';
+
 import CustomHeader from './components/custom-header/custom-header.component';
 import CustomDrawer from './components/custom-drawer/custom-drawer.component';
 import FloatingMenuHeader from './components/floating-menu-header/floating-menu-header.component';
@@ -17,13 +19,14 @@ import { selectFoldDrawer } from './redux/application/application.selectors';
 const App = ({ foldDrawer }) => {
     return (
         <div className='app'>
-            <CustomDrawer />
+            <LoginPage/>
+            {/* <CustomDrawer />
             <CustomHeader/>
             <FloatingMenuHeader/>
             <div className={`content-container ${foldDrawer ? 'content-fold-close' : 'content-fold-open'}`}>
                 <CustomBreadcrumb/>
                 <CustomTabs/>
-            </div>
+            </div> */}
         </div>
     )
 };
