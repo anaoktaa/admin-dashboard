@@ -6,8 +6,9 @@ import 'antd/dist/antd.less';
 import './ant-design.styles.css';
 import './App.css';
 
-import LoginPage from './pages/login/login.component';
-import LoginBoxedPage from './pages/login-boxed/login-boxed.component';
+import SigninPage from './pages/signin/signin.component';
+import SigninBoxedPage from './pages/signin-boxed/signin-boxed.component';
+import SignupPage from './pages/signup/signup.component';
 
 import CustomHeader from './components/custom-header/custom-header.component';
 import CustomDrawer from './components/custom-drawer/custom-drawer.component';
@@ -20,8 +21,9 @@ import { selectFoldDrawer } from './redux/application/application.selectors';
 const App = ({ foldDrawer }) => {
     return (
         <div className='app'>
-            {/* <LoginPage/> */}
-            <LoginBoxedPage/>
+            <SignupPage/>
+            {/* <SigninPage/> */}
+            {/* <SigninBoxedPage/> */}
             {/* <CustomDrawer />
             <CustomHeader/>
             <FloatingMenuHeader/>

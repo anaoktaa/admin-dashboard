@@ -1,0 +1,59 @@
+.signup-page-form {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    justify-content: center;
+    padding: 0 80px;
+}
+
+.signup-page-image-slider {
+    width: 40%;
+    height: 100%;
+}
+
+.signup-page-slide-image1 {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-image: url('https://images.unsplash.com/photo-1560569203-24a717322491?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80');
+}
+
+.signin-page-green-text {
+    color: #12b93d !important;
+    font-size: 15px !important;
+    padding: 0 !important;
+    margin: 0 0 6px !important;
+    font-weight: 400 !important;
+}
+
+.signup-have-account {
+    font-size: 18px !important;
+    margin-bottom: 20px;
+}
+
+.bg-round-button {
+    display: flex !important;
+    align-items: center;
+    padding: 22px 30px !important;
+    font-weight: bolder !important;
+    font-size: 18px !important;
+    border-radius: 30px !important;
+    text-transform: capitalize !important;
+}
+
+@media screen and (max-width: 986px) {
+    .signup-page-form {
+        width: 100%;
+        padding: 20px;
+        height: fit-content;
+    }
+    
+    .signup-page-image-slider {
+        display: none;
+    }
+}
