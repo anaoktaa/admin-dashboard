@@ -1,12 +1,12 @@
 import React from 'react';
+
 import { Carousel, Typography, Form, Input, Checkbox, Button  } from 'antd';
 
-import './signin.styles.css';
+import './forgot-password.styles.css';
 
 const { Title } = Typography;
 
-const SigninPage = () => {
-    
+const ForgotPassword = () => {
     return (
         <div className='signin-page-container'>
             <div className='signin-page-image-slider'>
@@ -51,47 +51,30 @@ const SigninPage = () => {
             </div>
             <div className='signin-page-form'>
                 <div className='signin-page-logo'/>
-                <Title level={3} className='signin-page-welcome-back'>Welcome Back,</Title>
-                <Title level={5} className='signin-page-please-text'>Please sign in to your account</Title>
-                <div className='flex-start'>
-                    <Title level={5} className='signin-page-please-text'>No account ?</Title>
-                    <Title level={5} className='signin-page-sign-up-text'> &nbsp;Sign up now</Title>
-                </div>
-                <div className='signin-page-line'></div>
+                <Title level={3} className='signin-page-welcome-back'>Forgot your Password?</Title>
+                <Title level={5} className='signin-page-please-text'>Use the form below to recover it.</Title>
+
                 <Form
                     name="basic"
                     initialValues={{ remember: true }}
                     >
                     <div className='signin-page-form-container'>
-                        <div className='signin-page-from-part '>
-                            <label className='label-input'>Username</label>
+                        <div className='signin-page-from-part2'>
+                            <label className='label-input'>Email</label>
                             <Form.Item
-                                name="username"
+                                name="email"
                                 rules={[{ required: true, message: 'Please input your username!' }]}
                             >
                                 <Input placeholder='Your username'/>
                             </Form.Item>
                         </div>
-                        <div className='signin-page-from-part '>
-                            <label className='label-input'>Password</label>
-                            <Form.Item
-                                name="password"
-                                rules={[{ required: true, message: 'Please input your password!' }]}
-                            >
-                                <Input.Password placeholder='Your password'/>
-                            </Form.Item>
-                        </div>
-                        <div className='signin-page-from-part2'>
-                            <Form.Item name="remember" valuePropName="checked">
-                                <Checkbox>Remember me</Checkbox>
-                            </Form.Item>
-                        </div>
                     </div>
-                    <div className='signin-page-line'></div>
+                 
+                    <Title level={5} className='signin-page-sign-up-text'>Sign in existing account</Title>
+
                     <Form.Item>
                         <div className='flex-end'>
-                            <Button type="link">Recover Password</Button>
-                            <Button type="primary">Signin to Dashboard</Button>
+                            <Button type="primary">Recover Password</Button>
                         </div>
                     </Form.Item>
                 </Form>
@@ -100,4 +83,4 @@ const SigninPage = () => {
     )
 };
 
-export default SigninPage;
+export default ForgotPassword;

@@ -8,6 +8,7 @@ const { Title } = Typography;
 const SigninBoxedPage = () => {
     return (
         <div className='signin-boxed-container'>
+            <div className='signin-page-logo'/>
             <div className='card-container '>
                 <Form
                     name="basic"

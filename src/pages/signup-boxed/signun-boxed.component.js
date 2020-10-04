@@ -14,7 +14,6 @@ const SignupBoxed = () => {
                     initialValues={{ remember: true }}
                 >
                     <div className='signin-boxed-form-container'>
-                   
                         <div className='flex-start'>
                             <Title level={3} className='signin-page-welcome-back'>Welcome</Title>
                         </div>

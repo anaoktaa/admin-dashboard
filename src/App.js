@@ -10,6 +10,8 @@ import SigninPage from './pages/signin/signin.component';
 import SigninBoxedPage from './pages/signin-boxed/signin-boxed.component';
 import SignupPage from './pages/signup/signup.component';
 import SignupBoxed from './pages/signup-boxed/signun-boxed.component';
+import ForgotPassword from './pages/forgot-password/forgot-password.component';
+import ForgotPasswordBoxed from './pages/forgot-password-boxed/forgot-password-boxed.component';
 
 import CustomHeader from './components/custom-header/custom-header.component';
 import CustomDrawer from './components/custom-drawer/custom-drawer.component';
@@ -22,7 +24,9 @@ import { selectFoldDrawer } from './redux/application/application.selectors';
 const App = ({ foldDrawer }) => {
     return (
         <div className='app'>
-            <SignupBoxed/>
+            <ForgotPasswordBoxed/>
+            {/* <ForgotPassword/> */}
+            {/* <SignupBoxed/> */}
             {/* <SignupPage/> */}
             {/* <SigninPage/> */}
             {/* <SigninBoxedPage/> */}

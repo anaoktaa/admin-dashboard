@@ -129,9 +129,13 @@
     margin: 15px 0 10px;
 }
 
-.signin-page-from-part,.signin-page-from-part2 {
+.signin-page-from-part{
     width: 48%;
 } 
+
+.signin-page-from-part2 {
+    width: 100%;
+}
 
 .signin-form-input {
     border-radius: 5px !important;
@@ -155,7 +159,9 @@
 @media screen and (max-width: 986px) {
     .signin-page-container {
         flex-direction: column;
-        height: fit-content;
+        /* height: fit-content; */
+        justify-content: center;
+        align-items: center;
     }
     
     .signin-page-image-slider {
