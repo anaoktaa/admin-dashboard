@@ -36,6 +36,11 @@
     margin-bottom: 20px;
 }
 
+.signup-have-account-small {
+    font-size: 15px !important;
+    margin-bottom: 5px;
+}
+
 .bg-round-button {
     display: flex !important;
     align-items: center;

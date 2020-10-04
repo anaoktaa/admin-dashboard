@@ -1,5 +1,5 @@
 import React from 'react';
-import { Carousel, Typography, Form, Input, Checkbox, Button  } from 'antd';
+import { Typography, Form, Input, Checkbox, Button  } from 'antd';
 
 import './signin-boxed.styles.css';
 

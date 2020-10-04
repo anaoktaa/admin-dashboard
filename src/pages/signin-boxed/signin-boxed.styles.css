@@ -35,7 +35,7 @@
 
 @media screen and (max-width: 425px) {
     .signin-boxed-form-container  {
-        width: 300px;
+        width: 100%;
     }
     
 }

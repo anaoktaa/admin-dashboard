@@ -1,0 +1,21 @@
+.signup-boxed-container {
+    background-image: linear-gradient(90deg,#434343 0,#000)!important;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pad-20 {
+    padding: 0 20px;
+}
+
+.flex-start-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
