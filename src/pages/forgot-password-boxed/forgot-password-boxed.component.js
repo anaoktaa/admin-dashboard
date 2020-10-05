@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Typography, Form, Input, Checkbox, Button  } from 'antd';
+import { Typography, Form, Input, Button  } from 'antd';
 
 const { Title } = Typography;
 
@@ -8,7 +8,7 @@ const { Title } = Typography;
 const ForgotPasswordBoxed = () => {
     return (
         <div className='signin-boxed-container'>
-            <div className='signin-page-logo'/>
+            <div className='signin-page-logo-white'/>
             <div className='card-container '>
                 <Form
                     name="basic"

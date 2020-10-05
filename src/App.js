@@ -24,19 +24,15 @@ import { selectFoldDrawer } from './redux/application/application.selectors';
 const App = ({ foldDrawer }) => {
     return (
         <div className='app'>
-            <ForgotPasswordBoxed/>
-            {/* <ForgotPassword/> */}
-            {/* <SignupBoxed/> */}
-            {/* <SignupPage/> */}
-            {/* <SigninPage/> */}
-            {/* <SigninBoxedPage/> */}
-            {/* <CustomDrawer />
+            <CustomDrawer />
             <CustomHeader/>
             <FloatingMenuHeader/>
             <div className={`content-container ${foldDrawer ? 'content-fold-close' : 'content-fold-open'}`}>
                 <CustomBreadcrumb/>
-                <CustomTabs/>
-            </div> */}
+                <div className='app-body-container'>
+                    <CustomTabs/>
+                </div>
+            </div>
         </div>
     )
 };

@@ -84,6 +84,16 @@
     background-image: url('../../assets/logo/admin-dash.png');
 }
 
+.signin-page-logo-white {
+    width: 200px;
+    height: 60px;
+    margin-bottom: 30px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url('../../assets/logo/admin-dash-grey.png');
+}
+
 .signin-page-welcome-back {
     color: gray !important;
     margin-bottom: 10px !important;

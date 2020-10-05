@@ -58,11 +58,16 @@
         justify-content: flex-start;
         padding: 0 10px;
     }
+
+    .floating-menu-container {
+        width: 98%;
+    }
+
 }
 
 @media screen and (max-width: 425px) {
     .floating-menu-wrapper {
-        width: 90%;
+        width: 98%;
         justify-content: flex-start;
     }
 }

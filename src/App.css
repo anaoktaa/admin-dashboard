@@ -9,7 +9,9 @@ body {    background-color: #f0f2f5;
     --header-height: 64px;
     --primary-color: #545cd8;
     --danger-color: #d92550;
-  }
+    --padding-md: 20px;
+    --padding-sm: 10px;
+}
 
 .flex-space-center  {
     display: flex;
@@ -116,6 +118,12 @@ a {
 }
 /*end styles for card*/
 
+/*Styles for app body container*/
+
+.app-body-container {
+    padding: var(--padding-md);
+}
+
 @media screen and (max-width: 1024px) {
     .app-theme-icon-wrapper {
         width: 10%;
@@ -170,4 +178,11 @@ a {
         width: 100%;
         transform: translateY(65px) translateX(0px);
     }   
+
+}
+
+@media screen and (max-width: 425px) {
+    .app-body-container {
+        padding: var(--padding-sm);
+    }
 }

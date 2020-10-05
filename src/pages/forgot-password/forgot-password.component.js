@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Carousel, Typography, Form, Input, Checkbox, Button  } from 'antd';
+import { Carousel, Typography, Form, Input, Button  } from 'antd';
 
 import './forgot-password.styles.css';
 

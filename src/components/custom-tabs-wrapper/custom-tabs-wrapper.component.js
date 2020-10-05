@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
+
+import withWindowResize from '../with-window-resize/with-window-resize.component';
 
 import './custom-tabs-wrapper.styles.css';
 
-const CustomTabsWrapper = ({ children, ...props }) => {
+const CustomTabsWrapper = ({ actualSize, children, ...props }) => {
     const [ activeKey, setActiveKey ] = useState(null);  
     const [ width, setWidth ] = useState(0); 
     const [ left, setLeft ] = useState(0);
+    const ref = useRef(null);
 
     const findActualLeft = (nodes, currentActiveNode) => {
         //Finding width
@@ -42,6 +45,15 @@ const CustomTabsWrapper = ({ children, ...props }) => {
         getClassName();
     }, []);
 
+
+    useEffect(() => {
+        const handleShowArrowTab = () => {
+            console.log('ACTUAL SIZE', actualSize.width);
+        }
+
+        handleShowArrowTab();
+    }, [actualSize.width]);
+
     const handleChooseActiveTab = event => {
         let target = event.target;
         let li = target.closest('li');
@@ -60,17 +72,35 @@ const CustomTabsWrapper = ({ children, ...props }) => {
         findActualLeft(nodes, li);
     }
 
+    const handleScrolTab = () => {
+        inputRef.current[7].scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+        });
+    }
+    const inputRef = useRef([]);
+
     return (
         <div>
             <ul 
+                ref={ref}
                 onClick={handleChooseActiveTab} 
                 id='regular-tabs' 
                 name='regular-tabs' 
                 className='tabs-container'
                 {...props}>
-                {children}
+                {children.map((child) => (
+                    <li 
+                        key={child.props['data-key']} 
+                        data-key={child.props['data-key']}
+                        className='tab-panel'
+                        ref={el => inputRef.current[child.props['data-key']] = el}>
+                        {child.props.title}
+                    </li>
+                ))}
                 <div style={{width: `${width}px`, left: `${left}px`}} className='tab-active-overlay'></div>
             </ul>
+            <button onClick={handleScrolTab}> scrol </button>
             {children.map((item, index) => {
                 if (Number(index) === Number(activeKey)) {
                     return (
@@ -84,4 +114,4 @@ const CustomTabsWrapper = ({ children, ...props }) => {
     )
 };
 
-export default CustomTabsWrapper;
+export default withWindowResize(CustomTabsWrapper);
