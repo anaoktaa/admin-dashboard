@@ -2,13 +2,27 @@ body {    background-color: #f0f2f5;
 
 }
 
-.app {
-}
 
 :root {
     --header-height: 64px;
     --primary-color: #545cd8;
+    --primary-color-rgb: 84, 92, 216;
+    --secondy-color: #6c757d;
+    --secondary-color-rgb: 108, 117, 125;
+    --success-color: #3ac47d;
+    --success-color-rgb: 58, 196, 125; 
+    --info-color: #30b1ff;
+    --info-color-rgb: 48, 177, 255;
+    --warning-color: #f7b924;
+    --warning-color-rgb: 247, 185, 36;
+    --alt-color: #83588a;
+    --alt-color-rgb: 131, 88, 138;
+    --light-color: #eee;
+    --light-color-rgb: 238, 238, 238;
+    --dark-color: #343a40;
+    --dark-color-rgb: 52, 58, 64;
     --danger-color: #d92550;
+    --danger-color-rgb: 217, 37, 80;
     --padding-md: 20px;
     --padding-sm: 10px;
 }

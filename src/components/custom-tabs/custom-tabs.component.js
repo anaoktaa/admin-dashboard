@@ -7,7 +7,7 @@ import './custom-tabs.styles.css';
 
 const CustomTabs = () => {
     return (
-        <CustomTabsWrapper data-active-key='3'>
+        <CustomTabsWrapper data-active-key='6'>
             <CustomTabPanel data-key='1' title='Makanan'>
                 <h1>Ini adalah makanan yang kamu suka</h1>
                 <h2>Makanan ini sungguh enak sekali laah</h2>

@@ -12,6 +12,7 @@ import SignupPage from './pages/signup/signup.component';
 import SignupBoxed from './pages/signup-boxed/signun-boxed.component';
 import ForgotPassword from './pages/forgot-password/forgot-password.component';
 import ForgotPasswordBoxed from './pages/forgot-password-boxed/forgot-password-boxed.component';
+import ElementButtons from './pages/element-buttons/element-buttons.component';
 
 import CustomHeader from './components/custom-header/custom-header.component';
 import CustomDrawer from './components/custom-drawer/custom-drawer.component';
@@ -30,7 +31,7 @@ const App = ({ foldDrawer }) => {
             <div className={`content-container ${foldDrawer ? 'content-fold-close' : 'content-fold-open'}`}>
                 <CustomBreadcrumb/>
                 <div className='app-body-container'>
-                    <CustomTabs/>
+                    <ElementButtons/>
                 </div>
             </div>
         </div>

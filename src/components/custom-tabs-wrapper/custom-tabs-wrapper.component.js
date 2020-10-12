@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
+import { LeftOutlined, RightOutlined } from '@ant-design/icons';
 
 import withWindowResize from '../with-window-resize/with-window-resize.component';
 
@@ -8,7 +9,37 @@ const CustomTabsWrapper = ({ actualSize, children, ...props }) => {
     const [ activeKey, setActiveKey ] = useState(null);  
     const [ width, setWidth ] = useState(0); 
     const [ left, setLeft ] = useState(0);
+    const [ showArrow, setShowArrow ] = useState(false);
+    const [ scrollPositionIdx, setScrollPositionIdx ] = useState(0);
+    const [ actualWidth, setActualWidth ] = useState(0); 
+    const [ maxChildrenTab, setMaxChildrenTab ]= useState(0); 
+
     const ref = useRef(null);
+    const nextRef = useRef(null);
+    const prevRef = useRef(null);
+    const listTabPanel = document.getElementsByClassName('tab-panel');
+
+    const handleScrollToRef = (index) => {
+        console.log('indexx cuii', index);
+        inputRef.current[index].scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+        });
+        setScrollPositionIdx(index);
+    }
+
+    const handleNext = () =>  {
+        if (scrollPositionIdx <= maxChildrenTab-1) {
+            handleScrollToRef(scrollPositionIdx+1);
+        }
+    }
+
+    const handlePrev = () =>  {
+        console.log('inii indexx', scrollPositionIdx);
+        handleScrollToRef(scrollPositionIdx-1);
+    }
+
+    console.log(scrollPositionIdx);
 
     const findActualLeft = (nodes, currentActiveNode) => {
         //Finding width
@@ -17,6 +48,7 @@ const CustomTabsWrapper = ({ actualSize, children, ...props }) => {
         let allWidth = 0;
         while (!findActivePanel) {
             if (nodes[initial].classList.length > 1) {
+                setScrollPositionIdx(initial);
                 setActiveKey(initial);
                 findActivePanel = true;                
             }
@@ -27,11 +59,38 @@ const CustomTabsWrapper = ({ actualSize, children, ...props }) => {
     }
 
     useEffect(() => {
+        const getTabsWidth = () => {
+            if (actualSize.width === actualWidth) return;
+            if (actualSize.width !== actualWidth) {
+                setActualWidth(actualSize.width);
+                let tabsWidth = 0;
+       
+                for (let i = 0 ; i < listTabPanel.length; i++) {
+                    tabsWidth = tabsWidth + listTabPanel[i].offsetWidth;
+                }
+
+                if (actualSize.width < tabsWidth) {
+                    setShowArrow(true);
+                }
+                else {
+                    setShowArrow(false);
+                }
+            }
+        }
+        getTabsWidth();
+    
+        window.addEventListener('resize', getTabsWidth);
+        return () => window.removeEventListener('resize', getTabsWidth);
+        
+    }, [actualSize.width]);
+
+    useEffect(() => {
         const getClassName = () => {    
             const listTabPanel = document.getElementsByClassName('tab-panel');
             const tabsContainer = document.getElementById('regular-tabs');
             let activeNode = null;
             const activeKey = tabsContainer.dataset.activeKey;
+            setMaxChildrenTab(listTabPanel.length);
             for (let i =0; i <listTabPanel.length; i++) {
                 if (listTabPanel[i].dataset.key === activeKey) {
                     listTabPanel[i].classList.add('tab-panel-active'); 
@@ -39,20 +98,13 @@ const CustomTabsWrapper = ({ actualSize, children, ...props }) => {
                     setWidth(listTabPanel[i].offsetWidth);
                 }
             }
+            handleScrollToRef(Number(activeKey)+1);
             findActualLeft(listTabPanel, activeNode);
         }
 
         getClassName();
     }, []);
 
-
-    useEffect(() => {
-        const handleShowArrowTab = () => {
-            console.log('ACTUAL SIZE', actualSize.width);
-        }
-
-        handleShowArrowTab();
-    }, [actualSize.width]);
 
     const handleChooseActiveTab = event => {
         let target = event.target;
@@ -72,16 +124,30 @@ const CustomTabsWrapper = ({ actualSize, children, ...props }) => {
         findActualLeft(nodes, li);
     }
 
-    const handleScrolTab = () => {
-        inputRef.current[7].scrollIntoView({
-            behavior: 'smooth',
-            block: 'start',
-        });
-    }
     const inputRef = useRef([]);
 
     return (
-        <div>
+        <div className={`${showArrow? 'custom-tabs-wrapper-container-with-padding': 'custom-tabs-wrapper-container'}`}>
+            {/* {
+                showArrow?
+                <div className='tabs-left-arrow'>
+                    <div ref={prevRef} onClick={handlePrev} className='button-arrow'>
+                        <LeftOutlined className='tab-arrow-icon'/>
+                    </div>
+                </div>
+                :
+                null
+            }
+                  {
+                showArrow?
+                <div className='tabs-right-arrow'>
+                    <div ref={nextRef} onClick={handleNext} className='button-arrow'>
+                        <RightOutlined className='tab-arrow-icon'/>
+                    </div>
+                </div>
+                :
+                null
+            } */}
             <ul 
                 ref={ref}
                 onClick={handleChooseActiveTab} 
@@ -100,12 +166,13 @@ const CustomTabsWrapper = ({ actualSize, children, ...props }) => {
                 ))}
                 <div style={{width: `${width}px`, left: `${left}px`}} className='tab-active-overlay'></div>
             </ul>
-            <button onClick={handleScrolTab}> scrol </button>
             {children.map((item, index) => {
                 if (Number(index) === Number(activeKey)) {
                     return (
                         <div>
+                          
                             {item.props.children}
+                
                         </div>
                     )
                 }
