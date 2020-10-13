@@ -20,6 +20,36 @@ const DashedButtonContainer = () => {
                 </div>
             </div>
             <div className='card-element'>
+                <p className='card-title-text'>ACTIVE STATES</p>
+                <div className='button-container-card'>
+                    <CustomButton className='mrb-10' variant='dashed' color='primary' active>Primary</CustomButton>
+                    <CustomButton className='mrb-10' variant='dashed' color='secondary' active>Secondary</CustomButton>
+                    <CustomButton className='mrb-10' variant='dashed' color='success' active>Success</CustomButton>
+                    <CustomButton className='mrb-10' variant='dashed' color='info' active>Info</CustomButton>
+                    <CustomButton className='mrb-10' variant='dashed' color='warning' active>Info</CustomButton>
+                    <CustomButton className='mrb-10' variant='dashed' color='danger' active>Danger</CustomButton>
+                    <CustomButton className='mrb-10' variant='dashed' color='alt' active>Alt</CustomButton>
+                    <CustomButton className='mrb-10' variant='dashed' color='light' active>Light</CustomButton>
+                    <CustomButton className='mrb-10' variant='dashed' color='dark' active>Dark</CustomButton>
+                </div>
+            </div>
+            <div className='card-element'>
+                <p className='card-title-text'>WIDER</p>
+                <div className='button-container-card'>
+                    <CustomButton className='mrb-10' variant='dashed' color='primary' size='large'>Large</CustomButton>
+                    <CustomButton className='mrb-10' variant='dashed' color='primary' size='normal'>Normal</CustomButton>
+                    <CustomButton className='mrb-10' variant='dashed' color='primary' size='small'>Small</CustomButton>
+                </div>
+            </div>
+            <div className='card-element'>
+                <p className='card-title-text'>SIZING</p>
+                <div className='button-container-card'>
+                    <CustomButton className='mrb-10' variant='dashed' color='primary' wide='large'>Large</CustomButton>
+                    <CustomButton className='mrb-10' variant='dashed' color='primary' wide='normal'>Normal</CustomButton>
+                    <CustomButton className='mrb-10' variant='dashed' color='primary' wide='small'>Small</CustomButton>
+                </div>
+            </div>
+            <div className='card-element'>
                 <p className='card-title-text'>DISABLED STATES</p>
                 <div className='button-container-card'>
                     <CustomButton className='mrb-10' variant='dashed' disabled color='primary'>Primary</CustomButton>
@@ -39,24 +69,6 @@ const DashedButtonContainer = () => {
                     <CustomButton className='mrb-10' variant='dashed' color='primary' block>Primary</CustomButton>
                     <CustomButton className='mrb-10' variant='dashed' color='secondary' block>Secondary</CustomButton>
                     <CustomButton className='mrb-10' variant='dashed' color='success' block>Success</CustomButton>
-                </div>
-            </div>
-            <div>
-                <div className='card-element mb-30'>
-                    <p className='card-title-text'>WIDER</p>
-                    <div className='button-container-card'>
-                        <CustomButton className='mrb-10' variant='dashed' color='primary' size='large'>Large</CustomButton>
-                        <CustomButton className='mrb-10' variant='dashed' color='primary' size='normal'>Normal</CustomButton>
-                        <CustomButton className='mrb-10' variant='dashed' color='primary' size='small'>Small</CustomButton>
-                    </div>
-                </div>
-                <div className='card-element'>
-                    <p className='card-title-text'>SIZING</p>
-                    <div className='button-container-card'>
-                        <CustomButton className='mrb-10' variant='dashed' color='primary' wide='large'>Large</CustomButton>
-                        <CustomButton className='mrb-10' variant='dashed' color='primary' wide='normal'>Normal</CustomButton>
-                        <CustomButton className='mrb-10' variant='dashed' color='primary' wide='small'>Small</CustomButton>
-                    </div>
                 </div>
             </div>
         </div>

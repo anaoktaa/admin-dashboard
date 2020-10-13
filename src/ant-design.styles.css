@@ -109,3 +109,9 @@
     margin-bottom: 8px;
     vertical-align: top;
 }
+
+.ant-typography {
+    color: rgba(0, 0, 0, 0.85);
+    overflow-wrap: break-word;
+    margin-bottom: 5px;
+}

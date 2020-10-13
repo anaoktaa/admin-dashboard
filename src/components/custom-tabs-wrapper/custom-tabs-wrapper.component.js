@@ -12,15 +12,13 @@ const CustomTabsWrapper = ({ actualSize, children, ...props }) => {
     const [ showArrow, setShowArrow ] = useState(false);
     const [ scrollPositionIdx, setScrollPositionIdx ] = useState(0);
     const [ actualWidth, setActualWidth ] = useState(0); 
-    const [ maxChildrenTab, setMaxChildrenTab ]= useState(0); 
 
     const ref = useRef(null);
-    const nextRef = useRef(null);
-    const prevRef = useRef(null);
+    // const nextRef = useRef(null);
+    // const prevRef = useRef(null);
     const listTabPanel = document.getElementsByClassName('tab-panel');
 
     const handleScrollToRef = (index) => {
-        console.log('indexx cuii', index);
         inputRef.current[index].scrollIntoView({
             behavior: 'smooth',
             block: 'start',
@@ -28,18 +26,16 @@ const CustomTabsWrapper = ({ actualSize, children, ...props }) => {
         setScrollPositionIdx(index);
     }
 
-    const handleNext = () =>  {
-        if (scrollPositionIdx <= maxChildrenTab-1) {
-            handleScrollToRef(scrollPositionIdx+1);
-        }
-    }
+    // const handleNext = () =>  {
+    //     if (scrollPositionIdx <= maxChildrenTab-1) {
+    //         handleScrollToRef(scrollPositionIdx+1);
+    //     }
+    // }
 
-    const handlePrev = () =>  {
-        console.log('inii indexx', scrollPositionIdx);
-        handleScrollToRef(scrollPositionIdx-1);
-    }
-
-    console.log(scrollPositionIdx);
+    // const handlePrev = () =>  {
+    //     console.log('inii indexx', scrollPositionIdx);
+    //     handleScrollToRef(scrollPositionIdx-1);
+    // }
 
     const findActualLeft = (nodes, currentActiveNode) => {
         //Finding width
@@ -85,23 +81,33 @@ const CustomTabsWrapper = ({ actualSize, children, ...props }) => {
     }, [actualSize.width]);
 
     useEffect(() => {
-        const getClassName = () => {    
+        const getClassName = () => {   
             const listTabPanel = document.getElementsByClassName('tab-panel');
             const tabsContainer = document.getElementById('regular-tabs');
             let activeNode = null;
             const activeKey = tabsContainer.dataset.activeKey;
-            setMaxChildrenTab(listTabPanel.length);
             for (let i =0; i <listTabPanel.length; i++) {
-                if (listTabPanel[i].dataset.key === activeKey) {
-                    listTabPanel[i].classList.add('tab-panel-active'); 
-                    activeNode = listTabPanel[i];
-                    setWidth(listTabPanel[i].offsetWidth);
+                if (activeKey)  {
+                    if (listTabPanel[i].dataset.key === activeKey) {
+                        listTabPanel[i].classList.add('tab-panel-active');  
+                        activeNode = listTabPanel[i];
+                        setWidth(listTabPanel[i].offsetWidth);
+                    }
+                }
+                else {
+                    listTabPanel[0].classList.add('tab-panel-active');  
+                    activeNode = listTabPanel[0];
+                    setWidth(listTabPanel[0].offsetWidth);
                 }
             }
-            handleScrollToRef(Number(activeKey)+1);
+            if (activeKey)  {
+                handleScrollToRef(activeNode.dataset.key);   
+            }
+            else {
+                handleScrollToRef(listTabPanel[0].dataset.key);
+            }
             findActualLeft(listTabPanel, activeNode);
         }
-
         getClassName();
     }, []);
 
@@ -124,30 +130,9 @@ const CustomTabsWrapper = ({ actualSize, children, ...props }) => {
         findActualLeft(nodes, li);
     }
 
-    const inputRef = useRef([]);
-
+    const inputRef = useRef({});
     return (
         <div className={`${showArrow? 'custom-tabs-wrapper-container-with-padding': 'custom-tabs-wrapper-container'}`}>
-            {/* {
-                showArrow?
-                <div className='tabs-left-arrow'>
-                    <div ref={prevRef} onClick={handlePrev} className='button-arrow'>
-                        <LeftOutlined className='tab-arrow-icon'/>
-                    </div>
-                </div>
-                :
-                null
-            }
-                  {
-                showArrow?
-                <div className='tabs-right-arrow'>
-                    <div ref={nextRef} onClick={handleNext} className='button-arrow'>
-                        <RightOutlined className='tab-arrow-icon'/>
-                    </div>
-                </div>
-                :
-                null
-            } */}
             <ul 
                 ref={ref}
                 onClick={handleChooseActiveTab} 
@@ -155,28 +140,44 @@ const CustomTabsWrapper = ({ actualSize, children, ...props }) => {
                 name='regular-tabs' 
                 className='tabs-container'
                 {...props}>
-                {children.map((child) => (
-                    <li 
+                {children.length ? children.map((child) => (
+                     <li 
                         key={child.props['data-key']} 
                         data-key={child.props['data-key']}
                         className='tab-panel'
-                        ref={el => inputRef.current[child.props['data-key']] = el}>
+                        ref={el => {
+                            if (el) {
+                                inputRef.current[child.props['data-key']] = el
+                            }
+                        }}
+                    >
                         {child.props.title}
                     </li>
-                ))}
+                ))
+                    :
+                    <li 
+                        key={children.props['data-key']} 
+                        data-key={children.props['data-key']}
+                        className='tab-panel'
+                        ref={el => inputRef.current[children.props['data-key']] = el}>
+                        {children.props.title}
+                    </li>
+                }
                 <div style={{width: `${width}px`, left: `${left}px`}} className='tab-active-overlay'></div>
             </ul>
-            {children.map((item, index) => {
+            {children.length ? children.map((item, index) => {
                 if (Number(index) === Number(activeKey)) {
                     return (
-                        <div>
-                          
+                        <div key={index}>
                             {item.props.children}
-                
                         </div>
                     )
                 }
-            })}
+            }) :
+                <div>
+                    {children.props.children}
+                </div>
+            }
         </div>
     )
 };

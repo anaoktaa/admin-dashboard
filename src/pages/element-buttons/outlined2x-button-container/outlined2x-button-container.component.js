@@ -20,6 +20,36 @@ const Outlined2xButtonContainer = () => {
                 </div>
             </div>
             <div className='card-element'>
+                <p className='card-title-text'>ACTIVE STATES</p>
+                <div className='button-container-card'>
+                    <CustomButton className='mrb-10' variant='outlined-2x' color='primary' active>Primary</CustomButton>
+                    <CustomButton className='mrb-10' variant='outlined-2x' color='secondary' active>Secondary</CustomButton>
+                    <CustomButton className='mrb-10' variant='outlined-2x' color='success' active>Success</CustomButton>
+                    <CustomButton className='mrb-10' variant='outlined-2x' color='info' active>Info</CustomButton>
+                    <CustomButton className='mrb-10' variant='outlined-2x' color='warning' active>Info</CustomButton>
+                    <CustomButton className='mrb-10' variant='outlined-2x' color='danger' active>Danger</CustomButton>
+                    <CustomButton className='mrb-10' variant='outlined-2x' color='alt' active>Alt</CustomButton>
+                    <CustomButton className='mrb-10' variant='outlined-2x' color='light' active>Light</CustomButton>
+                    <CustomButton className='mrb-10' variant='outlined-2x' color='dark' active>Dark</CustomButton>
+                </div>
+            </div>
+            <div className='card-element mb-30'>
+                <p className='card-title-text'>WIDER</p>
+                <div className='button-container-card'>
+                    <CustomButton className='mrb-10' variant='outlined-2x' color='primary' size='large'>Large</CustomButton>
+                    <CustomButton className='mrb-10' variant='outlined-2x' color='primary' size='normal'>Normal</CustomButton>
+                    <CustomButton className='mrb-10' variant='outlined-2x' color='primary' size='small'>Small</CustomButton>
+                </div>
+            </div>
+            <div className='card-element'>
+                <p className='card-title-text'>SIZING</p>
+                <div className='button-container-card'>
+                    <CustomButton className='mrb-10' variant='outlined-2x' color='primary' wide='large'>Large</CustomButton>
+                    <CustomButton className='mrb-10' variant='outlined-2x' color='primary' wide='normal'>Normal</CustomButton>
+                    <CustomButton className='mrb-10' variant='outlined-2x' color='primary' wide='small'>Small</CustomButton>
+                </div>
+            </div>
+            <div className='card-element'>
                 <p className='card-title-text'>DISABLED STATES</p>
                 <div className='button-container-card'>
                     <CustomButton className='mrb-10' variant='outlined-2x' disabled color='primary'>Primary</CustomButton>
@@ -39,24 +69,6 @@ const Outlined2xButtonContainer = () => {
                     <CustomButton className='mrb-10' variant='outlined-2x' color='primary' block>Primary</CustomButton>
                     <CustomButton className='mrb-10' variant='outlined-2x' color='secondary' block>Secondary</CustomButton>
                     <CustomButton className='mrb-10' variant='outlined-2x' color='success' block>Success</CustomButton>
-                </div>
-            </div>
-            <div>
-                <div className='card-element mb-30'>
-                    <p className='card-title-text'>WIDER</p>
-                    <div className='button-container-card'>
-                        <CustomButton className='mrb-10' variant='outlined-2x' color='primary' size='large'>Large</CustomButton>
-                        <CustomButton className='mrb-10' variant='outlined-2x' color='primary' size='normal'>Normal</CustomButton>
-                        <CustomButton className='mrb-10' variant='outlined-2x' color='primary' size='small'>Small</CustomButton>
-                    </div>
-                </div>
-                <div className='card-element'>
-                    <p className='card-title-text'>SIZING</p>
-                    <div className='button-container-card'>
-                        <CustomButton className='mrb-10' variant='outlined-2x' color='primary' wide='large'>Large</CustomButton>
-                        <CustomButton className='mrb-10' variant='outlined-2x' color='primary' wide='normal'>Normal</CustomButton>
-                        <CustomButton className='mrb-10' variant='outlined-2x' color='primary' wide='small'>Small</CustomButton>
-                    </div>
                 </div>
             </div>
         </div>
