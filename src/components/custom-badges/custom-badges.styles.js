@@ -25,6 +25,7 @@ const style = props => {
 
 export const BadgeStyle = styled.span`
     display: inline-block;
+    font-weight: bold;
     background-color: ${({color}) => color? colorsPalette[color] : '#fff'};
     color: ${({color}) => color? colorsPalette[color+'Text'] : '#000'};
     ${style};

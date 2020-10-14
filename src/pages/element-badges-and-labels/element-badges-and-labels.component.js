@@ -4,8 +4,8 @@ import CustomTabsWrapper from '../../components/custom-tabs-wrapper/custom-tabs-
 import CustomTabPanel from '../../components/custom-tab-panel/custom-tab-panel.component';
 
 import BadgesContainer from './badges-container/badges-container.component';
-
-import './element-badges-and-labels.styles.css';
+import LabelsContainer from './labels-container/labels-container.component';
+import AvatarsContainer from './avatars-container/avatars-container.component';
 
 const ElementBadgesAndLabels = () => {
     return (
@@ -14,7 +14,10 @@ const ElementBadgesAndLabels = () => {
                 <BadgesContainer/>
             </CustomTabPanel>
             <CustomTabPanel data-key='labels' title='Labels'>
-                <BadgesContainer/>
+                <LabelsContainer/>
+            </CustomTabPanel>
+            <CustomTabPanel data-key='avatars' title='Avatars'>
+                <AvatarsContainer/>
             </CustomTabPanel>
         </CustomTabsWrapper>
     )

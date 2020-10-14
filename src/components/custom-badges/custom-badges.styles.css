@@ -9,3 +9,31 @@
     top: 0;
     transform: translate(-70%, -30%);
 }
+
+.badges-with-avatar-circle-style {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-10%, 0%);
+}
+
+.badges-with-avatar-circle-style-bottom {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(10%, 0%);
+}
+
+.badges-with-avatar-square-style {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, -50%);
+}
+
+.badges-with-avatar-square-style-bottom {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(50%, 50%);
+}

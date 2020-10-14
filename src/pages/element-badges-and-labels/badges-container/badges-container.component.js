@@ -2,8 +2,8 @@ import React from 'react';
 
 import { LaptopOutlined, PictureOutlined, ShoppingOutlined } from '@ant-design/icons';
 
-import CustomBadges from '../../../components/custom-badges/custom-badges.component';
 import { CustomCard, CustomCardBody, CustomCardTitleText } from '../../../components/custom-card/custom-card.styles';
+import CustomBadges from '../../../components/custom-badges/custom-badges.component';
 import CustomButton from '../../../components/custom-button/custom-button.component';
 
 const BadgesContainer = () => {
