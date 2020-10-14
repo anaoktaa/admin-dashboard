@@ -3,8 +3,6 @@ import React from 'react';
 import CustomTabsWrapper from '../../components/custom-tabs-wrapper/custom-tabs-wrapper.component';
 import CustomTabPanel from '../../components/custom-tab-panel/custom-tab-panel.component';
 
-import './element-buttons.styles.css';
-
 import SolidButtonContainer from './solid-buttons-container/solid-button-container.component';
 import OutlinedButtonContainer from './outlined-button-container/outlined-button-container.component';
 import Outlined2xButtonContainer from './outlined2x-button-container/outlined2x-button-container.component';

@@ -4,7 +4,7 @@ import { Typography } from 'antd';
 import { CustomCard, CustomCardBody, CustomCardTitleText, CustomCardSubtitle } from '../../../components/custom-card/custom-card.styles';
 import CustomButton from '../../../components/custom-button/custom-button.component';
 
-const { Text, Link } = Typography;
+const { Link } = Typography;
 
 const BasicCardContainer = () => {
     return (

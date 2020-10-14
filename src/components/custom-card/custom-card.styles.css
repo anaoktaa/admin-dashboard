@@ -1,0 +1,5 @@
+.custom-card-header-child-container {
+    position: relative;
+    z-index: 20;
+    padding: 15px;
+}

@@ -5,21 +5,9 @@ const outlinedCard = css`
     border: 1px solid ${({outlined}) => outlined? colorsPalette[outlined] : 'transparent'};
 `;
 
-const containedCard = css`
-    background-color: ${({contained}) => contained? colorsPalette[contained] : '#fff'};
-    color: ${({contained}) => contained? '#fff': '#000'};
-    ${CustomCardTitleText} {
-        color: ${({contained}) => contained? '#fff': '#495057'};
-    }
-    ${CustomCardSubtitle} {
-        color: ${({contained}) => contained? '#fff': '#a9a9a9'};
-    }
-`;
-
 const titleText = css`
     font-size: 14px;
     font-weight: 500;
-
     display: block;
     text-transform: uppercase;
 `;
@@ -57,8 +45,8 @@ export const CustomCard = styled.div`
 `;
 
 export const CustomCardBody = styled.div`
-    width: fit-content;
     padding: 15px;
+    width: 100%;
 `;
 
 export const CustomCardHeader = styled.div`
@@ -85,4 +73,48 @@ export const CustomCardTitleText = styled.p`
 export const CustomCardSubtitle = styled.p`
     font-size: 14px;
     color: ${({contained}) => contained? '#fff': '#a9a9a9'};
+`;
+
+export const CardHeaderImg = styled.div`
+    width: 100%;
+    background-image: ${({imgUrl}) => imgUrl? `url(${imgUrl})` :null};
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;  
+    color: white;
+    position: relative;
+`;
+
+export const CardImgOverlay = styled.div`
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: ${({backgroundColor}) => backgroundColor? backgroundColor : '#252525bf'}
+`;
+
+const containedCard = css`
+    color: ${({contained}) => contained? '#fff': '#000'};
+    ${CustomCardHeader} {
+        background-color: ${({contained}) => contained? colorsPalette[contained] : '#fff'};
+        opacity: .92;
+        border-bottom: none;
+    }
+    ${CustomCardFooter} {
+        background-color: ${({contained}) => contained? colorsPalette[contained] : '#fff'};
+        opacity: .92;
+        border-top: none;
+    }
+    ${CustomCardBody} {
+        background-color: ${({contained}) => contained? colorsPalette[contained] : '#fff'};
+    }
+    ${CustomCardTitleText} {
+        color: ${({contained}) => contained? '#fff': '#495057'};
+        background-color: ${({contained}) => contained? colorsPalette[contained] : '#fff'};
+    }
+    ${CustomCardSubtitle} {
+        color: ${({contained}) => contained? '#fff': '#a9a9a9'};
+    }
 `;

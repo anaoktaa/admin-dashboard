@@ -1,0 +1,11 @@
+.custom-badge-wrapper {
+    position: relative;
+    width: fit-content;
+    display: inline-block;
+}
+
+.badges-with-child-style {
+    position: absolute;
+    top: 0;
+    transform: translate(-70%, -30%);
+}

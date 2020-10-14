@@ -7,7 +7,6 @@ import BasicCardContainer from './basic-card-container/basic-card-container.comp
 import ColorStatesContainer from  './color-states-card-container/color-states-card-container.component';
 import AdvancedCardContainer from './advanced-card-container/advanced-card-container.component';
 
-import './element-cards.styles.css';
 
 const ElementCards = () => {
     return (

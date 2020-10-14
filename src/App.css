@@ -138,6 +138,65 @@ a {
     padding: var(--padding-md);
 }
 
+.grid-3-gap-30 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+}
+
+.grid-2-gap-30 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+}
+
+.ta-right {
+    text-align: right;
+}
+
+.ta-center {
+    text-align: center;
+}
+
+.block {
+    display: block;
+}
+.super-small-text  {
+    font-size: 11px;
+    color: #ababab;
+    margin: 7px 0 4px;
+    padding: 0;
+}
+
+.white {
+    color: white !important;
+}
+
+.mrb-10 {
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.mrb-20 {
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+.mobile-mb-30 {
+    margin-bottom: 0px;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+    grid-gap: 30px;
+}
+
 @media screen and (max-width: 1024px) {
     .app-theme-icon-wrapper {
         width: 10%;
@@ -154,6 +213,28 @@ a {
 }
 
 @media screen and (max-width: 986px) {
+
+    .grid-2 {
+        grid-template-columns: 100%;
+        grid-gap: 0;
+    }
+
+    .card-element {
+        margin-bottom: 20px;
+    }
+
+    .mobile-mb-30 {
+        margin-bottom: 30px;
+    }
+
+    .grid-3-gap-30 {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .grid-2-gap-30 {
+        grid-template-columns: 1fr;
+    }
+
     .bg-icon-gradient-ripple {
         display: none;
     }
@@ -198,5 +279,9 @@ a {
 @media screen and (max-width: 425px) {
     .app-body-container {
         padding: var(--padding-sm);
+    }
+
+    .grid-3-gap-30 {
+        grid-template-columns: 1fr;
     }
 }

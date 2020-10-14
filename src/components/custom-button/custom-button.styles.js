@@ -12,6 +12,7 @@ const solidVariant = css`
     ${solid};
     &:hover {
         background-color: ${({color}) => color? colorsPalette[color+'Dark'] : '#ededed'};
+        text-decoration:  ${({color}) => color === 'link' ? 'underline': 'none'};
     }
 `;
 
@@ -21,14 +22,13 @@ const disabledSolid = css`
     cursor: default;
 `;
 
-
 /*Outlined Style */
 const outlined = css`
     background-color: white;
     border : ${({variant}) => variant === 'outlined' || variant === 'dashed'? '1px' : '2px'} 
             ${({variant}) => variant === 'outlined' || variant === 'outlined-2x'? 'solid' : 'dashed'}  
             ${({color}) =>  color? colorsPalette[color] : '#ededed'};
-    color:  ${({color}) =>  color? colorsPalette[color] : '#ededed'};
+    color:  ${({color}) =>  color !== 'link'? colorsPalette[color] : colorsPalette[color+'Text']};
 `;
 
 const disabledOutlined = css`
@@ -42,17 +42,19 @@ const outlinedVariant = css`
     &:hover {
         background-color: ${({color}) => color? colorsPalette[color] : '#ededed'};
         color: ${({color}) => color? colorsPalette[color+'Text'] : '#000'};
+        text-decoration:  ${({color}) => color === 'link' ? 'underline': 'none'};
     }
 `;
 
 /*No border */
 const noOutlinedVariant = css`
     background-color: white;
-    color:  ${({color}) =>  color? colorsPalette[color] : '#ededed'};
+    color:  ${({color}) =>  color !== 'link'? colorsPalette[color] : colorsPalette[color+'Text']};
 
     &:hover {
         background-color: ${({color}) => color? colorsPalette[color] : '#ededed'};
         color: ${({color}) => color? colorsPalette[color+'Text'] : '#000'};
+        text-decoration:  ${({color}) => color === 'link' ? 'underline': 'none'};
     }
 `;
 

@@ -12,7 +12,7 @@ export const colorsPalette =  {
     infoText: 'white',
     infoDark: '#2a9de2',
     warning: '#f7b924',
-    warningText: 'white',
+    warningText: '#000',
     warningDark: '#efad0e',
     alt: '#83588a',
     altText: 'white',
@@ -25,5 +25,8 @@ export const colorsPalette =  {
     darkDark: '#23272b',
     danger: '#d92550',
     dangerText :'white',
-    dangerDark: '#c32047'
+    dangerDark: '#c32047',
+    link: '#fff',
+    linkText: '#545cd8',
+    linkDark: '#f8f9fa'
 };
