@@ -14,14 +14,14 @@
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate(-10%, 0%);
+    transform: translate(20%, -20%);
 }
 
 .badges-with-avatar-circle-style-bottom {
     position: absolute;
     bottom: 0;
     right: 0;
-    transform: translate(10%, 0%);
+    transform: translate(-20%, 20%);
 }
 
 .badges-with-avatar-square-style {

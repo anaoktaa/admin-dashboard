@@ -42,6 +42,7 @@ export const CustomCard = styled.div`
     overflow: hidden;
     ${styleForCard};
     ${hoverStyleCard};
+    height: fit-content;
 `;
 
 export const CustomCardBody = styled.div`

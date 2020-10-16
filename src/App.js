@@ -33,7 +33,7 @@ const App = ({ foldDrawer }) => {
             <div className={`content-container ${foldDrawer ? 'content-fold-close' : 'content-fold-open'}`}>
                 <CustomBreadcrumb/>
                 <div className='app-body-container'>
-                    <ElementBadgesAndLabels/>
+                    <ElementButtons/>
                 </div>
             </div>
         </div>

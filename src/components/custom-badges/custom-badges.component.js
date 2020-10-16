@@ -4,7 +4,7 @@ import { BadgeStyle } from './custom-badges.styles';
 
 import './custom-badges.styles.css';
 
-const CustomBadges = ({ color, dot, outlined, number, size, children, position, className, ...props }) => {
+const CustomBadges = ({ color, dot, outlined, number, size, children, position, className, link, href, target, ...props }) => {
 
     if (!children) {
         return (
@@ -30,19 +30,34 @@ const CustomBadges = ({ color, dot, outlined, number, size, children, position, 
         else {
             classNameForBadge = 'badges-with-child-style';
         }
-
-        return (
-            <div className={`custom-badge-wrapper ${className}`}>
-                {children}
-                <BadgeStyle className={`${classNameForBadge}`} size={size} dot={dot} outlined={outlined} number={number} color={color} {...props}>
-                    {
-                        number?
-                        number:
-                        null
-                    }
-                </BadgeStyle>
-            </div>
-        )      
+        if (href) {
+            return (
+                <a href={href} target={target} className={`custom-badge-wrapper ${className}`}>
+                    {children}
+                    <BadgeStyle className={`${classNameForBadge}`} size={size} dot={dot} outlined={outlined} number={number} color={color} {...props}>
+                        {
+                            number?
+                            number:
+                            null
+                        }
+                    </BadgeStyle>
+                </a>
+            ) 
+        }
+        else {
+            return (
+                <div className={`custom-badge-wrapper ${className}`}>
+                    {children}
+                    <BadgeStyle className={`${classNameForBadge}`} size={size} dot={dot} outlined={outlined} number={number} color={color} {...props}>
+                        {
+                            number?
+                            number:
+                            null
+                        }
+                    </BadgeStyle>
+                </div>
+            ) 
+        }
     }
  
 };
