@@ -217,6 +217,34 @@ a {
     border-bottom: 1px solid #e2e2e2;
 }
 
+.grid-menu-3-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-menu-2-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-row-for-3-col,.grid-row-for-2-col {
+    width: 100%;
+    border-right: 1px solid #d6d6d6d6;
+    border-bottom: 1px solid #d6d6d6d6;
+}
+
+.grid-row-for-3-col:nth-child(3n),.grid-row-for-2-col:nth-child(2n) {
+    border-right-width: 0px;
+}
+
+.grid-row-for-3-col:nth-last-child(-n+3),.grid-row-for-2-col:nth-last-child(-n+2) {
+    border-bottom-width: 0px;
+}
+
 @media screen and (max-width: 1024px) {
     .app-theme-icon-wrapper {
         width: 10%;
@@ -233,6 +261,31 @@ a {
 }
 
 @media screen and (max-width: 986px) {
+
+    .grid-menu-3-col {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .grid-row-for-3-col {
+        border-right: 1px solid #d6d6d6d6;
+        border-bottom: 1px solid #d6d6d6d6;
+    }
+
+    .grid-row-for-3-col:nth-child(3n) {
+        border-right-width: 1px;
+    }
+
+    .grid-row-for-3-col:nth-child(2n) {
+        border-right-width: 0;
+    }
+    
+    .grid-row-for-3-col:nth-last-child(-n+3) {
+        border-bottom-width: 1px;
+    }
+
+    .grid-row-for-3-col:nth-last-child(-n+2) {
+        border-bottom-width: 0;
+    }
 
     .grid-2 {
         grid-template-columns: 100%;
@@ -311,7 +364,23 @@ a {
         padding: var(--padding-sm);
     }
 
-    .grid-3-gap-30 {
+    .grid-3-gap-30,.grid-menu-3-col,.grid-menu-2-col {
         grid-template-columns: 1fr;
+    }
+
+    .grid-row-for-3-col:nth-child(3n) {
+        border-right-width: 0;
+    }
+
+    .grid-row-for-3-col:nth-child(2n),.grid-row-for-2-col:nth-child(2n) {
+        border-right-width: 0;
+    }
+
+    .grid-row-for-3-col:nth-last-child(-n+2),.grid-row-for-2-col:nth-last-child(-n+2) {
+        border-bottom-width: 1px;
+    }
+
+    .grid-row-for-3-col,.grid-row-for-2-col {
+        border-right-width: 0;
     }
 }

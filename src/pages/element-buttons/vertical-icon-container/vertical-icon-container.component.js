@@ -252,6 +252,74 @@ const VerticalIconContainer = () => {
                         </CustomButton>
                     </CustomCardBody>
                 </CustomCard>
+                <CustomCard className='mb-30'>
+                    <CustomCardTitleText>
+                        GRID MENU HOVER COLOR
+                    </CustomCardTitleText>
+                    <CustomCardBody>
+                        <div className='grid-menu-3-col'>
+                            <div className='grid-row-for-3-col'>
+                                <CustomButton square iconType='vertical' block color='primary' variant='no-outlined' icon={<CrownOutlined />}>
+                                    Primary
+                                </CustomButton>
+                            </div>
+                            <div className='grid-row-for-3-col'>
+                                <CustomButton square iconType='vertical' block color='success' variant='no-outlined' icon={<AlertOutlined />}>
+                                    Success
+                                </CustomButton>
+                            </div>
+                            <div className='grid-row-for-3-col'>
+                                <CustomButton square iconType='vertical' block color='danger' variant='no-outlined' icon={<TrophyOutlined />}>
+                                    Danger
+                                </CustomButton>
+                            </div>
+                            <div className='grid-row-for-3-col'>
+                                <CustomButton square iconType='vertical' block color='warning' variant='no-outlined' icon={<RocketOutlined />}>
+                                    Warning
+                                </CustomButton>
+                            </div>
+                            <div className='grid-row-for-3-col'>
+                                <CustomButton square iconType='vertical' block color='info' variant='no-outlined' icon={<BulbOutlined />}>
+                                    Info
+                                </CustomButton>
+                            </div>
+                            <div className='grid-row-for-3-col'>
+                                <CustomButton square iconType='vertical' block color='secondary' variant='no-outlined' icon={<BugOutlined />}>
+                                    Secondary
+                                </CustomButton>
+                            </div>
+                        </div>
+                    </CustomCardBody>
+                </CustomCard>
+                <CustomCard className='mb-30'>
+                    <CustomCardTitleText>
+                        GRID MENU BIGGER TWO COLUMNS
+                    </CustomCardTitleText>
+                    <CustomCardBody>
+                        <div className='grid-menu-2-col'>
+                            <div className='grid-row-for-2-col'>
+                                <CustomButton square iconType='vertical' block color='primary' variant='no-outlined' icon={<CrownOutlined />}>
+                                    Primary
+                                </CustomButton>
+                            </div>
+                            <div className='grid-row-for-2-col'>
+                                <CustomButton square iconType='vertical' block color='success' variant='no-outlined' icon={<AlertOutlined />}>
+                                    Success
+                                </CustomButton>
+                            </div>
+                            <div className='grid-row-for-2-col'>
+                                <CustomButton square iconType='vertical' block color='danger' variant='no-outlined' icon={<TrophyOutlined />}>
+                                    Danger
+                                </CustomButton>
+                            </div>
+                            <div className='grid-row-for-2-col'>
+                                <CustomButton square iconType='vertical' block color='warning' variant='no-outlined' icon={<RocketOutlined />}>
+                                    Warning
+                                </CustomButton>
+                            </div>
+                        </div>
+                    </CustomCardBody>
+                </CustomCard>
             </div>
         </div>
     )

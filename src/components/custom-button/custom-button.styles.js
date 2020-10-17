@@ -12,7 +12,7 @@ const solidVariant = css`
     ${solid};
     &:hover {
         background-color: ${({color}) => color? colorsPalette[color+'Dark'] : '#ededed'};
-        text-decoration:  ${({color}) => color === 'link' ? 'underline': 'none'};
+        text-decoration:  ${(props) => props.color === 'link' && !props.icon ? 'underline': 'none'};
         box-shadow: none;
     }
 `;
