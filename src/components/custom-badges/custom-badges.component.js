@@ -1,14 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { BadgeStyle } from './custom-badges.styles';
 
 import './custom-badges.styles.css';
 
-const CustomBadges = ({ color, dot, outlined, number, size, children, position, className, link, href, target, ...props }) => {
+const CustomBadges = ({ color, dot, number, size, children, position,
+                        className, link, href, target, ...props }) => {
 
     if (!children) {
         return (
-            <BadgeStyle className={className} size={size} dot={dot} outlined={outlined} number={number} color={color} {...props}>
+            <BadgeStyle className={className} size={size} dot={dot} number={number} color={color} {...props}>
                 {
                     number?
                     number:
@@ -28,13 +30,18 @@ const CustomBadges = ({ color, dot, outlined, number, size, children, position, 
             }
         }
         else {
-            classNameForBadge = 'badges-with-child-style';
+            if (children.props.iconType === 'vertical') {
+                classNameForBadge = 'badges-with-child-style-grid-button';
+            }
+            else {
+                classNameForBadge = 'badges-with-child-style';
+            }
         }
         if (href) {
             return (
                 <a href={href} target={target} className={`custom-badge-wrapper ${className}`}>
                     {children}
-                    <BadgeStyle className={`${classNameForBadge}`} size={size} dot={dot} outlined={outlined} number={number} color={color} {...props}>
+                    <BadgeStyle className={`${classNameForBadge}`} size={size} dot={dot} number={number} color={color} {...props}>
                         {
                             number?
                             number:
@@ -46,9 +53,9 @@ const CustomBadges = ({ color, dot, outlined, number, size, children, position, 
         }
         else {
             return (
-                <div className={`custom-badge-wrapper ${className}`}>
+                <div className={`${children.props.block ? 'custom-badge-grid-button-wrapper' : 'custom-badge-wrapper'} ${className}`}>
                     {children}
-                    <BadgeStyle className={`${classNameForBadge}`} size={size} dot={dot} outlined={outlined} number={number} color={color} {...props}>
+                    <BadgeStyle className={`${classNameForBadge}`} size={size} dot={dot} number={number} color={color} {...props}>
                         {
                             number?
                             number:
@@ -56,10 +63,20 @@ const CustomBadges = ({ color, dot, outlined, number, size, children, position, 
                         }
                     </BadgeStyle>
                 </div>
-            ) 
+            )
         }
     }
- 
+};
+
+CustomBadges.propTypes = {
+    color: PropTypes.oneOf(['primary', 'secondary', 'warning', 'success', 'danger', 'info', 'alt', 'dark', 'light', 'link']),
+    dot: PropTypes.bool,
+    number: PropTypes.oneOfType([PropTypes.string,PropTypes.number,]),
+    size:  PropTypes.oneOfType([PropTypes.string,PropTypes.number,]),
+    position: PropTypes.oneOf(['top', 'bottom']),
+    link: PropTypes.bool,
+    href: PropTypes.string,
+    target: PropTypes.string
 };
 
 export default CustomBadges;

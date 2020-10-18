@@ -17,31 +17,31 @@ const ElementButtons = () => {
     return (
         <div>
             <CustomTabsWrapper >
-                <CustomTabPanel title='Solid'>
+                <CustomTabPanel data-key='solid' title='Solid'>
                     <SolidButtonContainer/>
                 </CustomTabPanel>
-                <CustomTabPanel title='Outlined'>
+                <CustomTabPanel data-key='outlined' title='Outlined'>
                     <OutlinedButtonContainer/>
                 </CustomTabPanel>
-                <CustomTabPanel title='Outlined 2x'>
+                <CustomTabPanel data-key='outlined-2x' title='Outlined 2x'>
                     <Outlined2xButtonContainer/>
                 </CustomTabPanel>
-                <CustomTabPanel title='Dashed'>
+                <CustomTabPanel data-key='dashed' title='Dashed'>
                     <DashedButtonContainer/>
                 </CustomTabPanel>
-                <CustomTabPanel title='Pills'>
+                <CustomTabPanel data-key='pills' title='Pills'>
                     <PillsButtonContainer/>
                 </CustomTabPanel>
-                <CustomTabPanel title='Square'>
+                <CustomTabPanel data-key='square' title='Square'>
                     <SquareButtonContainer/>
                 </CustomTabPanel>
-                <CustomTabPanel title='Shadow'>
+                <CustomTabPanel data-key='shadow' title='Shadow'>
                     <ShadowButtonContainer/>
                 </CustomTabPanel>
-                <CustomTabPanel title='Horizontal Icon'>
+                <CustomTabPanel data-key='horizontal-icon' title='Horizontal Icon'>
                     <HorizontalIconContainer/>
                 </CustomTabPanel>
-                <CustomTabPanel title='Vertical Icon'>
+                <CustomTabPanel data-key='vertical-icon' title='Vertical Icon'>
                     <VerticalIconContainer/>
                 </CustomTabPanel>
             </CustomTabsWrapper>

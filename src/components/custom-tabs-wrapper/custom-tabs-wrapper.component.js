@@ -115,7 +115,8 @@ const CustomTabsWrapper = ({ actualSize, children, ...props }) => {
     const handleChooseActiveTab = event => {
         let target = event.target;
         let li = target.closest('li');
-        let nodes = Array.from( li.closest('ul').children );
+        let nodes = document.getElementsByClassName('tab-panel');
+      
         let allWidth = 0;
         for (let i = 0; i < nodes.length; i++) {
             if (nodes[i].classList.length > 1) {

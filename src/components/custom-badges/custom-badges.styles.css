@@ -4,10 +4,23 @@
     display: inline-block;
 }
 
+.custom-badge-grid-button-wrapper {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+}
+
 .badges-with-child-style {
     position: absolute;
     top: 0;
-    transform: translate(-70%, -30%);
+    right: 0;
+    transform: translate(50%, -30%);
+}
+
+.badges-with-child-style-grid-button {
+    position: absolute;
+    top: 10%;
+    right: 8%;
 }
 
 .badges-with-avatar-circle-style {

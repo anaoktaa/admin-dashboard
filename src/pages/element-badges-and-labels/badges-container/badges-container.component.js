@@ -1,6 +1,9 @@
 import React from 'react';
 
-import { LaptopOutlined, PictureOutlined, ShoppingOutlined } from '@ant-design/icons';
+import { LaptopOutlined, PictureOutlined, ShoppingOutlined,
+         CrownOutlined, AlertOutlined, BugOutlined, DatabaseOutlined, MessageOutlined,
+         BulbOutlined, RocketOutlined, TrophyOutlined,  CameraOutlined,
+         ThunderboltOutlined  } from '@ant-design/icons';
 
 import { CustomCard, CustomCardBody, CustomCardTitleText } from '../../../components/custom-card/custom-card.styles';
 import CustomBadges from '../../../components/custom-badges/custom-badges.component';
@@ -204,6 +207,153 @@ const BadgesContainer = () => {
                         <CustomBadges className='mrb-20' color='danger' size={12} dot>
                             <ShoppingOutlined style={style.iconStyle} />
                         </CustomBadges>
+                    </CustomCardBody>
+                </CustomCard>
+            </div>
+            <div>
+                <CustomCard className='mb-30'>
+                    <CustomCardTitleText>
+                        ICON BUTTONS GRID I
+                    </CustomCardTitleText>
+                    <CustomCardBody>
+                        <div className='grid-menu-3-col'>
+                            <div className='grid-row-for-3-col'>
+                                <CustomBadges color='secondary' size={12} dot>
+                                    <CustomButton square iconType='vertical' block color='primary' variant='no-outlined' icon={<CrownOutlined />}>
+                                        Primary
+                                    </CustomButton>
+                                </CustomBadges>
+                            </div>
+                            <div className='grid-row-for-3-col'>
+                                <CustomBadges color='warning' size={10} dot>
+                                    <CustomButton square iconType='vertical' block color='success' variant='no-outlined' icon={<AlertOutlined />}>
+                                        Success
+                                    </CustomButton>
+                                </CustomBadges>
+                            </div>
+                            <div className='grid-row-for-3-col'>
+                                <CustomBadges color='primary' size={10} dot>
+                                    <CustomButton square iconType='vertical' block color='danger' variant='no-outlined' icon={<TrophyOutlined />}>
+                                        Danger
+                                    </CustomButton>
+                                </CustomBadges>
+                            </div>
+                            <div className='grid-row-for-3-col'>
+                                <CustomBadges color='success' size={10} dot>
+                                    <CustomButton square iconType='vertical' block color='warning' variant='no-outlined' icon={<RocketOutlined />}>
+                                        Warning
+                                    </CustomButton>
+                                </CustomBadges>
+                            </div>
+                            <div className='grid-row-for-3-col'>
+                                <CustomBadges color='alt' size={10} dot>
+                                    <CustomButton square iconType='vertical' block color='info' variant='no-outlined' icon={<BulbOutlined />}>
+                                        Info
+                                    </CustomButton>
+                                </CustomBadges>
+                            </div>
+                            <div className='grid-row-for-3-col'>
+                                <CustomBadges color='dark' size={10} dot>
+                                    <CustomButton square iconType='vertical' block color='secondary' variant='no-outlined' icon={<BugOutlined />}>
+                                        Secondary
+                                    </CustomButton>
+                                </CustomBadges>
+                            </div>
+                        </div>
+                    </CustomCardBody>
+                </CustomCard>
+                <CustomCard className='mb-30'>
+                    <CustomCardTitleText>
+                        ICON BUTTONS GRID II
+                    </CustomCardTitleText>
+                    <CustomCardBody>
+                        <div className='grid-menu-2-col'>
+                            <div className='grid-row-for-2-col'>
+                                <CustomBadges color='secondary' size={12} dot>
+                                    <CustomButton square iconType='vertical' block color='primary' variant='no-outlined' icon={<CrownOutlined />}>
+                                        Primary
+                                    </CustomButton>
+                                </CustomBadges>
+                            </div>
+                            <div className='grid-row-for-2-col'>
+                                <CustomBadges color='warning' size={10} dot>
+                                    <CustomButton square iconType='vertical' block color='success' variant='no-outlined' icon={<AlertOutlined />}>
+                                        Success
+                                    </CustomButton>
+                                </CustomBadges>
+                            </div>
+                            <div className='grid-row-for-2-col'>
+                                <CustomBadges color='primary' size={10} dot>
+                                    <CustomButton square iconType='vertical' block color='danger' variant='no-outlined' icon={<TrophyOutlined />}>
+                                        Danger
+                                    </CustomButton>
+                                </CustomBadges>
+                            </div>
+                            <div className='grid-row-for-2-col'>
+                                <CustomBadges color='success' size={10} dot>
+                                    <CustomButton square iconType='vertical' block color='warning' variant='no-outlined' icon={<RocketOutlined />}>
+                                        Warning
+                                    </CustomButton>
+                                </CustomBadges>
+                            </div>
+                        </div>
+                    </CustomCardBody>
+                </CustomCard>
+                <CustomCard>
+                    <CustomCardTitleText>
+                        ICON BUTTONS GRID III
+                    </CustomCardTitleText>
+                    <CustomCardBody>
+                        <CustomBadges color='success' className='mrb-10' size={10} dot>
+                            <CustomButton iconType='vertical' color='primary' variant='outlined' icon={<CrownOutlined />}>
+                                Primary
+                            </CustomButton>
+                        </CustomBadges>
+                        <CustomBadges color='primary' className='mrb-10' size={10} dot>
+                            <CustomButton iconType='vertical' color='secondary' variant='outlined' icon={<AlertOutlined />}>
+                                Secondary
+                            </CustomButton>
+                        </CustomBadges>
+                        <CustomBadges color='warning' className='mrb-10' size={10} dot>
+                            <CustomButton iconType='vertical' color='success' variant='outlined' icon={<CameraOutlined />}>
+                                Success
+                            </CustomButton>
+                        </CustomBadges>
+                        <CustomBadges color='danger' className='mrb-10' size={10} dot>             
+                            <CustomButton iconType='vertical' color='info' variant='outlined' icon={<BugOutlined />}>
+                                Info
+                            </CustomButton>
+                        </CustomBadges>
+                        <CustomBadges color='alt' className='mrb-10' size={10} dot>             
+                            <CustomButton iconType='vertical' color='warning' variant='outlined' icon={<BulbOutlined />}>
+                                Warning
+                            </CustomButton>
+                        </CustomBadges>
+                        <CustomBadges color='info' className='mrb-10' size={10} dot>             
+                            <CustomButton iconType='vertical' color='danger' variant='outlined' icon={<DatabaseOutlined />}>
+                                Danger
+                            </CustomButton>
+                        </CustomBadges>
+                        <CustomBadges color='secondary' className='mrb-10' size={10} dot>             
+                            <CustomButton iconType='vertical' color='alt' variant='outlined' icon={<MessageOutlined />}>
+                                Alt
+                            </CustomButton>
+                        </CustomBadges>
+                        <CustomBadges color='dark' className='mrb-10' size={10} dot>             
+                            <CustomButton iconType='vertical' color='light' variant='outlined' icon={<RocketOutlined />}>
+                                Light
+                            </CustomButton>
+                        </CustomBadges>
+                        <CustomBadges color='light' className='mrb-10' size={10} dot>             
+                            <CustomButton iconType='vertical' color='dark' variant='outlined' icon={<ThunderboltOutlined />}>
+                                Dark
+                            </CustomButton>
+                        </CustomBadges>
+                        <CustomBadges color='primary' className='mrb-10' size={10} dot>             
+                            <CustomButton iconType='vertical' color='link' variant='outlined' icon={<TrophyOutlined />}>
+                                Link
+                            </CustomButton>
+                        </CustomBadges>                 
                     </CustomCardBody>
                 </CustomCard>
             </div>
