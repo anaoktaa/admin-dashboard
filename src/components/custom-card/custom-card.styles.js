@@ -69,6 +69,7 @@ export const CustomCardTitleText = styled.p`
     ${titleText};
     margin: 0;
     padding: 15px 15px 0;
+    color: #363875;
 `;
 
 export const CustomCardSubtitle = styled.p`

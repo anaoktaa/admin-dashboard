@@ -1,11 +1,17 @@
 import React from 'react';
 import { Menu } from 'antd';
+import { withRouter } from 'react-router';
 
 import DrawerMenuData from './drawer-menu.data';
 
 const { SubMenu } = Menu;
 
-const DrawerMenu = () => {
+const DrawerMenu = ({ history }) => {
+
+    const handleRoute = item => {
+        history.push(item.url);
+    }
+
     return (
         <div>
             <Menu defaultSelectedKeys={['11']} mode="inline">
@@ -14,7 +20,7 @@ const DrawerMenu = () => {
                         <SubMenu key={parentItem.id} icon={parentItem.icon} title={parentItem.name}>
                             {
                                 parentItem.children.map((childrenItem) => (
-                                    <Menu.Item key={childrenItem.id}>{childrenItem.name}</Menu.Item>
+                                    <Menu.Item onClick={() => handleRoute(childrenItem)} key={childrenItem.id}>{childrenItem.name}</Menu.Item>
                                 ))
                             }
                         </SubMenu>
@@ -25,4 +31,4 @@ const DrawerMenu = () => {
     )
 };
 
-export default DrawerMenu;
+export default withRouter(DrawerMenu);

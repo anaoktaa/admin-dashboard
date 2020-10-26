@@ -153,7 +153,7 @@ const DrawerMenuData = [
         children: [
             {
                 id: 41,
-                url: 'elements/buttons',
+                url: '/elements/buttons',
                 name: 'Buttons',
                 icon: <BorderOutlined />,
                 title: 'Standard Buttons',
@@ -162,7 +162,7 @@ const DrawerMenuData = [
             {
                 id: 42,
                 name: 'Dropdowns',
-                url: 'elements/dropdowns',
+                url: '/elements/dropdowns',
                 icon: <UnorderedListOutlined />,
                 title: 'Dropdowns',
                 description: 'Multiple styles, actions and effects are available for the ArchitectUI dropdown buttons.'         
@@ -170,7 +170,7 @@ const DrawerMenuData = [
             {
                 id: 43,
                 name: 'Icons',
-                url: 'elements/icons',
+                url: '/elements/icons',
                 icon: <BugTwoTone />,
                 title: 'Icons',
                 description: 'Wide icons selection including from flag icons to FontAwesome and other icons libraries.'
@@ -178,7 +178,7 @@ const DrawerMenuData = [
             {
                 id: 44,
                 name: 'Badges',
-                url: 'elements/badges',
+                url: '/elements/badges',
                 icon: <SafetyOutlined />,
                 title: 'Badges & Labels',
                 description: 'Badges and labels are used to offer extra small pieces of info for your content.'
@@ -186,7 +186,7 @@ const DrawerMenuData = [
             {
                 id: 45,
                 name: 'Cards',
-                url: 'elements/cards',
+                url: '/elements/cards',
                 icon: <CreditCardTwoTone />,
                 title: 'Cards',
                 description: 'Wide selection of cards with multiple styles, borders, actions and hover effects.'

@@ -51,12 +51,12 @@ const outlinedVariant = css`
 /*No border */
 const noOutlinedVariant = css`
     background-color: white;
-    color:  ${({color}) =>  color !== 'link'? colorsPalette[color] : colorsPalette[color+'Text']};
+    color:  ${({color}) =>  color !== 'link'? colorsPalette[color] : 'grey'};
 
     &:hover {
-        background-color: ${({color}) => color? colorsPalette[color] : '#ededed'};
+        background-color: ${({color}) => color !== 'link'? colorsPalette[color] : colorsPalette.linkDark};
         color: ${({color}) => color? colorsPalette[color+'Text'] : '#000'};
-        text-decoration:  ${({color}) => color === 'link' ? 'underline': 'none'};
+        text-decoration:  ${(props) => props.color === 'link' && !props.icon ? 'underline': 'none'};
         box-shadow: none;
     }
 `;

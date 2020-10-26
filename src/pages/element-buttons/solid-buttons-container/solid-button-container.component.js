@@ -4,6 +4,10 @@ import CustomButton from '../../../components/custom-button/custom-button.compon
 import { CustomCard, CustomCardBody, CustomCardTitleText } from '../../../components/custom-card/custom-card.styles';
 
 const SolidButtonContainer = () => {
+    const handleScroll = () => {
+        console.log('keeatas dodong')
+        window.scrollTo(0, 0);
+    }
     return (
         <div className='grid-2'>
             <CustomCard className='mobile-mb-30'>
@@ -11,7 +15,7 @@ const SolidButtonContainer = () => {
                     SOLID
                 </CustomCardTitleText>
                 <CustomCardBody>
-                    <CustomButton className='mrb-10' variant='solid' color='primary'>Primary</CustomButton>
+                    <CustomButton onClick={handleScroll} className='mrb-10' variant='solid' color='primary'>Primary</CustomButton>
                     <CustomButton className='mrb-10' variant='solid' color='secondary'>Secondary</CustomButton>
                     <CustomButton className='mrb-10' variant='solid' color='success'>Success</CustomButton>
                     <CustomButton className='mrb-10' variant='solid' color='info'>Info</CustomButton>

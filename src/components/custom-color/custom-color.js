@@ -37,5 +37,5 @@ export const colorsPalette =  {
     dangerRgb: '217, 37, 80',
     link: '#fff',
     linkText: '#545cd8',
-    linkDark: '#f8f9fa'
+    linkDark: '#e9ebf8'
 };

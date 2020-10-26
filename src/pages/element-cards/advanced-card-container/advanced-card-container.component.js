@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography } from 'antd';
 
-import { CustomCard, CustomCardHeader, CustomCardBody, CustomCardTitleText, CustomCardFooter } from  '../../../components/custom-card/custom-card.styles';
+import { CustomCard, CustomCardHeader, CustomCardBody, CustomCardFooter } from  '../../../components/custom-card/custom-card.styles';
 import { CustomCardHeaderWithImage } from '../../../components/custom-card/custom-card-header-with-image.component';
 import CustomButton from '../../../components/custom-button/custom-button.component';
 
