@@ -1,7 +1,6 @@
 import React from 'react';
-import { CrownOutlined, AlertOutlined, CameraOutlined, BugOutlined,
-         BulbOutlined, DatabaseOutlined, MessageOutlined, RocketOutlined,
-         ThunderboltOutlined, TrophyOutlined } from '@ant-design/icons';
+import { CrownOutlined, AlertOutlined, BugOutlined,
+         BulbOutlined, RocketOutlined,TrophyOutlined } from '@ant-design/icons';
 
 import { CustomCard, CustomCardBody, CustomCardTitleText } from  '../../../components/custom-card/custom-card.styles';
 import CustomButton from '../../../components/custom-button/custom-button.component';
@@ -13,7 +12,7 @@ const GridMenuContainer = () => {
             <div>
                 <CustomCard className='mb-30'>
                     <CustomCardTitleText>
-                        GIRD MENU HOVER COLOR
+                        GRID MENU HOVER COLOR
                     </CustomCardTitleText>
                     <CustomCardBody>
                         <div className='grid-menu-3-col'>

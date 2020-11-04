@@ -5,6 +5,9 @@ import CustomTabPanel from '../../components/custom-tab-panel/custom-tab-panel.c
 
 import GridMenuContainer from './grid-menu-container/grid-menu-container.component';
 import VerticalMenuContainer from'./vertical-menu-container/vertical-menu-container.component';
+import HeaderMenuContainer from './header-menu-container/header-menu-container.component';
+
+import './element-navigation-menus.styles.css';
 
 const ElementNavigationMenus = () => {
     return (
@@ -16,7 +19,7 @@ const ElementNavigationMenus = () => {
                 <VerticalMenuContainer/>
             </CustomTabPanel>
             <CustomTabPanel data-key='advanced' title='Header Menu'>
-        
+                <HeaderMenuContainer/>
             </CustomTabPanel>
         </CustomTabsWrapper>
     )

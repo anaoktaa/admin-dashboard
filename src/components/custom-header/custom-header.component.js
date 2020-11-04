@@ -18,6 +18,7 @@ import MegaMenu from '../mega-menu/mega-menu.component';
 import SettingHeader from '../setting-header/setting-header.component';
 import SearchHeader from '../search-header/search-header.component';
 import RightMenuHeader from '../right-menu-header/right-menu-header.component';
+import OutsideAlerter from '../outside-wrapper/outside-wrapper.component';
 
 const { Text } = Typography;
 

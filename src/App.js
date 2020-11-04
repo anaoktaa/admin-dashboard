@@ -9,6 +9,7 @@ import './App.css';
 
 import Routing from './routing';
 
+import OutsideAlerter from './components/outside-wrapper/outside-wrapper.component';
 import CustomHeader from './components/custom-header/custom-header.component';
 import CustomDrawer from './components/custom-drawer/custom-drawer.component';
 import FloatingMenuHeader from './components/floating-menu-header/floating-menu-header.component';
@@ -38,6 +39,12 @@ const App = ({ foldDrawer, location }) => {
             <div className={`content-container ${foldDrawer ? 'content-fold-close' : 'content-fold-open'}`}>
                 <CustomBreadcrumb/>
                 <div className='app-body-container'>
+                    {/* <OutsideAlerter>
+                        <div style={{backgroundColor: 'red'}}>
+                    <h1>adasuhdjkahsdk</h1>
+                    <button>jsahdkgasjdhgjhgas</button>
+                        </div>
+                    </OutsideAlerter> */}
                     <Routing/>
                 </div>
             </div>

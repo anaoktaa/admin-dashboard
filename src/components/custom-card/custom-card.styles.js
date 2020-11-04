@@ -34,10 +34,10 @@ const hoverStyleCard = props => {
 }
 
 export const CustomCard = styled.div`
-    box-shadow: 0 0.46875rem 2.1875rem rgba(8,10,37,.03), 0 0.9375rem 1.40625rem rgba(8,10,37,.03), 0 0.25rem 0.53125rem rgba(8,10,37,.05), 0 0.125rem 0.1875rem rgba(8,10,37,.03);
+    box-shadow: ${({noneBoxShadow}) => noneBoxShadow? 'none': ' 0 0.46875rem 2.1875rem rgba(8,10,37,.03), 0 0.9375rem 1.40625rem rgba(8,10,37,.03), 0 0.25rem 0.53125rem rgba(8,10,37,.05), 0 0.125rem 0.1875rem rgba(8,10,37,.03)'};
     border-width: 0;
     transition: all .2s;
-    border-radius: 5px;
+    border-radius: ${({noneBorderRadius}) => noneBorderRadius? '0px' : '5px'};
     background-color: white;
     overflow: hidden;
     ${styleForCard};
@@ -94,7 +94,7 @@ export const CardImgOverlay = styled.div`
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: ${({backgroundColor}) => backgroundColor? backgroundColor : '#252525bf'}
+    background-color: ${({backgroundColorOverlay}) => backgroundColorOverlay? backgroundColorOverlay : '#252525bf'}
 `;
 
 const containedCard = css`

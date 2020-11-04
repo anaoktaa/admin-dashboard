@@ -4,13 +4,13 @@ import { CardHeaderImg, CardImgOverlay } from './custom-card.styles';
 
 import './custom-card.styles.css';
 
-export const CustomCardHeaderWithImage = ({ imgUrl, children }) => {
+export const CustomCardHeaderWithImage = ({ imgUrl, backgroundColorOverlay, children, ...props }) => {
     return (
-        <CardHeaderImg imgUrl={imgUrl}>
+        <CardHeaderImg imgUrl={imgUrl} {...props}>
             <div className='custom-card-header-child-container'>
                 {children}
             </div>
-            <CardImgOverlay/>
+            <CardImgOverlay backgroundColorOverlay={backgroundColorOverlay}/>
         </CardHeaderImg>
     )
 };
