@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { CustomButtonStyled } from './custom-button.styles';
+import { CustomButtonStyled, CustomButtonMenuItem } from './custom-button.styles';
 
 import './custom-button.styles.css';
 
 const CustomButton = ({ variant, color, className, children, pill, square, shadow, icon, 
-                        block, iconPosition, iconType, size, wide, ...props }) => {
+                        block, iconPosition, iconType, size, wide, role, active, ...props }) => {
     if (icon) {
         return (
             <CustomButtonStyled 

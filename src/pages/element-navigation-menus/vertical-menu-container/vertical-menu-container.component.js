@@ -4,9 +4,11 @@ import { InboxOutlined, BookOutlined, FileOutlined, PictureOutlined,
          HourglassOutlined,  } from '@ant-design/icons';
 
 import { CustomCard, CustomCardBody, CustomCardTitleText } from  '../../../components/custom-card/custom-card.styles';
-import { CustomMenu, CustomMenuItem, CustomMenuItemTitle, CustomMenuDivider, CustomMenuItemHeader } from '../../../components/custom-menu/custom-menu.styles';
 import CustomLabelBadge from '../../../components/custom-label-badge/custom-label-badge.component';
 import CustomButton from '../../../components/custom-button/custom-button.component';
+import CustomMenu from '../../../components/custom-menu/custom-menu.component';
+import CustomMenuItem from '../../../components/custom-menu-item/custom-menu-item.component';
+import { CustomMenuItemHeader, CustomMenuDivider } from '../../../components/custom-menu-item/custom-menu-item.styles';
 
 const VerticalMenuContainer = () => {
     return (
@@ -196,7 +198,135 @@ const VerticalMenuContainer = () => {
                             </ul>
                         </div>
                     </div>
-                   
+                </CustomCardBody>
+            </CustomCard>
+            <CustomCard className='mb-30'>
+                <CustomCardTitleText>
+                    MENU HOVER STYLES
+                </CustomCardTitleText>
+                <CustomCardBody>
+                    <div className='grid-4-gap-20'>
+                        <div className='flat-card-border padding-vertical-20 '>
+                            <CustomMenuItemHeader>
+                                Header
+                            </CustomMenuItemHeader>
+                            <CustomMenu role='primary'>
+                                <CustomMenuItem>
+                                    Menus
+                                </CustomMenuItem>
+                                <CustomMenuItem>
+                                    Settings
+                                </CustomMenuItem>
+                                <CustomMenuItem>
+                                    Actions
+                                </CustomMenuItem>
+                                <CustomMenuDivider/>
+                                <CustomMenuItem>
+                                    Divider
+                                </CustomMenuItem>
+                            </CustomMenu>
+                        </div>
+                        <div className='flat-card-border padding-vertical-20 '>
+                            <CustomMenuItemHeader>
+                                Header
+                            </CustomMenuItemHeader>
+                            <CustomMenu role='secondary'>
+                                <CustomMenuItem>
+                                    Menus
+                                </CustomMenuItem>
+                                <CustomMenuItem>
+                                    Settings
+                                </CustomMenuItem>
+                                <CustomMenuItem>
+                                    Actions
+                                </CustomMenuItem>
+                                <CustomMenuDivider/>
+                                <CustomMenuItem>
+                                    Divider
+                                </CustomMenuItem>
+                            </CustomMenu>
+                        </div>
+                        <div className='flat-card-border padding-vertical-20 '>
+                            <CustomMenuItemHeader>
+                                Header
+                            </CustomMenuItemHeader>
+                            <CustomMenu>
+                                <CustomMenuItem>
+                                    Menus
+                                </CustomMenuItem>
+                                <CustomMenuItem>
+                                    Settings
+                                </CustomMenuItem>
+                                <CustomMenuItem>
+                                    Actions
+                                </CustomMenuItem>
+                                <CustomMenuDivider/>
+                                <CustomMenuItem>
+                                    Divider
+                                </CustomMenuItem>
+                            </CustomMenu>
+                        </div>
+                        <div className='flat-card-border padding-vertical-20 '>
+                            <CustomMenuItemHeader>
+                                Header
+                            </CustomMenuItemHeader>
+                            <CustomMenu role='primary' pill={true}>
+                                <CustomMenuItem>
+                                    Menus
+                                </CustomMenuItem>
+                                <CustomMenuItem>
+                                    Settings
+                                </CustomMenuItem>
+                                <CustomMenuItem>
+                                    Actions
+                                </CustomMenuItem>
+                                <CustomMenuDivider/>
+                                <CustomMenuItem>
+                                    Divider
+                                </CustomMenuItem>
+                            </CustomMenu>
+                        </div>
+                        <div className='flat-card-border padding-vertical-20 '>
+                            <CustomMenuItemHeader>
+                                Header
+                            </CustomMenuItemHeader>
+                            <CustomMenu role='secondary' pill={true}>
+                                <CustomMenuItem>
+                                    Menus
+                                </CustomMenuItem>
+                                <CustomMenuItem>
+                                    Settings
+                                </CustomMenuItem>
+                                <CustomMenuItem>
+                                    Actions
+                                </CustomMenuItem>
+                                <CustomMenuDivider/>
+                                <CustomMenuItem>
+                                    Divider
+                                </CustomMenuItem>
+                            </CustomMenu>
+                        </div>
+                        <div className='flat-card-border padding-vertical-20 '>
+                            <CustomMenuItemHeader>
+                                Header
+                            </CustomMenuItemHeader>
+                            <CustomMenu>
+                                <CustomMenuItem>
+                                    <InboxOutlined style={style.iconStyle} /> Menus
+                                </CustomMenuItem>
+                                <CustomMenuItem>
+                                    <BookOutlined style={style.iconStyle}/> Settings
+                                </CustomMenuItem>
+                                <CustomMenuItem>    
+                                    <PictureOutlined style={style.iconStyle}/> Actions
+                                </CustomMenuItem>
+                                <CustomMenuDivider/>
+                                <CustomMenuItem>
+                                    <FileOutlined style={style.iconStyle}/> Divider
+                                </CustomMenuItem>
+                            </CustomMenu>
+                        </div>
+                    </div>
                 </CustomCardBody>
             </CustomCard>
         </div>

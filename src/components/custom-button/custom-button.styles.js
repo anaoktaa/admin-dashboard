@@ -191,3 +191,43 @@ export const CustomButtonStyled = styled.button`
     ${radiusForButton};
     ${buttonBoxShadow};
 `;
+
+const styleForPrimary = css`
+    &:hover  {
+        background-color: ${colorsPalette.primary};
+        color: ${colorsPalette.primaryText};
+    }
+`;
+
+const styleForSecondary = css`
+    &:hover  {
+        background-color: #e4f4ff;
+        color: #000;
+    }
+`;
+
+
+const styleForMenuItem = props => {
+    if(props.color === 'primary') {
+        return styleForPrimary;
+    }
+    else if (props.color === 'secondary') {
+        return styleForSecondary;
+    }
+}
+
+
+export const CustomButtonMenuItem = styled.button`
+    border: none;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    height: fit-content;
+    background-color: white;
+    transition: all .3s;
+    text-align: left;
+    ${wideButton};
+    ${sizeButton};
+    ${({block}) => block? blockStyle : null};
+    ${styleForMenuItem};
+`;

@@ -15,7 +15,7 @@ const GridMenuContainer = () => {
                         GRID MENU HOVER COLOR
                     </CustomCardTitleText>
                     <CustomCardBody>
-                        <div className='grid-menu-3-col'>
+                        <div className='grid-menu-3-col align-items-center justify-content-center'>
                             <div className='grid-row-for-3-col'>
                                 <CustomButton square iconType='vertical' block color='primary' variant='no-outlined' icon={<CrownOutlined />}>
                                     Primary
@@ -54,7 +54,7 @@ const GridMenuContainer = () => {
                         GIRD MENU BIGGER
                     </CustomCardTitleText>
                     <CustomCardBody>
-                        <div className='grid-menu-3-col'>
+                        <div className='grid-menu-3-col align-items-center justify-content-center'>
                             <div className='grid-row-for-3-col'>
                                 <CustomButton square iconType='vertical' block color='link' variant='no-outlined' icon={<CrownOutlined style={style.iconStyleBigger}/>}>
                                     Primary
