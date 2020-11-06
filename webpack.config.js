@@ -50,8 +50,11 @@ module.exports = {
                         modifyVars: {
                             'primary-color': '#545cd8',
                             'link-color': '#545cd8',
+                            'success-color': '#31b16f',
+                            'error-color': '#d92550',
+                            'warning-color': '#f7b924',
+                            'info-color': '#30b1ff',
                             'border-radius-base': '2px',
-                            'error-color': '#d92550'
                         },
                         javascriptEnabled: true,
                         },

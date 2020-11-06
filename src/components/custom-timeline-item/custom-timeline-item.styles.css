@@ -1,0 +1,6 @@
+.timeline-icon-container {
+    display: flex;
+    height: auto;
+    justify-content: center;
+    position: relative;
+}

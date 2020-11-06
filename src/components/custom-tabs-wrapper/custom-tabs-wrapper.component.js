@@ -116,19 +116,21 @@ const CustomTabsWrapper = ({ actualSize, children, ...props }) => {
         let target = event.target;
         let li = target.closest('li');
         let nodes = document.getElementsByClassName('tab-panel');
-      
         let allWidth = 0;
-        for (let i = 0; i < nodes.length; i++) {
-            if (nodes[i].classList.length > 1) {
-                nodes[i].classList.remove('tab-panel-active');
+     
+        if (li) {
+            for (let i = 0; i < nodes.length; i++) {
+                if (nodes[i].classList.length > 1) {
+                    nodes[i].classList.remove('tab-panel-active');
+                }
+                allWidth = nodes[i].offsetWidth + allWidth;
             }
-            allWidth = nodes[i].offsetWidth + allWidth;
-        }
-        setWidth(li.offsetWidth);
-        li.classList.add('tab-panel-active');
-  
-        //Finding width
-        findActualLeft(nodes, li);
+            setWidth(li.offsetWidth);
+            li.classList.add('tab-panel-active');
+
+              //Finding width
+            findActualLeft(nodes, li);
+        }  
     }
 
     const inputRef = useRef({});

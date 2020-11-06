@@ -12,7 +12,7 @@ const CustomMenu = ({ pill, role, children, ...props }) => {
         }
         return child;
     });
-    console.log(childrenWithProps);
+
     return (
         <CustomMenuStyled {...props}>
             {childrenWithProps}

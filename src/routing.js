@@ -11,15 +11,17 @@ import ElementButtons from './pages/element-buttons/element-buttons.component';
 import ElementCards from './pages/element-cards/element-cards.component';
 import ElementBadgesAndLabels from './pages/element-badges-and-labels/element-badges-and-labels.component';
 import ElementNavigationMenus from './pages/element-navigation-menus/element-navigation-menus.component';
+import ElementTimelines from './pages/element-timelines/element-timelines.component';
 
 const Routing =  () => {
     return (
         <Switch>
-            <Route exact path='/' component={ElementNavigationMenus} />
-            <Route path='/elements/buttons' component={ElementButtons}/>    
-            <Route path='/elements/badges' component={ElementBadgesAndLabels}/>    
-            <Route path='/elements/cards' component={ElementCards}/>  
-            <Route path='/elements/navigation' component={ElementNavigationMenus}/>    
+            <Route exact path='/' component={ElementTimelines} />
+            <Route exact path='/elements/buttons' component={ElementButtons}/>    
+            <Route exact path='/elements/badges' component={ElementBadgesAndLabels}/>    
+            <Route exact path='/elements/cards' component={ElementCards}/>  
+            <Route exact path='/elements/navigation' component={ElementNavigationMenus}/> 
+            <Route exact path='/element/timelines' component={ElementTimelines}/>   
         </Switch>
     )
 };
