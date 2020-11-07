@@ -1,9 +1,7 @@
 import React from 'react';
 import { Avatar } from 'antd';
-import { UserOutlined } from '@ant-design/icons';
 
 import { CustomCard, CustomCardBody, CustomCardTitleText } from '../../../components/custom-card/custom-card.styles';
-import CustomLabelBadge from '../../../components/custom-label-badge/custom-label-badge.component';
 import CustomBadges from '../../../components/custom-badges/custom-badges.component';
 
 const AvatarsContainer = () => {

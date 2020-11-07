@@ -1,0 +1,43 @@
+.mailbox-container {
+    display: grid;
+    grid-template-columns: .8fr 2.5fr;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.mailbox-menu-container {
+    box-shadow: 0 0 0 0 gray;
+    border-radius: 0;
+    background: #f8f9fa;
+    border: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+
+}
+
+.inbox-container {
+    background-color: white;
+    box-shadow: 0 0 0 0 transparent;
+    border-radius: 0;
+    border: 0;
+    padding: 20px;
+}
+
+.inbox-mail-container {
+    display: grid;
+    grid-template-columns: .6fr .6fr 1.4fr 2fr 8fr .8fr 1.4fr;
+    grid-gap: 5px;
+    color: black !important;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding: 10px 5px;
+}
+
+.inbox-mail-container:hover {
+    color: black !important;
+}
+

@@ -207,6 +207,14 @@ a:hover {
     padding-top: 30px;
 }
 
+.padding-top-20 {
+    padding-top: 20px;
+}
+
+.flex-wrap {
+    flex-wrap: wrap !important;
+}
+
 .padding-top-10 {
     padding-top: 10px;
 }
@@ -230,6 +238,10 @@ a:hover {
 
 .padding-left-30  {
     padding-left: 30px;
+}
+
+.padding-horizontal-10 {
+    padding: 0 10px;
 }
 
 .grid-2 {
@@ -406,6 +418,10 @@ a:hover {
     color: black !important;
 }
 
+.gray {
+    color: #949292 !important;
+}
+
 .margin-left-auto {
     margin-left: auto;
 }
@@ -414,6 +430,16 @@ a:hover {
     display: flex;
     flex-direction: row;
     width: 100%;
+}
+
+.align-items-end {
+    align-items: flex-end !important;
+}
+
+.text-overflow {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .dropdown-menu-item {

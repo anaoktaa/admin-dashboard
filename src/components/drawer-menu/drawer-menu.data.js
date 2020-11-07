@@ -161,34 +161,34 @@ const DrawerMenuData = [
             },
             {
                 id: 42,
-                name: 'Dropdowns',
-                url: '/elements/dropdowns',
+                name: 'Badges',
+                url: '/elements/badges',
                 icon: <UnorderedListOutlined />,
-                title: 'Dropdowns',
+                title: 'Standard Badges',
                 description: 'Multiple styles, actions and effects are available for the ArchitectUI dropdown buttons.'         
             },
             {
                 id: 43,
-                name: 'Icons',
-                url: '/elements/icons',
+                name: 'Cards',
+                url: '/elements/cards',
                 icon: <BugTwoTone />,
-                title: 'Icons',
+                title: 'Cards',
                 description: 'Wide icons selection including from flag icons to FontAwesome and other icons libraries.'
             },
             {
                 id: 44,
-                name: 'Badges',
-                url: '/elements/badges',
+                name: 'Navigations',
+                url: '/elements/navigations',
                 icon: <SafetyOutlined />,
-                title: 'Badges & Labels',
+                title: 'Navigations Menus',
                 description: 'Badges and labels are used to offer extra small pieces of info for your content.'
             },
             {
                 id: 45,
-                name: 'Cards',
-                url: '/elements/cards',
+                name: 'Timelines',
+                url: '/elements/timelines',
                 icon: <CreditCardTwoTone />,
-                title: 'Cards',
+                title: 'Timelines',
                 description: 'Wide selection of cards with multiple styles, borders, actions and hover effects.'
             }
         ]
