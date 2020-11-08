@@ -1,0 +1,73 @@
+.chat-apps-container {
+    display: grid;
+    grid-template-columns: 380px 2.5fr;
+    box-sizing: border-box;
+    border-radius: 5px;
+    position: relative;
+}
+
+.chat-inbox-list-container {
+    box-shadow: 0 0 0 0 gray;
+    border-radius: 0;
+    background: #f8f9fa;
+    border: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+.chat-content-container {
+    background-color: white;
+    box-shadow: 0 0 0 0 transparent;
+    border-radius: 0;
+    border: 0;
+    padding: 20px;
+}
+
+.chat-list-container {
+    display: flex !important;
+    align-items: center;
+    padding: 15px 20px !important;
+}
+
+.chat-wrapper {
+    margin-left: 20px;
+}
+
+.padding-horizontal-20 {
+    padding: 0 20px;
+}
+
+.chat-detail-list,.chat-detail-active {
+    font-size: 13px;
+    color: #949292;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+    overflow: hidden;
+    margin: 0;
+}
+
+.chat-profile-name,.chat-profile-name-active {
+    font-size: 14px;
+    font-weight: 500;
+    color: #383838;
+    margin: 0;
+    padding: 0;
+    line-height: 23px;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+.chat-detail-active {
+    color: #d2d2d2 !important;
+}
+
+.chat-profile-name-active {
+    color: white !important;
+}

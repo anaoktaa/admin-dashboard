@@ -13,17 +13,19 @@ import ElementBadgesAndLabels from './pages/element-badges-and-labels/element-ba
 import ElementNavigationMenus from './pages/element-navigation-menus/element-navigation-menus.component';
 import ElementTimelines from './pages/element-timelines/element-timelines.component';
 import ApplicationsMailbox from './pages/applications-mailbox/applications-mailbox.component';
+import ApplicationChat from './pages/applications-chat/applications-chat.component';
 
 const Routing =  () => {
     return (
         <Switch>
-            <Route exact path='/' component={ApplicationsMailbox} />
+            <Route exact path='/' component={ApplicationChat} />
             <Route exact path='/elements/buttons' component={ElementButtons}/>    
             <Route exact path='/elements/badges' component={ElementBadgesAndLabels}/>    
             <Route exact path='/elements/cards' component={ElementCards}/>  
             <Route exact path='/elements/navigations' component={ElementNavigationMenus}/> 
             <Route exact path='/elements/timelines' component={ElementTimelines}/>   
             <Route exact path='/applications/mailbox' component={ApplicationsMailbox}/>
+            <Route exact path='/applications/chat' component={ApplicationChat}/>
         </Switch>
     )
 };

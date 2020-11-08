@@ -113,7 +113,7 @@ const DrawerMenuData = [
         children: [
             {
                 id: 31,
-                url: 'application/analytics',
+                url: '/applications/mailbox',
                 name: 'Mailbox',
                 icon: <MailTwoTone />,
                 title: 'Mailbox Layout Example',
@@ -122,7 +122,7 @@ const DrawerMenuData = [
             {
                 id: 32,
                 name: 'Chat',
-                url: 'application/chat',
+                url: '/applications/chat',
                 icon: <MessageTwoTone />,
                 title: 'Chat Example',
                 description: 'Build chat layouts or any other kind of layout easily with ArchitectUI'         
@@ -130,7 +130,7 @@ const DrawerMenuData = [
             {
                 id: 33,
                 name: 'Split Layout',
-                url: 'application/split-layout',
+                url: '/application/split-layout',
                 icon: <LayoutTwoTone />,
                 title: 'Split Layout',
                 description: 'Build chat layouts or any other kind of layout easily with ArchitectUI.'
@@ -138,7 +138,7 @@ const DrawerMenuData = [
             {
                 id: 34,
                 name: 'FAQ Section',
-                url: 'dashboard/faq-section',
+                url: '/dashboard/faq-section',
                 icon: <QuestionCircleTwoTone />,
                 title: 'FAQ Section',
                 description: 'Dummy page layout example.'

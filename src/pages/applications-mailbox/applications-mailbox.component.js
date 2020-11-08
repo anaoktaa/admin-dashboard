@@ -1,15 +1,14 @@
-import React from 'react';
-import { Avatar, Checkbox, Typography, Rate   } from 'antd';
-import { TagOutlined, CalendarOutlined,
-    MessageOutlined, WalletOutlined, SettingOutlined, PushpinOutlined,
-    HourglassOutlined,  } from '@ant-design/icons';
+import React, { useState } from 'react';
+import { Avatar, Checkbox, Typography, Rate,  Input  } from 'antd';
+import { TagOutlined, CalendarOutlined, MenuOutlined, SearchOutlined,
+        MessageOutlined, WalletOutlined, SettingOutlined, PushpinOutlined,
+        HourglassOutlined,  } from '@ant-design/icons';
 
 import CustomButton from '../../components/custom-button/custom-button.component';
 import CustomLabelBadge from '../../components/custom-label-badge/custom-label-badge.component';
 import CustomBadges from '../../components/custom-badges/custom-badges.component';
 import CustomMenu from '../../components/custom-menu/custom-menu.component';
 import CustomMenuItem from '../../components/custom-menu-item/custom-menu-item.component';
-import { CustomMenuDivider } from '../../components/custom-menu-item/custom-menu-item.styles';
 
 import { MailboxData } from './application-mailbox.data';
 import './applications-mailbox.styles.css';
@@ -17,9 +16,16 @@ import './applications-mailbox.styles.css';
 const { Title, Text } = Typography;
 
 const ApplicationsMailbox = () => {
+
+    const [ mailboxMenu, setMailboxMenu ] = useState(false);
+
+    const handleToggleMailboxMenu = () => {
+        setMailboxMenu(!mailboxMenu);
+    }
+
     return (
         <div className='mailbox-container'>
-            <div className='mailbox-menu-container'>
+            <div className={`mailbox-menu-container ${mailboxMenu? 'mailbox-menu-show':  ''}`}>
                 <CustomButton block pill shadow color='primary' variant='solid'>Write New Email</CustomButton>
                 <ul className='nav padding-top-20'>
                     <li className='nav-item'>
@@ -112,45 +118,57 @@ const ApplicationsMailbox = () => {
                     </li>
                 </ul>
             </div>
-            <div className='inbox-container'>
-                <Title level={3}>Inbox</Title>
+            <div className={`inbox-container ${mailboxMenu? 'inbox-container-show' : ''}`}>
+                <div className='mailbox-header-container'>
+                    <div className='flex-row align-item-center'>
+                        <MenuOutlined className='mailbox-menu' onClick={handleToggleMailboxMenu} style={style.menuMailbox} />
+                        <Title level={3}>Inbox</Title>
+                    </div>
+                   <div className='inbox-search-container' >
+                    <Input addonBefore={<SearchOutlined />} placeholder='Search...' />
+                   </div>
+                </div>
+              
                 <div>
-                    <CustomMenu role='secondary'>
+                    <CustomMenu role='secondary' border={true}>
                         {
                             MailboxData.map((item) => (
-                                <div>
-                                    <CustomMenuItem key={item.id}>
-                                        <div className='inbox-mail-container'>
-                                            <div lassName='flex-column align-items-center justify-content-center'>
-                                                <Checkbox/>
-                                            </div>
-                                            <div style={{marginTop: '-5px'}}>
-                                                <Rate count={1}/>
-                                            </div>
-                                            <div lassName='flex-column align-items-center justify-content-center'>
-                                                <Avatar size={40} src={item.picture} />
-                                            </div>
-                                            <div>
-                                                <p className='profile-name'>{item.name}</p>
-                                            </div>
-                                            <div className='text-overflow padding-horizontal-10'>
-                                                <Text className='gray'>
-                                                {item.email}
-                                                </Text>
-                                            </div>
-                                            <div lassName='flex-column align-items-center justify-content-center'>
-                                                <TagOutlined className='gray'/>
-                                            </div>
-                                            <div className='flex-column align-items-end'>
-                                                <Text className='gray'>
-                                                    <CalendarOutlined/>
-                                                    &nbsp; {item.date}
-                                                </Text>
-                                            </div>
+                                <CustomMenuItem key={item.id}>
+                                    <div className='inbox-mail-container'>
+                                        <div lassName='flex-column align-items-center justify-content-center'>
+                                            <Checkbox/>
                                         </div>
-                                    </CustomMenuItem>
-                                    <CustomMenuDivider/>
-                                </div>
+                                        <div style={{marginTop: '-5px'}}>
+                                            <Rate count={1}/>
+                                        </div>
+                                        <div lassName='flex-column align-items-center justify-content-center'>
+                                            <Avatar size={40} src={item.picture} />
+                                        </div>
+                                        <div>
+                                            <p className='profile-name'>{item.name}</p>
+                                            {
+                                                item.lastseen?
+                                                <p className='last-seen-text'>Last seen {item.lastseen} ago</p>
+                                                :
+                                                null
+                                            }
+                                        </div>
+                                        <div className='text-overflow padding-horizontal-10'>
+                                            <Text className='gray'>
+                                            {item.email}
+                                            </Text>
+                                        </div>
+                                        <div lassName='flex-column align-items-center justify-content-center'>
+                                            <TagOutlined className='gray'/>
+                                        </div>
+                                        <div className='flex-column align-items-end'>
+                                            <Text className='gray'>
+                                                <CalendarOutlined/>
+                                                &nbsp; {item.date}
+                                            </Text>
+                                        </div>
+                                    </div>
+                                </CustomMenuItem>
                             )) 
                         }
                     </CustomMenu>
@@ -163,6 +181,9 @@ const ApplicationsMailbox = () => {
 const style = {
     iconStyle: {
         fontSize: '18px', width: '30px', textAlign: 'left',
+    },
+    menuMailbox : {
+        padding: 0, cursor: 'pointer' ,margin: '0 25px 0 0', lineHeight: '40px', fontSize: '20px', 
     }
 }
 

@@ -2,9 +2,9 @@ import React from 'react';
 
 import { CustomMenuItemStyled } from './custom-menu-item.styles';
 
-const CustomMenuItem = ({ children, ...props }) => {
+const CustomMenuItem = ({ active, activeColor, children, ...props }) => {
     return (
-        <CustomMenuItemStyled {...props}>
+        <CustomMenuItemStyled active={active} activeColor={activeColor} {...props}>
             {children}
         </CustomMenuItemStyled>
     )
