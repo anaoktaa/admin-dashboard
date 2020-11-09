@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Avatar, Typography,  Input  } from 'antd';
-import { SearchOutlined, SettingOutlined } from '@ant-design/icons';
+import { SearchOutlined, SettingOutlined, MenuOutlined, CloseOutlined } from '@ant-design/icons';
 
 import CustomButton from '../../components/custom-button/custom-button.component';
 import CustomBadges from '../../components/custom-badges/custom-badges.component';
@@ -16,12 +16,18 @@ import { ChatList } from './application-chat.data';
 import './applications-chat.styles.css';
 
 const { Text } = Typography;
-const { TextArea } = Input;
 
 const ApplicationChat = () => {
+
+    const [ chatMenu, setChatMenu ] = useState(false);
+
+    const HandleToggleChatMenu = () => {
+        setChatMenu(!chatMenu);
+    }
+
     return (
         <div className='chat-apps-container'>
-            <div className='chat-inbox-list-container'>
+            <div className={`chat-inbox-list-container ${chatMenu? 'chat-inbox-list-container-show': ''}`}>
                 <div className='width-100 padding-horizontal-20' >
                     <Input addonBefore={<SearchOutlined />} placeholder='Search...' />
                 </div>
@@ -79,30 +85,52 @@ const ApplicationChat = () => {
                     <CustomButton variant='solid' color='success' pill >Offline Group Conversations</CustomButton>
                 </div>
             </div>
-            <div className='chat-content-container'>
+            <div className={`chat-content-container ${chatMenu? 'chat-content-container-show' : ''}`}>
                 <div className='chat-content-header flex-row justify-content-space-between align-items-center'>
                     <div className='flex-row'>
-                        <div className='mr-20'>
-                            <CustomBadges position='bottom' color='success' size={13} dot>
-                                <Avatar shape='square' size={45} src="https://images.unsplash.com/photo-1589329482108-e414c7c6b8c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" />
-                            </CustomBadges>
+                        <div className='menu-chat-apps'>
+                            {
+                                chatMenu?
+                                <CloseOutlined onClick={HandleToggleChatMenu} style={{fontSize: '20px'}} className={`mr-20 close-menu ${chatMenu? 'show-close-menu' : ''}`}/>
+                                :
+                                <MenuOutlined onClick={HandleToggleChatMenu} style={{fontSize: '20px'}} className={`mr-20 close-menu ${chatMenu? '' : 'show-close-menu'}`} />
+                            }
+                            <div className='mr-20'>
+                                <CustomBadges position='bottom' color='success' size={13} dot>
+                                    <Avatar shape='square' size={38} src="https://images.unsplash.com/photo-1589329482108-e414c7c6b8c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" />
+                                </CustomBadges>
+                            </div>
+                            <div className='active-chat-profile-wrapper'>
+                                <p className='active-chat-profile-name'>Silaladungka</p>
+                                <Text className='gray fs-12'>Last seen : </Text>
+                                <Text className='fs-12' type="secondary">10 minutes ago</Text>
+                            </div>
                         </div>
-                        <div className='active-chat-profile-wrapper'>
-                            <p className='active-chat-profile-name'>Silaladungka</p>
-                            <Text className='gray'>Last seen online : </Text>
-                            <Text type="secondary">10 minutes ago</Text>
+                        <div className='menu-chat-apps-desktop'> 
+                            <div className='flex-row'>
+                                <div className='mr-20'>
+                                    <CustomBadges position='bottom' color='success' size={13} dot>
+                                        <Avatar shape='square' size={45} src="https://images.unsplash.com/photo-1589329482108-e414c7c6b8c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" />
+                                    </CustomBadges>
+                                </div>
+                                <div className='active-chat-profile-wrapper'>
+                                    <p className='active-chat-profile-name'>Silaladungka</p>
+                                    <Text className='gray'>Last seen online : </Text>
+                                    <Text type="secondary">10 minutes ago</Text>
+                                </div>
+                            </div>
+                            <CustomButton color='primary' variant='solid' icon={<SettingOutlined />}>
+                                Actions
+                            </CustomButton>
                         </div>
                     </div>
-                    <CustomButton color='primary' variant='solid' icon={<SettingOutlined />}>
-                        Actions
-                    </CustomButton>
                 </div>
                 <div className='chat-list-active-container'>
                     <ChatBallon
                         chatlist={ChatList}
                     />
                     <div className='text-input-chat-container'>
-                        <TextArea rows={4} placeholder='Write here and hit enter to send...'/>
+                        <Input placeholder='Write here and hit enter to send...' />
                     </div>
                 </div>
 

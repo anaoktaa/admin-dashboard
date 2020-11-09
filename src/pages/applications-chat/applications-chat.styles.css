@@ -24,6 +24,7 @@
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     border: 0;
+    box-sizing: border-box;
     box-shadow: 0 1px 12px #dedede, 0 -9px 10px transparent;
 }
 
@@ -110,4 +111,101 @@
     margin: 30px 0 0;
     padding: 30px 0 0;
     border-top: 1px solid #d4d4d4;
+}
+
+.menu-chat-apps {
+    display: none;
+}
+
+.menu-chat-apps-desktop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+ 
+@media screen and (max-width: 986px) {
+
+    .chat-apps-container {
+        display: grid;
+        grid-template-columns: 250px 2.5fr;
+        box-sizing: border-box;
+        border-radius: 5px;
+        position: relative;
+        overflow-x: scroll;
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        scrollbar-width: none;  /* Firefox */
+        transition: all .6s;
+    }
+
+    .chat-inbox-list-container-show {
+        transform: translateX(0px) !important;
+        width: 250px !important;
+    }
+
+    .chat-inbox-list-container {
+        position: relative;
+        transform: translateX(-280px);
+        width: 250px;
+        transition: all .12s;
+    }
+
+    .chat-content-container-show {
+        position: relative !important;
+        transform: translateX(0px) !important;
+        width: 500px !important;
+    }
+
+    .chat-content-container {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transition: all .6s;
+    }
+    
+    .menu-chat-apps {
+        display: flex;
+        align-items: center;
+    }
+
+    .menu-chat-apps-desktop {
+        display: none;
+    }
+
+    .active-chat-profile-name {
+        font-size: 17px;
+    }
+
+    .text-input-chat-container{
+        position: sticky;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .close-menu {
+        transition: all .6s;
+    }
+
+    .show-close-menu {
+        animation: allclosemenu .6s;
+    }
+
+    @keyframes allclosemenu {
+        0% {
+            opacity: 0;
+            transform: rotate(0deg) translateX(-100px);
+        }
+        50% {
+            transform: rotate(0deg) translateX(0px);
+        }
+        100% {
+            transform: rotate(180deg) translateX(0px);
+            opacity: 1;
+        }
+    }
+ 
 }

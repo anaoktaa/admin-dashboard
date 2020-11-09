@@ -133,9 +133,9 @@ const ApplicationsMailbox = () => {
                     <CustomMenu role='secondary' border={true}>
                         {
                             MailboxData.map((item) => (
-                                <CustomMenuItem key={item.id}>
+                                <CustomMenuItem className='no-margin-no-padding' key={item.id}>
                                     <div className='inbox-mail-container'>
-                                        <div lassName='flex-column align-items-center justify-content-center'>
+                                        <div className='flex-column align-items-center justify-content-center'>
                                             <Checkbox/>
                                         </div>
                                         <div style={{marginTop: '-5px'}}>
@@ -160,6 +160,29 @@ const ApplicationsMailbox = () => {
                                         </div>
                                         <div lassName='flex-column align-items-center justify-content-center'>
                                             <TagOutlined className='gray'/>
+                                        </div>
+                                        <div className='flex-column align-items-end'>
+                                            <Text className='gray'>
+                                                <CalendarOutlined/>
+                                                &nbsp; {item.date}
+                                            </Text>
+                                        </div>
+                                    </div>
+                                    <div className='inbox-mail-container-mobile'>
+                                        <div className='flex-column align-items-center justify-content-center'>
+                                            <Checkbox/>
+                                        </div>
+                                        <div style={{marginTop: '-5px'}}>
+                                            <Rate count={1}/>
+                                        </div>
+                                        <div lassName='flex-column align-items-center justify-content-center'>
+                                            <Avatar size={40} src={item.picture} />
+                                        </div>
+                                        <div className='text-overflow padding-horizontal-10'>
+                                            <p className='profile-name'>{item.name}</p>
+                                            <Text className='gray'>
+                                            {item.email}
+                                            </Text>
                                         </div>
                                         <div className='flex-column align-items-end'>
                                             <Text className='gray'>

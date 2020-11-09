@@ -34,7 +34,7 @@
     justify-content: center;
     align-items: center;
     height: 100%;
-    padding: 10px 5px;
+    padding: 20px 20px;
 }
 
 .inbox-mail-container:hover {
@@ -62,6 +62,10 @@
 
 .inbox-search-container {
     width: 400px;
+}
+
+.inbox-mail-container-mobile {
+    display: none;
 }
 
 @media screen and (max-width: 986px) {
@@ -104,6 +108,23 @@
         position: absolute;
         width: 100%;
         transition: all .6s;
+    }
+}
+
+@media screen and (max-width :650px) {
+    .inbox-mail-container {
+        display: none;
+    }
+
+    .inbox-mail-container-mobile {
+        display: grid;
+        grid-template-columns: .6fr .6fr 1fr 8fr 1.3fr;
+        grid-gap: 5px;
+        color: black !important;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        padding: 10px 5px;
     }
 }
 

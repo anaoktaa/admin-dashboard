@@ -49,7 +49,6 @@ const ChatBallon = ({ chatlist, ...props }) => {
                                                 <ChatListStartWrapper>
                                                     {
                                                          itemList.list.map((chatListText) => {
-                                                            console.log(chatListText)
                                                             return (
                                                                 <NotOwnerContainerChat>
                                                                     {chatListText}
