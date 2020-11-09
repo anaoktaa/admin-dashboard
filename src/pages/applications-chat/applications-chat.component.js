@@ -1,18 +1,22 @@
 import React from 'react';
-import { Avatar, Checkbox, Typography, Rate,  Input  } from 'antd';
-import { TagOutlined, CalendarOutlined, MenuOutlined, SearchOutlined,
-        MessageOutlined, WalletOutlined, SettingOutlined, PushpinOutlined,
-        HourglassOutlined,  } from '@ant-design/icons';
+import { Avatar, Typography,  Input  } from 'antd';
+import { SearchOutlined, SettingOutlined } from '@ant-design/icons';
 
 import CustomButton from '../../components/custom-button/custom-button.component';
-import CustomLabelBadge from '../../components/custom-label-badge/custom-label-badge.component';
 import CustomBadges from '../../components/custom-badges/custom-badges.component';
 import CustomMenu from '../../components/custom-menu/custom-menu.component';
+import CustomLabelBadges from '../../components/custom-label-badge/custom-label-badge.component';
 import CustomMenuItem from '../../components/custom-menu-item/custom-menu-item.component';
+import ChatBallon from '../../components/chat-ballon/chat-ballon.component';
 import { CustomMenuItemHeader, CustomMenuDivider } from '../../components/custom-menu-item/custom-menu-item.styles';
 
 import { MailboxData } from '../applications-mailbox/application-mailbox.data';
+import { ChatList } from './application-chat.data';
+
 import './applications-chat.styles.css';
+
+const { Text } = Typography;
+const { TextArea } = Input;
 
 const ApplicationChat = () => {
     return (
@@ -32,10 +36,19 @@ const ApplicationChat = () => {
                                     <Avatar size={40} src={item.picture}/>
                                 </CustomBadges>
                                 <div className='chat-wrapper text-overflow width-100'>
-                                    <p className={`${item.activechat? 'chat-profile-name-active' : 'chat-profile-name'}`}>{item.name}</p>
-                                    <p className={`${item.activechat? 'chat-detail-active' : 'chat-detail-list'}`}>
-                                        {item.chat}
-                                    </p>
+                                    <div className='flex-row justify-content-space-between align-items-start'>
+                                        <p className={`${item.activechat? 'chat-profile-name-active' : 'chat-profile-name'}`}>{item.name}</p>
+                                        <p className='chat-date'>{item.datechat}</p>
+                                    </div>
+                                    <div className='flex-row justify-content-space-between align-items-start'>
+                                        <p className={`${item.activechat? 'chat-detail-active' : 'chat-detail-list'}`}>
+                                            {item.chat}
+                                        </p>
+                                        {
+                                            item.unread?
+                                            <CustomLabelBadges color='danger' pill={true}>{item.unread}</CustomLabelBadges> : null
+                                        }
+                                    </div>
                                 </div>
                             </CustomMenuItem>
                         ))
@@ -67,6 +80,31 @@ const ApplicationChat = () => {
                 </div>
             </div>
             <div className='chat-content-container'>
+                <div className='chat-content-header flex-row justify-content-space-between align-items-center'>
+                    <div className='flex-row'>
+                        <div className='mr-20'>
+                            <CustomBadges position='bottom' color='success' size={13} dot>
+                                <Avatar shape='square' size={45} src="https://images.unsplash.com/photo-1589329482108-e414c7c6b8c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" />
+                            </CustomBadges>
+                        </div>
+                        <div className='active-chat-profile-wrapper'>
+                            <p className='active-chat-profile-name'>Silaladungka</p>
+                            <Text className='gray'>Last seen online : </Text>
+                            <Text type="secondary">10 minutes ago</Text>
+                        </div>
+                    </div>
+                    <CustomButton color='primary' variant='solid' icon={<SettingOutlined />}>
+                        Actions
+                    </CustomButton>
+                </div>
+                <div className='chat-list-active-container'>
+                    <ChatBallon
+                        chatlist={ChatList}
+                    />
+                    <div className='text-input-chat-container'>
+                        <TextArea rows={4} placeholder='Write here and hit enter to send...'/>
+                    </div>
+                </div>
 
             </div>
         </div>
