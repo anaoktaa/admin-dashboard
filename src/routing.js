@@ -14,11 +14,12 @@ import ElementNavigationMenus from './pages/element-navigation-menus/element-nav
 import ElementTimelines from './pages/element-timelines/element-timelines.component';
 import ApplicationsMailbox from './pages/applications-mailbox/applications-mailbox.component';
 import ApplicationChat from './pages/applications-chat/applications-chat.component';
+import ApplicationFaq from  './pages/applications-faq/applications-faq.component';
 
 const Routing =  () => {
     return (
         <Switch>
-            <Route exact path='/' component={ApplicationChat} />
+            <Route exact path='/' component={ApplicationFaq} />
             <Route exact path='/elements/buttons' component={ElementButtons}/>    
             <Route exact path='/elements/badges' component={ElementBadgesAndLabels}/>    
             <Route exact path='/elements/cards' component={ElementCards}/>  
@@ -26,6 +27,7 @@ const Routing =  () => {
             <Route exact path='/elements/timelines' component={ElementTimelines}/>   
             <Route exact path='/applications/mailbox' component={ApplicationsMailbox}/>
             <Route exact path='/applications/chat' component={ApplicationChat}/>
+            <Route exact path='/applications/faq' component={ApplicationFaq}/>
         </Switch>
     )
 };

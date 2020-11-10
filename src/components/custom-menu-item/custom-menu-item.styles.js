@@ -37,15 +37,26 @@ const styledformenuitem = props => {
 const primaryactive = css`
     background-color: ${colorsPalette.primary} !important;
     color: white !important;
+    &:hover  {
+        background-color: ${colorsPalette.primary} !important;
+        color: white !important;
+    }
 `;
 
 const secondaryactive = css`
     background-color: #e4f4ff !important;
     color: ${colorsPalette.primary} !important;
+    &:hover {
+        background-color: #e4f4ff !important;
+        color: ${colorsPalette.primary} !important;
+    }
 `;
 
 const linkactive = css`
     color: ${colorsPalette.primary} !important;
+    &:hover {
+        color: ${colorsPalette.primary} !important; 
+    }
 `;
 
 const activemenuitem = props => {

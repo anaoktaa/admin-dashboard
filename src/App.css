@@ -198,6 +198,10 @@ a:hover {
     margin-bottom: 30px;
 }
 
+.mb-10 {
+    margin-bottom: 10px;
+}
+
 .mobile-mb-30 {
     margin-bottom: 0px;
 }
@@ -426,6 +430,10 @@ a:hover {
     color: #949292 !important;
 }
 
+.primary-color {
+    color: var(--primary-color) !important;
+}
+
 .margin-left-auto {
     margin-left: auto;
 }
@@ -499,6 +507,26 @@ a:hover {
     border-bottom: 1px solid #8080804f;
     width: 100%;
     margin: 5px 0;
+}
+
+/*Input type*/
+.success-input {
+    border: 1px solid var(--success-color) !important;
+}
+
+.success-label {
+    color: var(--success-color)  !important;
+}
+
+.error-label {
+    color: var(--danger-color) !important;
+}
+
+.success-input:focus {
+    border-color: #3ac47dc2;
+    outline: 0;
+    -webkit-box-shadow: 0 0 0 1px #3ac47dc2;
+    box-shadow: 0 0 0 1px #3ac47dc2;
 }
 
 @media screen and (max-width: 1024px) {

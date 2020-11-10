@@ -1,0 +1,122 @@
+.appliations-faq-container {
+    display: grid;
+    grid-template-columns: 1.5fr 3fr;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 100%;
+    position: relative;
+}
+
+.faq-menu-container {
+    padding: 30px 20px;
+    background-color: #ffffff8f;
+}
+
+.faq-content-container {
+    background-color: white;
+    padding: 30px 20px;
+    height: 600px;
+    overflow-y: auto;
+}   
+
+.faq-margin-menu-item {
+    margin: 3px 0 !important;
+}
+
+.tab-text-example-content {
+    display: block;
+    line-height: 2 !important;
+    padding-bottom: 10px !important;
+}
+
+.app-faq-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 986px) {
+
+
+    .app-faq-mobile {
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    .close-menu {
+        transition: all .6s;
+    }
+
+    .show-close-menu {
+        animation: allclosemenu .6s;
+    }
+
+    @keyframes allclosemenu {
+        0% {
+            opacity: 0;
+            transform: rotate(0deg) translateX(-100px);
+        }
+        50% {
+            transform: rotate(0deg) translateX(0px);
+        }
+        100% {
+            transform: rotate(180deg) translateX(0px);
+            opacity: 1;
+        }
+    }
+
+    .appliations-faq-container {
+        display: grid;
+        grid-template-columns: 1.5fr 3fr;
+        box-sizing: border-box;
+        border-radius: 5px;
+        position: relative;
+        overflow-x: scroll;
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        scrollbar-width: none;  /* Firefox */
+        transition: all .6s;
+        height: 800px;
+    }
+
+    .faq-menu-container {
+        position: relative;
+        transform: translateX(-280px);
+        width: 250px;
+        transition: all .12s;
+        padding: 20px;
+        background-color: #ffffff8f;
+    }
+
+    .faq-menu-container-show {
+        transform: translateX(0px) !important;
+        width: 250px !important;
+        padding: 20px;
+        background-color: #ffffff8f;
+        transition: all .12s;
+    }
+
+    .faq-content-container {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transition: all .6s;
+        background-color: white;
+        padding: 20px;
+        overflow: auto;
+        height: 800px;
+        border-radius: 5px;
+    }  
+
+    .faq-content-container-show {
+        position: relative !important;
+        transform: translateX(0px) !important;
+        width: 500px !important;
+        background-color: white;
+        padding: 20px;
+        overflow: auto;
+        height: 800px;
+
+    }
+
+}
