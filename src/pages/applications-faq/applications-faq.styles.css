@@ -7,12 +7,12 @@
     position: relative;
 }
 
-.faq-menu-container {
+.faq-menu-container,.faq-menu-container-show {
     padding: 30px 20px;
     background-color: #ffffff8f;
 }
 
-.faq-content-container {
+.faq-content-container,.faq-content-container-show {
     background-color: white;
     padding: 30px 20px;
     height: 600px;

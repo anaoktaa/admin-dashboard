@@ -128,17 +128,9 @@ const DrawerMenuData = [
                 description: 'Build chat layouts or any other kind of layout easily with ArchitectUI'         
             },
             {
-                id: 33,
-                name: 'Split Layout',
-                url: '/application/split-layout',
-                icon: <LayoutTwoTone />,
-                title: 'Split Layout',
-                description: 'Build chat layouts or any other kind of layout easily with ArchitectUI.'
-            },
-            {
                 id: 34,
                 name: 'FAQ Section',
-                url: '/dashboard/faq-section',
+                url: '/applications/faq-section',
                 icon: <QuestionCircleTwoTone />,
                 title: 'FAQ Section',
                 description: 'Dummy page layout example.'
@@ -191,46 +183,6 @@ const DrawerMenuData = [
                 title: 'Timelines',
                 description: 'Wide selection of cards with multiple styles, borders, actions and hover effects.'
             }
-        ]
-    },
-    {
-        id: 5,
-        name: 'Components',
-        icon: <BlockOutlined />,
-        url: 'components',
-        children: [
-            {
-                id: 51,
-                url: 'components/tabs',
-                name: 'Tabs',
-                icon: <BorderOutlined />,
-                title: 'Tabs',
-                description: 'Tabs are used to split content between multiple sections. Wide variety available. '
-            },
-            {
-                id: 52,
-                name: 'Accordions',
-                url: 'components/accordions',
-                icon: <FormatPainterOutlined />,
-                title: 'Accordions',
-                description: 'Accordions represent collapsable component with extended functionality.'         
-            },
-            {
-                id: 53,
-                name: 'Notifications',
-                url: 'components/notifications',
-                icon: <HourglassTwoTone />,
-                title: 'Notifications',
-                description: 'Notifications represent one of the best ways to give feedback for various users actions. '
-            },
-            {
-                id: 54,
-                name: 'Modals',
-                url: 'components/modals',
-                icon: <MobileTwoTone/>,
-                title: 'Modals',
-                description: 'Wide selection of modal dialogs styles and animations available.'
-            },
         ]
     },
     {
