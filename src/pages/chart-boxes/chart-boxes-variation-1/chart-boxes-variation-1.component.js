@@ -5,6 +5,9 @@ import CustomTabPanel from '../../../components/custom-tab-panel/custom-tab-pane
 
 import Basic from './basic/basic.component';
 import Colors from './colors/colors.component';
+import Grids from './grids/grids.component';
+import Alignments from './alignments/alignments.component';
+import ProgressCircle from './progress-circle/progress-circle.component';
 
 const ChartBoxesVariation1 = () => {
     return (
@@ -16,13 +19,13 @@ const ChartBoxesVariation1 = () => {
             <Colors/>
         </CustomTabPanel>
         <CustomTabPanel data-key='grids' title='Grids'>
-
+            <Grids/>
         </CustomTabPanel>
         <CustomTabPanel data-key='alignments' title='Alignments'>
-      
+            <Alignments/>
         </CustomTabPanel>
         <CustomTabPanel data-key='progress-circle' title='Progress Circle'>
-  
+            <ProgressCircle/>
         </CustomTabPanel>
       </CustomTabsWrapper>
     )

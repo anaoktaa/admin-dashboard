@@ -1,0 +1,14 @@
+.chart-boxes-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 30px;
+    margin-bottom: 30px;
+}
+
+@media screen and (max-width: 650px) {
+    .chart-boxes-grid-container {
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-bottom: 30px;
+    }
+}
