@@ -16,11 +16,12 @@ import ApplicationsMailbox from './pages/applications-mailbox/applications-mailb
 import ApplicationChat from './pages/applications-chat/applications-chat.component';
 import ApplicationFaq from  './pages/applications-faq/applications-faq.component';
 import ChartBoxesVariation1 from './pages/chart-boxes/chart-boxes-variation-1/chart-boxes-variation-1.component';
+import ChartBoxesVariation2 from './pages/chart-boxes/chart-boxes-variation-2/chart-boxes-variation-2.component';
 
 const Routing =  () => {
     return (
         <Switch>
-            <Route exact path='/' component={ChartBoxesVariation1} />
+            <Route exact path='/' component={ChartBoxesVariation2} />
             <Route exact path='/elements/buttons' component={ElementButtons}/>    
             <Route exact path='/elements/badges' component={ElementBadgesAndLabels}/>    
             <Route exact path='/elements/cards' component={ElementCards}/>  
@@ -29,6 +30,8 @@ const Routing =  () => {
             <Route exact path='/applications/mailbox' component={ApplicationsMailbox}/>
             <Route exact path='/applications/chat' component={ApplicationChat}/>
             <Route exact path='/applications/faq' component={ApplicationFaq}/>
+            <Route exact path='/chart-boxes/variation-1' component={ChartBoxesVariation1}/>
+            <Route exact path='/chart-boxes/variation-2' component={ChartBoxesVariation2}/>
         </Switch>
     )
 };

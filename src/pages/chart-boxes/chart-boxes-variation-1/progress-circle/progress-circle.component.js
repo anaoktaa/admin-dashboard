@@ -1,15 +1,10 @@
 import React from 'react';
 
-import { SettingOutlined, DesktopOutlined, RocketOutlined,
-    RobotOutlined, GiftOutlined, FireOutlined, HeartOutlined,
-    StarOutlined } from '@ant-design/icons';
-
-
 import ChartBoxVar1 from '../../../../components/chart-box-var-1/chart-box-var-1.component';
 
 const ProgressCircle = () => {
     return (
-        <div className='grid-3-gap-30'>
+        <div className='grid-3-gap-30 mb-30'>
             <ChartBoxVar1
                 variant='progress-circle'
                 progressBarValue={100}

@@ -91,8 +91,8 @@ export const ChartBoxVarIconContainer = styled.div`
 export const DefaultValueText = styled.p`
     margin: 3px 0 0;
     font-size: 38px;
-    color: ${({defaultValueColor}) => defaultValueColor? defaultValueColor: '#505050'} ;
-    font-weight: bold;
+    color: ${({defaultValueColor}) => colorsPalette[defaultValueColor]? colorsPalette[defaultValueColor]: defaultValueColor? defaultValueColor : '#505050'} ;
+    font-weight: ${({normal}) => normal? '400': 'bold'};
 `;
 
 export const DefaultValueDescriptionText = styled.p`

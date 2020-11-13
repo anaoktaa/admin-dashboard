@@ -5,7 +5,7 @@ import {
     BorderOutlined, UnorderedListOutlined, BugTwoTone, SafetyOutlined, 
     CreditCardTwoTone, BlockOutlined, FormatPainterOutlined, RocketOutlined,
     HourglassTwoTone, MobileTwoTone, ProfileTwoTone, UngroupOutlined, BookTwoTone,
-    StockOutlined, AppstoreOutlined, GiftOutlined, TableOutlined
+    StockOutlined, AppstoreOutlined, GiftOutlined, TableOutlined, LineChartOutlined
 } from '@ant-design/icons';
 
 const DrawerMenuData = [
@@ -130,7 +130,7 @@ const DrawerMenuData = [
             {
                 id: 34,
                 name: 'FAQ Section',
-                url: '/applications/faq-section',
+                url: '/applications/faq',
                 icon: <QuestionCircleTwoTone />,
                 title: 'FAQ Section',
                 description: 'Dummy page layout example.'
@@ -187,32 +187,32 @@ const DrawerMenuData = [
     },
     {
         id: 6,
-        name: 'Tables',
-        icon: <TableOutlined />,
-        url: 'tables',
+        name: 'Chart Boxes',
+        icon: <LineChartOutlined />,
+        url: 'chart-boxes',
         children: [
             {
                 id: 61,
-                url: 'tables/tabs',
-                name: 'Data Tables',
+                url: '/chart-boxes/variation-1',
+                name: 'Variation1',
                 icon: <ProfileTwoTone />,
-                title: 'Data Tables',
+                title: 'Variation 1',
                 description: 'Choose between regular React Bootstrap tables or advanced dynamic ones. '
             },
             {
                 id: 62,
-                name: 'Regular Tables',
-                url: 'tables/accordions',
+                name: 'Variation2',
+                url: '/chart-boxes/variation-2',
                 icon: <UngroupOutlined />,
-                title: 'Regular Tables',
+                title: 'Variation 2',
                 description: 'Tables are the backbone of almost all web applications.'         
             },
             {
                 id: 63,
-                name: 'Grid Tabless',
-                url: 'tables/notifications',
+                name: 'Variation3',
+                url: '/chart-boxes/variation-1',
                 icon: <BookTwoTone />,
-                title: 'Grid Tables',
+                title: 'Variation 3',
                 description: 'Basic example of a React table with sort, search and filter functionality.'
             },
         ]
