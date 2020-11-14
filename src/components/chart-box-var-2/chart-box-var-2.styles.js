@@ -27,7 +27,6 @@ export const MainTitleText = styled.p`
 export const DescriptionText = styled.p`
     color: ${({descriptionTextColor}) => colorsPalette[descriptionTextColor]? colorsPalette[descriptionTextColor] :descriptionTextColor?  descriptionTextColor : '#828282'};
     font-size: 14px;
-    text-align: right;
     margin-bottom: 2px;
 `;
 
@@ -42,7 +41,6 @@ export const DescriptionProgressText = styled.p`
     color: ${({descriptionProgressColor}) => colorsPalette[descriptionProgressColor]? colorsPalette[descriptionProgressColor] :descriptionProgressColor?  descriptionProgressColor : '#828282'};
     margin-bottom: 3px;
     font-size: 14px;
-    text-align: right;
     font-weight: 500;
     margin-bottom: 3px;
 `;

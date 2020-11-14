@@ -210,7 +210,7 @@ const DrawerMenuData = [
             {
                 id: 63,
                 name: 'Variation3',
-                url: '/chart-boxes/variation-1',
+                url: '/chart-boxes/variation-3',
                 icon: <BookTwoTone />,
                 title: 'Variation 3',
                 description: 'Basic example of a React table with sort, search and filter functionality.'
