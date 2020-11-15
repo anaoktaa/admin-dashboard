@@ -5,7 +5,8 @@ import {
     BorderOutlined, UnorderedListOutlined, BugTwoTone, SafetyOutlined, 
     CreditCardTwoTone, BlockOutlined, FormatPainterOutlined, RocketOutlined,
     HourglassTwoTone, MobileTwoTone, ProfileTwoTone, UngroupOutlined, BookTwoTone,
-    StockOutlined, AppstoreOutlined, GiftOutlined, TableOutlined, LineChartOutlined
+    StockOutlined, AppstoreOutlined, GiftOutlined, TableOutlined, LineChartOutlined,
+    IdcardOutlined
 } from '@ant-design/icons';
 
 const DrawerMenuData = [
@@ -13,7 +14,7 @@ const DrawerMenuData = [
         id: 1,
         name: 'Dashboard',
         icon: <RocketOutlined />,
-        url: 'dashboard',
+        url: '/dashboard',
         children: [
             {
                 id: 11,
@@ -53,7 +54,7 @@ const DrawerMenuData = [
         id: 2,
         name: 'Pages',
         icon: <LayoutOutlined />,
-        url: 'pages',
+        url: '/pages',
         children: [
             {
                 id: 21,
@@ -109,7 +110,7 @@ const DrawerMenuData = [
         id: 3,
         name: 'Application',
         icon: <AppstoreOutlined />,
-        url: 'application',
+        url: '/application',
         children: [
             {
                 id: 31,
@@ -141,7 +142,7 @@ const DrawerMenuData = [
         id: 4,
         name: 'Elements',
         icon: <GiftOutlined />,
-        url: 'elements',
+        url: '/elements',
         children: [
             {
                 id: 41,
@@ -186,10 +187,10 @@ const DrawerMenuData = [
         ]
     },
     {
-        id: 6,
+        id: 5,
         name: 'Chart Boxes',
         icon: <LineChartOutlined />,
-        url: 'chart-boxes',
+        url: '/chart-boxes',
         children: [
             {
                 id: 61,
@@ -217,6 +218,13 @@ const DrawerMenuData = [
             },
         ]
     },
+    {
+        id: 6,
+        name: 'Profile Boxes',
+        icon: <IdcardOutlined />,
+        url: '/profile-boxes',
+        children: []
+    }
 ];
 
 export default DrawerMenuData;

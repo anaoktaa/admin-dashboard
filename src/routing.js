@@ -18,10 +18,12 @@ import ApplicationFaq from  './pages/applications-faq/applications-faq.component
 import ChartBoxesVariation1 from './pages/chart-boxes/chart-boxes-variation-1/chart-boxes-variation-1.component';
 import ChartBoxesVariation2 from './pages/chart-boxes/chart-boxes-variation-2/chart-boxes-variation-2.component';
 import ChartBoxesVariation3 from './pages/chart-boxes/chart-boxes-variation-3/chart-boxes-variation-3.component';
+import ProfileBoxes from './pages/profile-boxes/profile-boxes.component';
+
 const Routing =  () => {
     return (
         <Switch>
-            <Route exact path='/' component={ChartBoxesVariation3} />
+            <Route exact path='/' component={ProfileBoxes} />
             <Route exact path='/elements/buttons' component={ElementButtons}/>    
             <Route exact path='/elements/badges' component={ElementBadgesAndLabels}/>    
             <Route exact path='/elements/cards' component={ElementCards}/>  
@@ -33,6 +35,7 @@ const Routing =  () => {
             <Route exact path='/chart-boxes/variation-1' component={ChartBoxesVariation1}/>
             <Route exact path='/chart-boxes/variation-2' component={ChartBoxesVariation2}/>
             <Route exact path='/chart-boxes/variation-3' component={ChartBoxesVariation3}/>
+            <Route exact path='/profile-boxes' component={ProfileBoxes} />
         </Switch>
     )
 };

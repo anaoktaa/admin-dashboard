@@ -117,6 +117,10 @@ a:hover {
     padding: 10px;
 }
 
+.block {
+    display: block !important;
+}
+
 .card-header-title {
     color: white;
     margin-bottom: 6px;
@@ -183,6 +187,10 @@ a:hover {
 .mrb-10 {
     margin-bottom: 10px;
     margin-right: 10px;
+}
+
+.mr-10  {
+    margin-right: 10px !important;
 }
 
 .mrb-20 {
@@ -376,6 +384,10 @@ a:hover {
     padding: 7px 0;
 }
 
+.nav-item:hover .hover-show-only {
+   opacity: 1;
+}
+
 .nav-item-header {
     text-transform: uppercase;
     font-size: 12px;
@@ -430,12 +442,20 @@ a:hover {
     color: #949292 !important;
 }
 
+.black-gray {
+    color: #656565 !important;
+}
+
 .primary-color {
     color: var(--primary-color) !important;
 }
 
 .margin-left-auto {
     margin-left: auto;
+}
+
+.margin-bottom-10 {
+    margin-bottom: 10px !important;
 }
 
 .flex-row {
@@ -527,6 +547,11 @@ a:hover {
     outline: 0;
     -webkit-box-shadow: 0 0 0 1px #3ac47dc2;
     box-shadow: 0 0 0 1px #3ac47dc2;
+}
+
+.hover-show-only {
+    opacity: 0;
+    transition: all .5s;
 }
 
 @media screen and (max-width: 1024px) {

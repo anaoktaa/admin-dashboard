@@ -1,0 +1,4 @@
+.fixed-height {
+    height: 130px;
+    overflow-y: auto;
+}

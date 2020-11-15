@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { ChartBoxGridContainer } from './chart-box-grid.styles';
 
-const ChartBoxGrid = ({ children, col, showBorder, ...props }) => {
+const ChartBoxGrid = ({ children, col, showBorder, showBoxShadow, ...props }) => {
     let bgColor = null;
     let gap = 0;
     let totalChild = 0;
@@ -29,10 +30,14 @@ const ChartBoxGrid = ({ children, col, showBorder, ...props }) => {
         return child;
     });
     return (
-        <ChartBoxGridContainer gap={gap} bgColor={bgColor} col={col} {...props}>
+        <ChartBoxGridContainer showBoxShadow={showBoxShadow} gap={gap} bgColor={bgColor} col={col} {...props}>
             {childrenWithProps}
         </ChartBoxGridContainer>
     )
 };
 
 export default ChartBoxGrid;
+
+ChartBoxGrid.defaultProps = {
+    showBoxShadow:  true,
+};

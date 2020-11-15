@@ -16,15 +16,25 @@ const DrawerMenu = ({ history }) => {
         <div>
             <Menu defaultSelectedKeys={['11']} mode="inline">
                 {
-                    DrawerMenuData.map((parentItem) => (
-                        <SubMenu key={parentItem.id} icon={parentItem.icon} title={parentItem.name}>
-                            {
-                                parentItem.children.map((childrenItem) => (
-                                    <Menu.Item onClick={() => handleRoute(childrenItem)} key={childrenItem.id}>{childrenItem.name}</Menu.Item>
-                                ))
-                            }
-                        </SubMenu>
-                    ))
+                    DrawerMenuData.map((parentItem) => {
+                        if (parentItem.children.length === 0) {
+                            return (
+                                <Menu.Item icon={parentItem.icon} onClick={() => handleRoute(parentItem)} key={parentItem.id}>{parentItem.name}</Menu.Item>
+                            )
+                        }
+                        else {
+                            return (
+                                <SubMenu key={parentItem.id} icon={parentItem.icon} title={parentItem.name}>
+                                    {
+                                        parentItem.children.map((childrenItem) => (
+                                            <Menu.Item onClick={() => handleRoute(childrenItem)} key={childrenItem.id}>{childrenItem.name}</Menu.Item>
+                                        ))
+                                    }
+                                </SubMenu>
+                            )
+                        }
+                       
+                    })
                 }
             </Menu>
         </div>

@@ -94,7 +94,7 @@ export const CardImgOverlay = styled.div`
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: ${({backgroundColorOverlay}) => backgroundColorOverlay? backgroundColorOverlay : '#252525bf'}
+    background-color: ${({backgroundColorOverlay}) => colorsPalette[backgroundColorOverlay]? colorsPalette[backgroundColorOverlay] : backgroundColorOverlay? backgroundColorOverlay : '#252525bf'}
 `;
 
 const containedCard = css`
