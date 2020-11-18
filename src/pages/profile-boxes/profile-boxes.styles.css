@@ -2,3 +2,20 @@
     height: 130px;
     overflow-y: auto;
 }
+
+.top-authors {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: gray;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.profile-boxes-card-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    column-gap: 10px;
+
+}

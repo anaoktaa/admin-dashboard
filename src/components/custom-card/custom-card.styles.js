@@ -39,7 +39,6 @@ export const CustomCard = styled.div`
     transition: all .2s;
     border-radius: ${({noneBorderRadius}) => noneBorderRadius? '0px' : '5px'};
     background-color: white;
-    overflow: hidden;
     ${styleForCard};
     ${hoverStyleCard};
     height: fit-content;
@@ -100,21 +99,21 @@ export const CardImgOverlay = styled.div`
 const containedCard = css`
     color: ${({contained}) => contained? '#fff': '#000'};
     ${CustomCardHeader} {
-        background-color: ${({contained}) => contained? colorsPalette[contained] : '#fff'};
+        background-color: ${({contained}) => colorsPalette[contained]? colorsPalette[contained] : contained? contained  : '#fff'};
         opacity: .92;
         border-bottom: none;
     }
     ${CustomCardFooter} {
-        background-color: ${({contained}) => contained? colorsPalette[contained] : '#fff'};
+        background-color: ${({contained}) => colorsPalette[contained]? colorsPalette[contained] : contained? contained  : '#fff'};
         opacity: .92;
         border-top: none;
     }
     ${CustomCardBody} {
-        background-color: ${({contained}) => contained? colorsPalette[contained] : '#fff'};
+        background-color: ${({contained}) => colorsPalette[contained]? colorsPalette[contained] : contained? contained  : '#fff'};
     }
     ${CustomCardTitleText} {
         color: ${({contained}) => contained? '#fff': '#495057'};
-        background-color: ${({contained}) => contained? colorsPalette[contained] : '#fff'};
+        background-color: ${({contained}) => colorsPalette[contained]? colorsPalette[contained] : contained? contained  : '#fff'};
     }
     ${CustomCardSubtitle} {
         color: ${({contained}) => contained? '#fff': '#a9a9a9'};

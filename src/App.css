@@ -101,6 +101,10 @@ a:hover {
     box-shadow: 0 0.46875rem 2.1875rem rgba(8,10,37,.03), 0 0.9375rem 1.40625rem rgba(8,10,37,.03), 0 0.25rem 0.53125rem rgba(8,10,37,.05), 0 0.125rem 0.1875rem rgba(8,10,37,.03);
 }
 
+.overflow-hidden {
+    overflow: hidden !important;
+}
+
 .card-header-container {
     width: 100%;
     box-sizing: border-box;
@@ -199,7 +203,11 @@ a:hover {
 }
 
 .mr-20 {
-    margin-right: 20px;
+    margin-right: 20px !important;
+}
+
+.mr-30 {
+    margin-right: 30px !important;
 }
 
 .mb-30 {
@@ -454,8 +462,20 @@ a:hover {
     margin-left: auto;
 }
 
+.margin-top-8 {
+    margin-top: 8px !important;
+}
+
+.no-mt {
+    margin-bottom: 0px !important;
+}
+
 .margin-bottom-10 {
     margin-bottom: 10px !important;
+}
+
+.justify-items {
+    justify-items: center !important;
 }
 
 .flex-row {

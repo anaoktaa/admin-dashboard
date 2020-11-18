@@ -30,6 +30,12 @@ const borderStyle = props => {
     }
 }
 
+const borderRadiusStyle = props => {
+    if (props.borderRadius) {
+        return borderRadiusCss;
+    }
+}
+
 
 export const ChartBoxVar3Container = styled.div`
     background: ${({bgColor}) => colorsPalette[bgColor]? colorsPalette[bgColor] : bgColor ?  bgColor : 'white' }; 
@@ -37,7 +43,7 @@ export const ChartBoxVar3Container = styled.div`
     border-radius: ${({borderRadius}) => borderRadius? '5px' : '0px'};
     padding: 10px;
     height: fit-content;
-    ${borderRadiusCss};
+    ${borderRadiusStyle};
     ${borderStyle};
     display: flex;
     flex-direction: column;

@@ -62,6 +62,6 @@ ChartBoxVar3.defaultProps = {
     boxShadow: true,
     borderRadius: true,
     mainTitleColor: '#737373',
-    descriptionTextColor: '#949494'
+    descriptionTextColor: '#949494',
     
 };
