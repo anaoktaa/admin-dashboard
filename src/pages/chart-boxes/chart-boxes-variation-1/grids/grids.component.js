@@ -3,8 +3,8 @@ import { SettingOutlined, DesktopOutlined, RocketOutlined,
          RobotOutlined, GiftOutlined, FireOutlined, HeartOutlined,
          StarOutlined } from '@ant-design/icons';
 
-import ChartBoxVar1 from '../../../../components/chart-box-var-1/chart-box-var-1.component';
-import ChartBoxGridContainer from  '../../../../components/chart-box-grid/chart-box-grid.component';
+import ChartBoxVar1 from 'Components/chart-box-var-1/chart-box-var-1.component';
+import ChartBoxGridContainer from  'Components/chart-box-grid/chart-box-grid.component';
 
 import './grids.styles.css';
 

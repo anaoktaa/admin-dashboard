@@ -5,9 +5,9 @@ import { LaptopOutlined, PictureOutlined, ShoppingOutlined,
          BulbOutlined, RocketOutlined, TrophyOutlined,  CameraOutlined,
          ThunderboltOutlined  } from '@ant-design/icons';
 
-import { CustomCard, CustomCardBody, CustomCardTitleText } from '../../../components/custom-card/custom-card.styles';
-import CustomBadges from '../../../components/custom-badges/custom-badges.component';
-import CustomButton from '../../../components/custom-button/custom-button.component';
+import { CustomCard, CustomCardBody, CustomCardTitleText } from 'Components/custom-card/custom-card.styles';
+import CustomBadges from 'Components/custom-badges/custom-badges.component';
+import CustomButton from 'Components/custom-button/custom-button.component';
 
 const BadgesContainer = () => {
     return (

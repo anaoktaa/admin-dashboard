@@ -30,6 +30,42 @@ html {
     --padding-sm: 10px;
 }
 
+.primary {
+    color: var(--primary-color) !important;
+}
+
+.secondary {
+    color: var(--secondy-color) !important;
+}
+
+.success {
+    color: var(--success-color) !important;
+}
+
+.info {
+    color: var(--info-color) !important;
+}
+
+.warning {
+    color: var(--warning-color) !important;
+}
+
+.danger {
+    color: var(--danger-color) !important;
+}
+
+.alt {
+    color: var(--alt-color) !important;
+}
+
+.dark {
+    color: var(--dark-color) !important;
+}
+
+.light {
+    color: var(--light-color) !important;
+}
+
 .flex-space-center  {
     display: flex;
     align-items: center;

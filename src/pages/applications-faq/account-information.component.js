@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Input   } from 'antd';
 
-import CustomButton from '../../components/custom-button/custom-button.component';
+import CustomButton from 'Components/custom-button/custom-button.component';
  
 const AccountInformation = () => {
     return (

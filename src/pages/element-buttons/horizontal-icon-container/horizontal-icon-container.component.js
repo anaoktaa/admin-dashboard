@@ -3,8 +3,8 @@ import { CrownOutlined, AlertOutlined, CameraOutlined, BugOutlined,
          BulbOutlined, DatabaseOutlined, MessageOutlined, RocketOutlined,
          ThunderboltOutlined, TrophyOutlined } from '@ant-design/icons';
 
-import CustomButton from '../../../components/custom-button/custom-button.component';
-import { CustomCard, CustomCardBody, CustomCardTitleText } from '../../../components/custom-card/custom-card.styles';
+import CustomButton from 'Components/custom-button/custom-button.component';
+import { CustomCard, CustomCardBody, CustomCardTitleText } from 'Components/custom-card/custom-card.styles';
 
 const HorizontalIconContainer = () => {
     return (

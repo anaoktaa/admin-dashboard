@@ -2,10 +2,10 @@ import React from 'react';
 import { Typography } from 'antd';
 import { MessageOutlined, SettingOutlined, HourglassOutlined, WalletOutlined, PushpinOutlined } from '@ant-design/icons';
 
-import { CustomCard, CustomCardBody, CustomCardTitleText } from  '../../../components/custom-card/custom-card.styles';
-import { CustomCardHeaderWithImage } from '../../../components/custom-card/custom-card-header-with-image.component';
-import CustomLabelBadge from '../../../components/custom-label-badge/custom-label-badge.component';
-import CustomButton from '../../../components/custom-button/custom-button.component';
+import { CustomCard, CustomCardBody, CustomCardTitleText } from  'Components/custom-card/custom-card.styles';
+import { CustomCardHeaderWithImage } from 'Components/custom-card/custom-card-header-with-image.component';
+import CustomLabelBadge from 'Components/custom-label-badge/custom-label-badge.component';
+import CustomButton from 'Components/custom-button/custom-button.component';
 
 const { Title } = Typography;
 const { Text, Link } = Typography;

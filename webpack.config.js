@@ -3,6 +3,14 @@ const path = require('path');
 
 module.exports = {
     entry: './src/index.js',
+    resolve: {
+        alias: {
+          Assets: path.resolve(__dirname, 'src/assets/'),
+          Components: path.resolve(__dirname, 'src/components/'),
+          Pages: path.resolve(__dirname, 'src/pages/'),
+          Redux_Component: path.resolve(__dirname, 'src/redux/'),
+        }
+    },
     output: {
       path: path.resolve(__dirname, 'dist'),
       filename: 'main.js',

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { CustomCard, CustomCardBody, CustomCardTitleText } from '../../../components/custom-card/custom-card.styles';
+import { CustomCard, CustomCardBody, CustomCardTitleText } from 'Components/custom-card/custom-card.styles';
 
 const ColorStatesContainer = () => {
 

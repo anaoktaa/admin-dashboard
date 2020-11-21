@@ -1,7 +1,7 @@
 import React from 'react';
 
-import ChartBoxVar3 from '../../../components/chart-box-var-3/chart-box-var-3.component';
-import ChartBoxGridContainer from '../../../components/chart-box-grid/chart-box-grid.component';
+import ChartBoxVar3 from 'Components/chart-box-var-3/chart-box-var-3.component';
+import ChartBoxGridContainer from 'Components/chart-box-grid/chart-box-grid.component';
 
 const ChartBoxesVariation3 = () => {
     return (

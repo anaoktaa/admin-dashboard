@@ -4,11 +4,11 @@ import { TagOutlined, CalendarOutlined, MenuOutlined, SearchOutlined,
         MessageOutlined, WalletOutlined, SettingOutlined, PushpinOutlined,
         HourglassOutlined,  } from '@ant-design/icons';
 
-import CustomButton from '../../components/custom-button/custom-button.component';
-import CustomLabelBadge from '../../components/custom-label-badge/custom-label-badge.component';
-import CustomBadges from '../../components/custom-badges/custom-badges.component';
-import CustomMenu from '../../components/custom-menu/custom-menu.component';
-import CustomMenuItem from '../../components/custom-menu-item/custom-menu-item.component';
+import CustomButton from 'Components/custom-button/custom-button.component';
+import CustomLabelBadge from 'Components/custom-label-badge/custom-label-badge.component';
+import CustomBadges from 'Components/custom-badges/custom-badges.component';
+import CustomMenu from 'Components/custom-menu/custom-menu.component';
+import CustomMenuItem from 'Components/custom-menu-item/custom-menu-item.component';
 
 import { MailboxData } from './application-mailbox.data';
 import './applications-mailbox.styles.css';

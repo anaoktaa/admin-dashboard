@@ -1,8 +1,8 @@
 import React from 'react';
 import { Avatar } from 'antd';
 
-import { CustomCard, CustomCardBody, CustomCardTitleText } from '../../../components/custom-card/custom-card.styles';
-import CustomBadges from '../../../components/custom-badges/custom-badges.component';
+import { CustomCard, CustomCardBody, CustomCardTitleText } from 'Components/custom-card/custom-card.styles';
+import CustomBadges from 'Components/custom-badges/custom-badges.component';
 
 const AvatarsContainer = () => {
     return (

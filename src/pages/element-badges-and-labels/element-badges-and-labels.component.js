@@ -1,7 +1,7 @@
 import React from 'react';
 
-import CustomTabsWrapper from '../../components/custom-tabs-wrapper/custom-tabs-wrapper.component';
-import CustomTabPanel from '../../components/custom-tab-panel/custom-tab-panel.component';
+import CustomTabsWrapper from 'Components/custom-tabs-wrapper/custom-tabs-wrapper.component';
+import CustomTabPanel from 'Components/custom-tab-panel/custom-tab-panel.component';
 
 import BadgesContainer from './badges-container/badges-container.component';
 import LabelsContainer from './labels-container/labels-container.component';

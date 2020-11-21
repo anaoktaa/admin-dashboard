@@ -2,11 +2,10 @@ import React from 'react';
 import { Typography } from 'antd';
 import { IdcardOutlined, SettingOutlined, CloudOutlined } from '@ant-design/icons';
 
-import CustomTimeline from '../../../components/custom-timeline/custom-timeline.component';
-import CustomTimelineItem from  '../../../components/custom-timeline-item/custom-timeline-item.component';
-import CustomLabelBadge from '../../../components/custom-label-badge/custom-label-badge.component';
+import CustomTimeline from 'Components/custom-timeline/custom-timeline.component';
+import CustomTimelineItem from  'Components/custom-timeline-item/custom-timeline-item.component';
 
-import { CustomCard, CustomCardBody, CustomCardTitleText } from  '../../../components/custom-card/custom-card.styles';
+import { CustomCard, CustomCardBody, CustomCardTitleText } from  'Components/custom-card/custom-card.styles';
 
 const { Text } = Typography;
 

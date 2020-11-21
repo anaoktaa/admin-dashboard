@@ -1,8 +1,8 @@
 import React from 'react';
 import { Typography } from 'antd';
 
-import { CustomCard, CustomCardBody, CustomCardTitleText, CustomCardSubtitle } from '../../../components/custom-card/custom-card.styles';
-import CustomButton from '../../../components/custom-button/custom-button.component';
+import { CustomCard, CustomCardBody, CustomCardTitleText, CustomCardSubtitle } from 'Components/custom-card/custom-card.styles';
+import CustomButton from 'Components/custom-button/custom-button.component';
 
 const { Link } = Typography;
 

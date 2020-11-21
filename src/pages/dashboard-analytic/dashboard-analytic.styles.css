@@ -17,7 +17,7 @@
     position: relative !important;
 }
 
-.da-absolute-chart-title {
+.da-absolute-chart-title-container {
     position: absolute;
     font-size: 20px;
     color: black;

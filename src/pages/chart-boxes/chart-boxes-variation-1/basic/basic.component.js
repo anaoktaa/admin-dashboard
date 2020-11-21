@@ -4,7 +4,7 @@ import { SettingOutlined, DesktopOutlined, RocketOutlined,
          StarOutlined } from '@ant-design/icons';
 
          
-import ChartBoxVar1 from '../../../../components/chart-box-var-1/chart-box-var-1.component';
+import ChartBoxVar1 from 'Components/chart-box-var-1/chart-box-var-1.component';
 
 const Basic = () => {
     return (

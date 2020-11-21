@@ -1,7 +1,7 @@
 import React from 'react';
 
-import CustomButton from '../../../components/custom-button/custom-button.component';
-import { CustomCard, CustomCardBody, CustomCardTitleText } from '../../../components/custom-card/custom-card.styles';
+import CustomButton from 'Components/custom-button/custom-button.component';
+import { CustomCard, CustomCardBody, CustomCardTitleText } from 'Components/custom-card/custom-card.styles';
 
 const ShadowButtonContainer = () => {
     return (

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import CustomTabsWrapper from '../../components/custom-tabs-wrapper/custom-tabs-wrapper.component';
-import CustomTabPanel from '../../components/custom-tab-panel/custom-tab-panel.component';
+import CustomTabsWrapper from 'Components/custom-tabs-wrapper/custom-tabs-wrapper.component';
+import CustomTabPanel from 'Components/custom-tab-panel/custom-tab-panel.component';
 
 import SolidButtonContainer from './solid-buttons-container/solid-button-container.component';
 import OutlinedButtonContainer from './outlined-button-container/outlined-button-container.component';

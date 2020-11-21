@@ -4,12 +4,12 @@ import {Line} from 'react-chartjs-2';
 import { GlobalOutlined, CustomerServiceOutlined, DownOutlined, CrownOutlined, MacCommandOutlined,
          LeftOutlined, RightOutlined } from '@ant-design/icons';
 
-import { CustomCard, CustomCardFooter, CustomCardBody, CustomCardHeader, CustomCardTitleText } from '../../../components/custom-card/custom-card.styles';
+import { CustomCard, CustomCardFooter, CustomCardBody, CustomCardHeader, CustomCardTitleText } from 'Components/custom-card/custom-card.styles';
 import { DefaultValueDescriptionText, DefaultValueText,
-         ProgressValueTextContainer, ChartBoxVarIconContainer } from '../../../components/chart-box-var-1/chart-box-var-1.styles';
-import CustomButton from '../../../components/custom-button/custom-button.component';
-import CustomTimeline from '../../../components/custom-timeline/custom-timeline.component';
-import CustomTimelineItem from  '../../../components/custom-timeline-item/custom-timeline-item.component';
+         ProgressValueTextContainer, ChartBoxVarIconContainer } from 'Components/chart-box-var-1/chart-box-var-1.styles';
+import CustomButton from 'Components/custom-button/custom-button.component';
+import CustomTimeline from 'Components/custom-timeline/custom-timeline.component';
+import CustomTimelineItem from  'Components/custom-timeline-item/custom-timeline-item.component';
 
 const { Text } = Typography;
 
@@ -24,6 +24,7 @@ const DashboardAnalyticVariation1 = () => {
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
+        dots: false
     })
 
     const gotoNext = () => {
@@ -34,7 +35,7 @@ const DashboardAnalyticVariation1 = () => {
         customeSlider.current.innerSlider.slickPrev()
     }
 
-    const data= {
+    const data1= {
         labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
         datasets: [{
             label: 'New Accounts',
@@ -45,7 +46,20 @@ const DashboardAnalyticVariation1 = () => {
         }]
     };
 
+    const data2= {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        datasets: [{
+            label: 'New Accounts',
+            data: [180, 202, 312, 430, 111, 165, 320, 290, 563, 640, 721, 821],
+            backgroundColor: '#f6e6eb',
+            borderColor: '#d92550',
+            borderWidth: 6,  
+        }]
+    };
+
     const options = {
+        elements: { 
+            point: { radius: 0 } }, //point
             legend: {
                 display: false
             },
@@ -54,9 +68,13 @@ const DashboardAnalyticVariation1 = () => {
             scales: {
             xAxes: [{
                 gridLines: {
-                display: false,
-                drawBorder: false //<- set this
+                    display: false,
+                    drawBorder: false 
                 },
+                ticks: {
+                    display: false
+              },
+
                 
             }],
             yAxes :[
@@ -163,25 +181,28 @@ const DashboardAnalyticVariation1 = () => {
                             </button>
                             <div style={{width: '90%'}}>
                                 <Carousel {...sliderSettings} ref={customeSlider}>
-                                    <div>
+                                    <div className='relative'>
+                                        <div className='da-absolute-chart-title-container'>
+                                            NEW ACCOUNTS SINCE 2019
+                                        </div>
                                         <Line 
-                                            data={data}
+                                            data={data1}
                                             width={100}
                                             height={300}
                                             options={options}
                                         />
                                     </div>
-                                    <div>
+                                    <div className='relative'>
                                         <Line 
-                                            data={data}
+                                            data={data2}
                                             width={100}
                                             height={300}
                                             options={options}
                                         />
                                     </div>
-                                    <div>
+                                    <div className='relative'>
                                         <Line 
-                                            data={data}
+                                            data={data1}
                                             width={100}
                                             height={300}
                                             options={options}

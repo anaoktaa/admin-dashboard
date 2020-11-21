@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { MenuOutlined, CloseOutlined } from '@ant-design/icons';
 
-import { CustomMenuItemHeader } from '../../components/custom-menu-item/custom-menu-item.styles';
-import CustomMenu from '../../components/custom-menu/custom-menu.component';
-import CustomMenuItem from '../../components/custom-menu-item/custom-menu-item.component';
+import { CustomMenuItemHeader } from 'Components/custom-menu-item/custom-menu-item.styles';
+import CustomMenu from 'Components/custom-menu/custom-menu.component';
+import CustomMenuItem from 'Components/custom-menu-item/custom-menu-item.component';
 import TabExample1 from './tab-example-1.component';
 import TabExample2 from './tab-example-2.component';
 import TabExample3 from './tab-example-3.component';

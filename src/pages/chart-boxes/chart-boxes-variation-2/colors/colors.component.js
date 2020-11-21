@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ChartBoxVar2 from '../../../../components/chart-box-var-2/chart-box-var-2.component';
+import ChartBoxVar2 from 'Components/chart-box-var-2/chart-box-var-2.component';
 
 const Colors = () => {
     return (

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Typography } from 'antd';
 
-import { CustomCard, CustomCardHeader, CustomCardBody, CustomCardFooter } from  '../../../components/custom-card/custom-card.styles';
-import { CustomCardHeaderWithImage } from '../../../components/custom-card/custom-card-header-with-image.component';
-import CustomButton from '../../../components/custom-button/custom-button.component';
+import { CustomCard, CustomCardHeader, CustomCardBody, CustomCardFooter } from  'Components/custom-card/custom-card.styles';
+import { CustomCardHeaderWithImage } from 'Components/custom-card/custom-card-header-with-image.component';
+import CustomButton from 'Components/custom-button/custom-button.component';
 
 const { Title } = Typography;
 

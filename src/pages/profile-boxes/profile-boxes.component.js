@@ -3,11 +3,11 @@ import { Avatar, Typography } from 'antd';
 import { RocketOutlined, ThunderboltOutlined, FileTextOutlined, DatabaseOutlined, MessageOutlined,
         CrownOutlined, AlertOutlined,TrophyOutlined } from '@ant-design/icons';
 
-import { CustomCard, CustomCardBody, CustomCardFooter } from  '../../components/custom-card/custom-card.styles';
-import { CustomCardHeaderWithImage } from '../../components/custom-card/custom-card-header-with-image.component';
-import CustomButton from '../../components/custom-button/custom-button.component';
-import ChartBoxVar3 from '../../components/chart-box-var-3/chart-box-var-3.component';
-import ChartBoxGridContainer from '../../components/chart-box-grid/chart-box-grid.component';
+import { CustomCard, CustomCardBody, CustomCardFooter } from  'Components/custom-card/custom-card.styles';
+import { CustomCardHeaderWithImage } from 'Components/custom-card/custom-card-header-with-image.component';
+import CustomButton from 'Components/custom-button/custom-button.component';
+import ChartBoxVar3 from 'Components/chart-box-var-3/chart-box-var-3.component';
+import ChartBoxGridContainer from 'Components/chart-box-grid/chart-box-grid.component';
 
 import './profile-boxes.styles.css';
 

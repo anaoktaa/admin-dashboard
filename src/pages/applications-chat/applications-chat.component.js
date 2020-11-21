@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import { Avatar, Typography,  Input  } from 'antd';
 import { SearchOutlined, SettingOutlined, MenuOutlined, CloseOutlined } from '@ant-design/icons';
 
-import CustomButton from '../../components/custom-button/custom-button.component';
-import CustomBadges from '../../components/custom-badges/custom-badges.component';
-import CustomMenu from '../../components/custom-menu/custom-menu.component';
-import CustomLabelBadges from '../../components/custom-label-badge/custom-label-badge.component';
-import CustomMenuItem from '../../components/custom-menu-item/custom-menu-item.component';
-import ChatBallon from '../../components/chat-ballon/chat-ballon.component';
+import CustomButton from 'Components/custom-button/custom-button.component';
+import CustomBadges from 'Components/custom-badges/custom-badges.component';
+import CustomMenu from 'Components/custom-menu/custom-menu.component';
+import CustomLabelBadges from 'Components/custom-label-badge/custom-label-badge.component';
+import CustomMenuItem from 'Components/custom-menu-item/custom-menu-item.component';
+import ChatBallon from 'Components/chat-ballon/chat-ballon.component';
 import { CustomMenuItemHeader, CustomMenuDivider } from '../../components/custom-menu-item/custom-menu-item.styles';
 
 import { MailboxData } from '../applications-mailbox/application-mailbox.data';
