@@ -2,9 +2,14 @@
     width: 100%;
 }
 
-.dashboard-analytic-timeline-container {
+.height-300 {
     height: 300px;
-    overflow-y: auto;
+    overflow: hidden;
+}
+
+.dashboard-analytic-timeline-container {
+    height: 300px !important;
+    overflow-y: auto !important;
 }
 
 .technical-support-container {
@@ -110,6 +115,20 @@
 .da-tasklist:hover .da-task-list-hidden {
     visibility: visible;
     opacity: 1;
+}
+
+.da-relative-container {
+    position: absolute;
+    z-index: 19000;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.da-box-chart-container-fixed {
+    width: 100%;
+    overflow: hidden;
 }
 
 @media screen and (max-width: 650px) {

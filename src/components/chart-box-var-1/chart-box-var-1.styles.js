@@ -73,6 +73,7 @@ export const ChartBoxVar1Container = styled.div`
     ${borderStyled};
     ${borderRadiusCss};
     position: relative;
+    width: 100%;
 `;   
 
 export const ChartBoxVarIconContainer = styled.div`
@@ -96,7 +97,7 @@ export const DefaultValueText = styled.p`
 `;
 
 export const DefaultValueDescriptionText = styled.p`
-    color: ${({defaultValueDescColor}) => defaultValueDescColor? defaultValueDescColor : '#929292'};
+    color: ${({defaultValueDescColor}) => colorsPalette[defaultValueDescColor]? colorsPalette[defaultValueDescColor] : colorsPalette ? colorsPalette : '#929292'};
     margin-bottom: 6px;
 `;
 

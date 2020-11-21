@@ -5,3 +5,35 @@
     right: 0;
     border-radius: 0px;
 }
+
+.chart-box-graph-container {
+    padding: 0;
+    margin-bottom: -10px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.chart-box-graph-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    background-color: #ffffffb0;
+    
+}
+
+.chart-box-detail-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1900;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

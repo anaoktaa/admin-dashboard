@@ -4,7 +4,6 @@ import { colorsPalette } from '../custom-color/custom-color';
 export const ChatContainer = styled.div`
     overflow-Y : auto;
     overflow-X: hidden;
-    height: 600px;
 `
 
 export const ChatBallonContainer = styled.div`

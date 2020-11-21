@@ -34,6 +34,28 @@ export const Data3= {
     }]
 };
 
+export const Data4= {
+  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  datasets: [{
+      label: 'Helpdesk Tickets',
+      data: [120, 122, 128, 130, 126, 125, 120, 123, 120, 125, 133, 127, 120],
+      backgroundColor: '#f1dae1',
+      borderColor: '#d92550',
+      borderWidth: 6,  
+  }]
+};
+
+export const Data5= {
+    datasets: [{
+      data: [0.3, 0.4, .5, 0.35, 0.28, 0.3, .43, 0.51, 0.39, 0.45, .41, 0.45],
+      borderWidth: 0,
+      backgroundColor: '#6269d6',
+    }],
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+};
+
+
+
 export const Options = {
     elements: { 
         point: { radius: 0 } }, //point
@@ -50,9 +72,7 @@ export const Options = {
             },
             ticks: {
                 display: false
-          },
-
-            
+            },            
         }],
         yAxes :[
         {
@@ -66,6 +86,73 @@ export const Options = {
         ],
     }
 }
+
+export const Options2 = {
+      elements: { 
+      point: { radius: 4 } }, //point
+      legend: {
+          display: false
+      },
+      maintainAspectRatio: false,
+      label: false,
+      scales: {
+      xAxes: [{
+          gridLines: {
+              display: false,
+              drawBorder: false 
+          },
+          ticks: {
+              display: false
+          },
+          stacked: false
+      }],
+      yAxes :[
+      {
+          gridLines: {
+          display: false
+          },
+          ticks: {
+              display: false
+          },
+      },                                           
+      ],
+  }
+}
+
+export const Options3 = {
+    legend: { display: false },
+    animation: {
+        animateScale: true
+    },
+    maintainAspectRatio: false,
+    scales: {
+        xAxes: [{
+            barPercentage: 1,
+            categoryPercentage: 1,
+            gridLines: {
+              display: false,
+              drawBorder: false 
+            },
+            ticks: {
+                display: false
+            },
+        }],
+        yAxes: [{
+            barPercentage: 1,
+            categoryPercentage: 1,
+            gridLines: {
+              display: false,
+              drawBorder: false 
+            },
+            ticks: {
+                display: false
+            },
+        }]
+    },
+    tooltips: {
+
+    }
+  };
 
 export const Columns = [
     {

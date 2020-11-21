@@ -6,14 +6,14 @@ import { DownOutlined, UpOutlined, ArrowLeftOutlined, ArrowRightOutlined } from 
 import { ChartBoxVarIconContainer, DefaultValueText,
          DefaultValueDescriptionText, ProgressValueTextContainer, ChartBoxVar1Container,
          ChartBoxVar1GridAlignment, ChartBox1Basic } from './chart-box-var-1.styles';
-
 import { colorsPalette } from '../custom-color/custom-color';
 import './chart-box-var-1.styles.css';
 
 const ChartBoxVar1 = ({ bgColor, zoom, variant, icon, iconColor, iconBgColor, iconContainerShape, defaultValue, defaultValueDescription,
                         progressValue, progressValueColor, progressValueArrow, defaultValueColor,
                         defaultValueDescColor, border, boxShadow, borderRadius, col,
-                        progressBarValue, progressBarColor, trailColor,...props }) => {
+                        progressBarValue, progressBarColor, trailColor, children,
+                        chart, ...props }) => {
     
     let ArrowIcon = null;  
     if (progressValueArrow === 'up') {
@@ -28,34 +28,68 @@ const ChartBoxVar1 = ({ bgColor, zoom, variant, icon, iconColor, iconBgColor, ic
     else if (progressValueArrow === 'right') {
         ArrowIcon = <ArrowRightOutlined />;
     }                
+    
+    const ChartBoxBasic1Const =  () => (
+        <ChartBox1Basic >
+            {
+                icon?
+                <ChartBoxVarIconContainer iconContainerShape={iconContainerShape} iconColor={iconColor} iconBgColor={iconBgColor}>
+                    {icon}
+                </ChartBoxVarIconContainer>
+                :
+                null
+            }   
+            <DefaultValueText defaultValueColor={defaultValueColor}>
+                {defaultValue}
+            </DefaultValueText>
+            <DefaultValueDescriptionText defaultValueDescColor={defaultValueDescColor}>
+                {defaultValueDescription}
+            </DefaultValueDescriptionText >
+            {
+                children?
+                <div>
+                    {children}
+                </div>
+                :
+                <ProgressValueTextContainer progressValueColor={progressValueColor}>
+                    <span>{ArrowIcon}</span>
+                    <span>{progressValue}</span>
+                </ProgressValueTextContainer>
+            }
+        </ChartBox1Basic>   
+    );
+
     if (variant === 'basic') {
         return (
             <ChartBoxVar1Container row={props.row} col={col} border={border} boxShadow={boxShadow} borderRadius={borderRadius} bgColor={bgColor} zoom={zoom}>
-                <ChartBox1Basic >
-                    {
-                        icon?
-                        <ChartBoxVarIconContainer iconContainerShape={iconContainerShape} iconColor={iconColor} iconBgColor={iconBgColor}>
-                            {icon}
-                        </ChartBoxVarIconContainer>
-                        :
-                        null
-                    }   
-                    <DefaultValueText defaultValueColor={defaultValueColor}>
-                        {defaultValue}
-                    </DefaultValueText>
-                    <DefaultValueDescriptionText defaultValueDescColor={defaultValueDescColor}>
-                        {defaultValueDescription}
-                    </DefaultValueDescriptionText >
-                    <ProgressValueTextContainer progressValueColor={progressValueColor}>
-                        <span>{ArrowIcon}</span>
-                        <span>{progressValue}</span>
-                    </ProgressValueTextContainer>
-                </ChartBox1Basic>
                 {
-                    progressBarValue?
-                        <Progress strokeColor={`${colorsPalette[progressBarColor] ? colorsPalette[progressBarColor] : progressBarColor}`} className='progression-bar-style' percent={progressBarValue} status="active" showInfo={false} />
-                        :
-                        null
+                    chart?
+                    <div className='overflow-hidden'>
+                        <div className='chart-box-graph-container'>
+                            {chart}
+                            <div className='chart-box-graph-overlay'/>
+                        </div>
+                        <div className='chart-box-detail-container'>
+                            <ChartBoxBasic1Const/> 
+                            {
+                                progressBarValue?
+                                    <Progress strokeColor={`${colorsPalette[progressBarColor] ? colorsPalette[progressBarColor] : progressBarColor}`} className='progression-bar-style' percent={progressBarValue} status="active" showInfo={false} />
+                                    :
+                                    null
+                            }
+                        </div>
+                    </div>
+                    :
+                    <div>
+                        <ChartBoxBasic1Const/>
+                        {
+                            progressBarValue?
+                                <Progress strokeColor={`${colorsPalette[progressBarColor] ? colorsPalette[progressBarColor] : progressBarColor}`} className='progression-bar-style' percent={progressBarValue} status="active" showInfo={false} />
+                                :
+                                null
+                        }
+                    </div>
+
                 }
             </ChartBoxVar1Container>
            
@@ -63,7 +97,7 @@ const ChartBoxVar1 = ({ bgColor, zoom, variant, icon, iconColor, iconBgColor, ic
     }
     else if (variant === 'alignment') {
         return (
-            <ChartBoxVar1Container  row={props.row} col={col} border={border} boxShadow={boxShadow} borderRadius={borderRadius} bgColor={bgColor} zoom={zoom}>
+            <ChartBoxVar1Container {...props} row={props.row} col={col} border={border} boxShadow={boxShadow} borderRadius={borderRadius} bgColor={bgColor} zoom={zoom}>
                     <ChartBoxVar1GridAlignment icon={icon} >
                     {
                         icon?
@@ -80,10 +114,16 @@ const ChartBoxVar1 = ({ bgColor, zoom, variant, icon, iconColor, iconBgColor, ic
                         <DefaultValueText style={{lineHeight: 1}} defaultValueColor={defaultValueColor}>
                             {defaultValue}
                         </DefaultValueText>
-                        <ProgressValueTextContainer justifyContent='flex-start' progressValueColor={progressValueColor}>
-                            <span>{ArrowIcon}</span>
-                            <span>{progressValue}</span>
-                        </ProgressValueTextContainer>
+                        {
+                            children?
+                            <div>{children}</div>
+                            :
+                            <ProgressValueTextContainer justifyContent='flex-start' progressValueColor={progressValueColor}>
+                                <span>{ArrowIcon}</span>
+                                <span>{progressValue}</span>
+                            </ProgressValueTextContainer>
+                        }
+                       
                     </div>
                 </ChartBoxVar1GridAlignment>
                 {

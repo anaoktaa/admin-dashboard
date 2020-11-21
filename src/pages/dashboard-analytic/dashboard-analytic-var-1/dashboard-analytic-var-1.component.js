@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Typography, Carousel, Table, Input, Checkbox  } from 'antd';
-import {Line} from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 import { GlobalOutlined, CustomerServiceOutlined, DownOutlined, CrownOutlined, MacCommandOutlined,
          LeftOutlined, RightOutlined, UpOutlined, CheckOutlined, DeleteOutlined } from '@ant-design/icons';
 
@@ -429,6 +429,7 @@ const DashboardAnalyticVariation1 = () => {
                     </CustomCardHeader>
                     <CustomCardBody>
                         <ChatBallon
+                            className='dashboard-analytic-timeline-container'
                             chatlist={ChatList2}
                         />
                         <div className='text-input-chat-container'>

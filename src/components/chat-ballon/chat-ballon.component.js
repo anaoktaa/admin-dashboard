@@ -7,7 +7,7 @@ import { ChatBallonContainer, NotOwnerContainerChat, AvatarProfileContainer,
 
 const ChatBallon = ({ chatlist, ...props }) => {
     return (
-        <ChatContainer>
+        <ChatContainer {...props}>
             {
                 chatlist.map((item, index) => {
                     if (item.ownerAccountChat ) {

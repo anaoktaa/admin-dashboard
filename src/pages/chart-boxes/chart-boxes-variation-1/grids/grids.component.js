@@ -1,6 +1,6 @@
 import React from 'react';
 import { SettingOutlined, DesktopOutlined, RocketOutlined,
-         RobotOutlined, GiftOutlined, FireOutlined, HeartOutlined,
+         RobotOutlined, GiftOutlined, HeartOutlined,
          StarOutlined } from '@ant-design/icons';
 
 import ChartBoxVar1 from 'Components/chart-box-var-1/chart-box-var-1.component';

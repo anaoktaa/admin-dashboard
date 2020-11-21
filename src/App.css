@@ -745,6 +745,10 @@ a:hover {
     .grid-menu-4-col {
         grid-template-columns: 1fr 1fr;
     }
+
+    .grid-3-gap-30 {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media screen and (max-width: 425px) {
@@ -752,7 +756,7 @@ a:hover {
         padding: var(--padding-sm);
     }
 
-    .grid-3-gap-30,.grid-menu-3-col,.grid-menu-2-col {
+    .grid-menu-3-col,.grid-menu-2-col {
         grid-template-columns: 1fr;
     }
 

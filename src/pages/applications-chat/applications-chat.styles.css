@@ -96,6 +96,11 @@
     margin-top: -5px;
 }
 
+.chat-box-container {
+    height: 600px !important;
+    overflow-y: auto;
+}
+
 .chat-list-active-container {
     padding: 40px 20px;
 }

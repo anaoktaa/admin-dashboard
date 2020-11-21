@@ -128,6 +128,7 @@ const ApplicationChat = () => {
                 <div className='chat-list-active-container'>
                     <ChatBallon
                         chatlist={ChatList}
+                        className='chat-box-container'
                     />
                     <div className='text-input-chat-container'>
                         <Input placeholder='Write here and hit enter to send...' />
