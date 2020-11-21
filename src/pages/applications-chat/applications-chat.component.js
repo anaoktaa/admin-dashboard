@@ -8,7 +8,7 @@ import CustomMenu from 'Components/custom-menu/custom-menu.component';
 import CustomLabelBadges from 'Components/custom-label-badge/custom-label-badge.component';
 import CustomMenuItem from 'Components/custom-menu-item/custom-menu-item.component';
 import ChatBallon from 'Components/chat-ballon/chat-ballon.component';
-import { CustomMenuItemHeader, CustomMenuDivider } from '../../components/custom-menu-item/custom-menu-item.styles';
+import { CustomMenuItemHeader, CustomMenuDivider } from 'Components/custom-menu-item/custom-menu-item.styles';
 
 import { MailboxData } from '../applications-mailbox/application-mailbox.data';
 import { ChatList } from './application-chat.data';

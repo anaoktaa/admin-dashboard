@@ -3,7 +3,7 @@
 }
 
 .dashboard-analytic-timeline-container {
-    height: 500px;
+    height: 300px;
     overflow-y: auto;
 }
 
@@ -19,11 +19,49 @@
 
 .da-absolute-chart-title-container {
     position: absolute;
-    font-size: 20px;
-    color: black;
-    text-transform: uppercase;
     top: 20px;
     left: 30px;
+}
+
+.color5d {
+    color: #5d5d5d !important;
+}
+
+.color6d {
+    color: #6d6d6d !important;
+}
+
+.color98 {
+    color: #989898 !important;
+}
+
+.fs-16 {
+    font-size: 16px;
+}
+
+.da-fs-20-upper {
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 0  !important;
+    padding: 0 !important;
+}
+
+.da-fs-34-bold {
+    font-size: 34px;
+    font-weight: bold;
+    margin-bottom: 0 !important;
+}
+
+.da-fs-30-fw-400 {
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 0 !important;
+}
+
+.da-icon-detail-performance {
+    font-size: 28px;
+    font-weight: bold;
+    margin-right: 5px;
 }
 
 .button-prev {
@@ -55,6 +93,23 @@
 
 .button-navigation:hover {
     box-shadow: 2px 0px 15px #6d696957, 0px 3px 10px #e0e0e0;
+}
+
+.da-task-list-container {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 30px 2fr 1fr;
+}
+
+.da-task-list-hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: all .4s;
+}
+
+.da-tasklist:hover .da-task-list-hidden {
+    visibility: visible;
+    opacity: 1;
 }
 
 @media screen and (max-width: 650px) {

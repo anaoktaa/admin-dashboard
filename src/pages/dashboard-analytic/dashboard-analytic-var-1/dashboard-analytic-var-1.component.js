@@ -1,8 +1,8 @@
-import React, { useState, useRef } from 'react';
-import { Typography, Carousel } from 'antd';
+import React, { useRef } from 'react';
+import { Typography, Carousel, Table, Input, Checkbox  } from 'antd';
 import {Line} from 'react-chartjs-2';
 import { GlobalOutlined, CustomerServiceOutlined, DownOutlined, CrownOutlined, MacCommandOutlined,
-         LeftOutlined, RightOutlined } from '@ant-design/icons';
+         LeftOutlined, RightOutlined, UpOutlined, CheckOutlined, DeleteOutlined } from '@ant-design/icons';
 
 import { CustomCard, CustomCardFooter, CustomCardBody, CustomCardHeader, CustomCardTitleText } from 'Components/custom-card/custom-card.styles';
 import { DefaultValueDescriptionText, DefaultValueText,
@@ -10,6 +10,16 @@ import { DefaultValueDescriptionText, DefaultValueText,
 import CustomButton from 'Components/custom-button/custom-button.component';
 import CustomTimeline from 'Components/custom-timeline/custom-timeline.component';
 import CustomTimelineItem from  'Components/custom-timeline-item/custom-timeline-item.component';
+import ChatBallon from 'Components/chat-ballon/chat-ballon.component';
+import ChartBoxVar3 from 'Components/chart-box-var-3/chart-box-var-3.component';
+import ChartBoxGridContainer from 'Components/chart-box-grid/chart-box-grid.component';
+import TaskListContainer from 'Components/task-list-container/task-list-container.component';
+import CustomLabelBadge from 'Components/custom-label-badge/custom-label-badge.component';
+
+
+import { ChatList2 } from 'Pages/applications-chat/application-chat.data';
+
+import { Data1, Data2, Data3, Options, Columns, Data } from './dashboard-analytic.data';
 
 const { Text } = Typography;
 
@@ -18,14 +28,14 @@ const DashboardAnalyticVariation1 = () => {
     const customeSlider = useRef();
 
     // setting slider configurations
-    const [sliderSettings, setSliderSettings] = useState({
+    const sliderSettings ={
         infinite: true,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
         arrows: false,
         dots: false
-    })
+    };
 
     const gotoNext = () => {
         customeSlider.current.innerSlider.slickNext()
@@ -33,61 +43,6 @@ const DashboardAnalyticVariation1 = () => {
 
     const gotoPrev = () => {
         customeSlider.current.innerSlider.slickPrev()
-    }
-
-    const data1= {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-        datasets: [{
-            label: 'New Accounts',
-            data: [180, 202, 312, 430, 111, 165, 320, 290, 563, 640, 721, 821],
-            backgroundColor: '#d8f3e5',
-            borderColor: '#3ac47d',
-            borderWidth: 6,  
-        }]
-    };
-
-    const data2= {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-        datasets: [{
-            label: 'New Accounts',
-            data: [180, 202, 312, 430, 111, 165, 320, 290, 563, 640, 721, 821],
-            backgroundColor: '#f6e6eb',
-            borderColor: '#d92550',
-            borderWidth: 6,  
-        }]
-    };
-
-    const options = {
-        elements: { 
-            point: { radius: 0 } }, //point
-            legend: {
-                display: false
-            },
-            maintainAspectRatio: false,
-            label: false,
-            scales: {
-            xAxes: [{
-                gridLines: {
-                    display: false,
-                    drawBorder: false 
-                },
-                ticks: {
-                    display: false
-              },
-
-                
-            }],
-            yAxes :[
-            {
-                gridLines: {
-                display: false
-                },
-                ticks: {
-                    display: false
-                },
-            },                                           
-            ],
-        }
     }
       
     return (
@@ -115,7 +70,7 @@ const DashboardAnalyticVariation1 = () => {
                                             <span><DownOutlined /></span>
                                             <span>54.1%</span>
                                         </ProgressValueTextContainer>
-                                        <Text className='no-mt margin-top-8'>&nbsp; Less Earnings</Text>
+                                        <Text className='no-mb margin-top-8'>&nbsp; Less Earnings</Text>
                                     </div>
                                 </div>
                             </div>
@@ -131,7 +86,7 @@ const DashboardAnalyticVariation1 = () => {
                                         9M
                                     </DefaultValueText>
                                     <div className='flex-row align-items-center'>
-                                        <Text className='no-mt margin-top-8'>Growth Rate&nbsp;</Text>
+                                        <Text className='no-mb margin-top-8'>Growth Rate&nbsp;</Text>
                                         <ProgressValueTextContainer progressValueColor='info' justifyContent='flex-start'>
                                             <span><DownOutlined /></span>
                                             <span>14.1%</span>
@@ -151,7 +106,7 @@ const DashboardAnalyticVariation1 = () => {
                                         $563
                                     </DefaultValueText>
                                     <div className='flex-row align-items-center'>
-                                        <Text className='no-mt margin-top-8'>Increased by&nbsp;</Text>
+                                        <Text className='no-mb margin-top-8'>Increased by&nbsp;</Text>
                                         <ProgressValueTextContainer progressValueColor='warning' justifyContent='flex-start'>
                                             <span><DownOutlined /></span>
                                             <span>7.35%</span>
@@ -166,7 +121,7 @@ const DashboardAnalyticVariation1 = () => {
                     <CustomButton shadow icon={<GlobalOutlined />} size='large' variant='solid' color='primary' pill={true}>View Complete Report</CustomButton>
                 </CustomCardFooter>
             </CustomCard>
-            <div className='grid-2-gap-30'>
+            <div className='grid-2-gap-30 mb-30'>
                 <CustomCard className='overflow-hidden'>
                     <CustomCardHeader>
                         <CustomCardTitleText>Techinical Support</CustomCardTitleText>
@@ -183,29 +138,51 @@ const DashboardAnalyticVariation1 = () => {
                                 <Carousel {...sliderSettings} ref={customeSlider}>
                                     <div className='relative'>
                                         <div className='da-absolute-chart-title-container'>
-                                            NEW ACCOUNTS SINCE 2019
+                                            <p className='da-fs-20-upper color6d'>NEW ACCOUNTS SINCE 2019</p>
+                                            <div className='flex-row align-items-center'>
+                                                <UpOutlined className='da-icon-detail-performance success' />
+                                                <p className='da-fs-34-bold color5d'>78</p>
+                                                <p className='da-fs-30-fw-400 color98'>%</p>
+                                                <p className='fs-16 success no-mb ml-10'>+14</p>
+                                            </div>
                                         </div>
                                         <Line 
-                                            data={data1}
+                                            data={Data1}
                                             width={100}
                                             height={300}
-                                            options={options}
+                                            options={Options}
                                         />
                                     </div>
                                     <div className='relative'>
+                                        <div className='da-absolute-chart-title-container'>
+                                            <p className='da-fs-20-upper color6d'>HELPDESK TIKCET</p>
+                                            <div className='flex-row align-items-center'>
+                                                <p className='da-fs-34-bold warning'>34</p>
+                                                <p className='fs-16 no-mb ml-10 color98'>5%</p>
+                                                <p className='fs-16 no-mb ml-5'>increase</p>
+                                            </div>
+                                        </div>
                                         <Line 
-                                            data={data2}
+                                            data={Data2}
                                             width={100}
                                             height={300}
-                                            options={options}
+                                            options={Options}
                                         />
                                     </div>
                                     <div className='relative'>
+                                        <div className='da-absolute-chart-title-container'>
+                                            <p className='da-fs-20-upper color6d'>LAST YEAR TOTAL SALES</p>
+                                            <div className='flex-row align-items-center'>
+                                                <p className='da-fs-34-bold fw-400 color98'>$</p>
+                                                <p className='da-fs-34-bold primary color5d'>629</p>
+                                                <DownOutlined className='da-icon-detail-performance primary ml-5' />
+                                            </div>
+                                        </div>
                                         <Line 
-                                            data={data1}
+                                            data={Data3}
                                             width={100}
                                             height={300}
-                                            options={options}
+                                            options={Options}
                                         />
                                     </div>
                                 </Carousel>
@@ -339,7 +316,191 @@ const DashboardAnalyticVariation1 = () => {
                         
                     </CustomCardFooter>
                 </CustomCard>
-            </div>  
+            </div>
+            <CustomCard className='mb-30'>
+                <CustomCardHeader>
+                    <CustomCardTitleText>Easy Dynamic Tables</CustomCardTitleText>
+                </CustomCardHeader>
+                <CustomCardBody>
+                    <Table columns={Columns} dataSource={Data} />
+                </CustomCardBody>
+            </CustomCard> 
+            <div className='grid-2-gap-30 mb-30'>
+                <CustomCard>
+                    <CustomCardHeader>
+                        <CustomCardTitleText>Task List</CustomCardTitleText>
+                    </CustomCardHeader>
+                    <CustomCardBody>
+                        <TaskListContainer className='da-tasklist' color='primary'>
+                            <div className='da-task-list-container'>
+                                <Checkbox></Checkbox>
+                                <div className='flex-column'>
+                                    <div className='flex-row'>
+                                        <Text className='fw-bold color5d mr-10'>Wash the car</Text>
+                                        <CustomLabelBadge color='danger'>
+                                            Danger
+                                        </CustomLabelBadge>
+                                    </div>
+                                    <Text className='color98'>Written by Bob</Text>
+                                </div>
+                                <div className='da-task-list-hidden flex-row justify-content-end'>
+                                    <CustomButton className='mr-10' color='success' variant='solid' icon={<CheckOutlined />}/>
+                                    <CustomButton className='mr-10' color='danger' variant='solid' icon={<DeleteOutlined />}/>
+                                </div>
+                            </div>
+                        </TaskListContainer>
+                        <TaskListContainer className='da-tasklist' color='warning'>
+                            <div className='da-task-list-container'>
+                                <Checkbox></Checkbox>
+                                <div className='flex-column'>
+                                    <div className='flex-row'>
+                                        <Text className='fw-bold color5d mr-10'>Task with badge</Text>
+                                    </div>
+                                    <Text className='color98'>Show on hover actions !</Text>
+                                </div>
+                                <div className='flex-row justify-content-end'>
+                                    <div className='da-task-list-hidden'>
+                                        <CustomButton className='mr-10' color='success' variant='solid' icon={<CheckOutlined />}/>
+                                    </div>
+                                    <CustomLabelBadge color='success'>
+                                        NEW
+                                    </CustomLabelBadge>
+                                </div>
+                            </div>
+                        </TaskListContainer>
+                        <TaskListContainer className='da-tasklist' color='danger'>
+                            <div className='da-task-list-container'>
+                                <Checkbox></Checkbox>
+                                <div className='flex-column'>
+                                    <Text className='fw-bold color5d mr-10'>Development Task</Text>
+                                    <Text className='color98'>Finish React ToDo AppList !</Text>
+                                </div>
+                                <div className='flex-row justify-content-end'>
+                                    <CustomButton className='mr-10' color='success' variant='solid' icon={<CheckOutlined />}/>
+                                    <CustomButton className='mr-10' color='danger' variant='solid' icon={<DeleteOutlined />}/>
+                                </div>
+                            </div>
+                        </TaskListContainer>
+                        <TaskListContainer className='da-tasklist' color='success'>
+                            <div className='da-task-list-container'>
+                                <Checkbox></Checkbox>
+                                <div className='flex-column'>
+                                    <div className='flex-row'>
+                                        <Text className='fw-bold color5d mr-10'>Wash the car</Text>
+                                        <CustomLabelBadge color='warning'>
+                                            INFO
+                                        </CustomLabelBadge>
+                                    </div>
+                                    <Text className='color98'>Written by Bob</Text>
+                                </div>
+                                <div className='da-task-list-hidden flex-row justify-content-end'>
+                                    <CustomButton className='mr-10' color='success' variant='solid' icon={<CheckOutlined />}/>
+                                    <CustomButton className='mr-10' color='danger' variant='solid' icon={<DeleteOutlined />}/>
+                                </div>
+                            </div>
+                        </TaskListContainer>
+                        <TaskListContainer className='da-tasklist' color='primary'>
+                            <div className='da-task-list-container'>
+                                <Checkbox></Checkbox>
+                                <div className='flex-column'>
+                                    <div className='flex-row'>
+                                        <Text className='fw-bold color5d mr-10'>Task with Badge</Text>
+                                        <CustomLabelBadge color='info'>
+                                            NEW
+                                        </CustomLabelBadge>
+                                    </div>
+                                    <Text className='color98'>Written by Silaladungka</Text>
+                                </div>
+                                <div className='flex-row justify-content-end'>
+                                    <CustomButton className='mr-10' color='success' variant='solid' icon={<CheckOutlined />}/>
+                                    <CustomButton className='mr-10' color='danger' variant='solid' icon={<DeleteOutlined />}/>
+                                </div>
+                            </div>
+                        </TaskListContainer>
+                    </CustomCardBody>
+                    <CustomCardFooter>
+                        <CustomButton color='link' variant='solid' className='mr-10'>Cancel</CustomButton>
+                        <CustomButton color='primary' variant='solid'>Add Task</CustomButton>
+                    </CustomCardFooter>
+                </CustomCard>
+                <CustomCard>
+                    <CustomCardHeader>
+                        <CustomCardTitleText>Chat Box</CustomCardTitleText>
+                    </CustomCardHeader>
+                    <CustomCardBody>
+                        <ChatBallon
+                            chatlist={ChatList2}
+                        />
+                        <div className='text-input-chat-container'>
+                            <Input placeholder='Write here and hit enter to send...' />
+                        </div>
+                    </CustomCardBody>
+                </CustomCard>
+            </div> 
+            <div className='mb-30'>
+                <ChartBoxGridContainer col={3} >
+                    <ChartBoxVar3
+                        defaultValue="1896"
+                        defaultValueColor='success'
+                        mainTitleText='Total Orders'
+                        descriptionText='Last year expenses'
+                        progressBarValue={80}
+                        strokeWidth={6}
+                        progressBarColor='primary'
+                        descriptionProgressDetail='YoY Growth'
+                    />   
+                    <ChartBoxVar3
+                        defaultValue="$568"
+                        defaultValueColor='primary'
+                        mainTitleText='Clients'
+                        descriptionText='Total Clients Profit'
+                        progressBarValue={50}
+                        strokeWidth={6}
+                        progressBarColor='warning'
+                        descriptionProgressDetail='Retention'
+                    />     
+                    <ChartBoxVar3
+                        defaultValue="$14M"
+                        defaultValueColor='warning'
+                        mainTitleText='Products Sold'
+                        descriptionText='Total revenue streams'
+                        progressBarValue={100}
+                        strokeWidth={6}
+                        progressBarColor='danger'
+                        descriptionProgressDetail='Sales'
+                    /> 
+                    <ChartBoxVar3
+                        defaultValue="46%"
+                        defaultValueColor='danger'
+                        mainTitleText='Followers'
+                        descriptionText='Peple interested'
+                        progressBarValue={40}
+                        strokeWidth={6}
+                        progressBarColor='success'
+                        descriptionProgressDetail='Twitter Progress'
+                    />  
+                      <ChartBoxVar3
+                        defaultValue="36%"
+                        defaultValueColor='danger'
+                        mainTitleText='Products Sold'
+                        descriptionText='Total revenue streams'
+                        progressBarValue={80}
+                        strokeWidth={6}
+                        progressBarColor='success'
+                        descriptionProgressDetail='Sales'
+                    /> 
+                    <ChartBoxVar3
+                        defaultValue="$23M"
+                        defaultValueColor='primary'
+                        mainTitleText='Followers'
+                        descriptionText='Peple interested'
+                        progressBarValue={90}
+                        strokeWidth={6}
+                        progressBarColor='warning'
+                        descriptionProgressDetail='Twitter Progress'
+                    />   
+                </ChartBoxGridContainer>
+            </div>
         </div>
     )
 };

@@ -8,8 +8,10 @@ const labelbadge = css`
     text-transform: uppercase;
     border-radius: ${({pill}) => pill? '20px': '5px'};
     display: inline-block;
+    align-self: center;
     background-color: ${({color}) => color? colorsPalette[color] : '#fff'};
     color: ${({color}) => color? colorsPalette[color+'Text'] : '#000'};
+
 `
 
 export const LabelBadge = styled.span`

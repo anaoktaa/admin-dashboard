@@ -319,6 +319,14 @@ a:hover {
     margin-left: 5px;
 }
 
+.ml-10 {
+    margin-left: 10px !important;
+}
+
+.ml-20 {
+    margin-left: 20px !important;
+}
+
 .grid-3-gap-10 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -372,6 +380,10 @@ a:hover {
 
 .justify-content-center {
     justify-content: center !important;
+}
+
+.justify-content-end{
+    justify-content: flex-end !important;
 }
 
 .grid-menu-2-col {
@@ -503,6 +515,10 @@ a:hover {
 }
 
 .no-mt {
+    margin-top: 0px !important;
+}
+
+.no-mb {
     margin-bottom: 0px !important;
 }
 
@@ -571,6 +587,10 @@ a:hover {
 
 .fw-bold {
     font-weight: bold !important;
+}
+
+.fw-400 {
+    font-weight: 400 !important;
 }
 
 .no-margin-no-padding {
