@@ -14,7 +14,7 @@ const ChartBoxGrid = ({ children, col, showBorder, showBoxShadow, ...props }) =>
 
     const childrenWithProps = React.Children.map(children, child => {
         const boxShadow = false;
-        const borderRadius = true;
+        const borderRadius = child.type.name === 'ChartBoxVar3' ? true  : false;
         const border= true;
         const row = Math.ceil(totalChild/col);
         const width = col > 1 ?  '100%' : '100%';

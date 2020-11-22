@@ -9,4 +9,12 @@ export const ChartBoxGridContainer = styled.div`
     background-color : ${({bgColor}) => bgColor? bgColor : 'none'};
     gap-column: ${({gap}) => gap? gap: 0};
     height: fit-content;
+
+    @media screen and (max-width: 986px) {
+        grid-template-columns: repeat(${({col}) => col%2 === 1? 1 : 2}, 1fr);
+    }
+
+    @media screen and (max-width: 650px) {
+        grid-template-columns: repeat(1, 1fr);   
+    }
 `;

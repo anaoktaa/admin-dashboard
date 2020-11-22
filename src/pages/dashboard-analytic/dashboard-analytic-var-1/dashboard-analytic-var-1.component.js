@@ -190,9 +190,6 @@ const DashboardAnalyticVariation1 = () => {
                         </div>
                         
                     </CustomCardBody>
-                    <CustomCardFooter>
-
-                    </CustomCardFooter>
                 </CustomCard>
                 <CustomCard>
                     <CustomCardHeader>
