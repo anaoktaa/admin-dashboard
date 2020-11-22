@@ -1,0 +1,6 @@
+.tbl-2-name-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    align-items: center;
+}

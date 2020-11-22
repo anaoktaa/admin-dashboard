@@ -5,7 +5,7 @@ import { colorsPalette } from '../custom-color/custom-color';
 export const ChartBoxVar2Container = styled.div`
     padding: 10px;
     box-sizing: border-box;
-    box-shadow: 0 0.46875rem 2.1875rem rgba(8,10,37,.03), 0 0.9375rem 1.40625rem rgba(8,10,37,.03), 0 0.25rem 0.53125rem rgba(8,10,37,.05), 0 0.125rem 0.1875rem rgba(8,10,37,.03);
+    box-shadow: ${({boxShadow}) => boxShadow? ' 0 0.46875rem 2.1875rem rgba(8,10,37,.03), 0 0.9375rem 1.40625rem rgba(8,10,37,.03), 0 0.25rem 0.53125rem rgba(8,10,37,.05), 0 0.125rem 0.1875rem rgba(8,10,37,.03)': 'none'};
     border-radius: 5px;  
     background: ${({bgColor}) => colorsPalette[bgColor]? colorsPalette[bgColor] : bgColor? bgColor : 'white' }; 
     height: fit-content;

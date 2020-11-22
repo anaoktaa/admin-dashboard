@@ -16,10 +16,11 @@ import ChartBoxGridContainer from 'Components/chart-box-grid/chart-box-grid.comp
 import TaskListContainer from 'Components/task-list-container/task-list-container.component';
 import CustomLabelBadge from 'Components/custom-label-badge/custom-label-badge.component';
 
-
 import { ChatList2 } from 'Pages/applications-chat/application-chat.data';
 
-import { Data1, Data2, Data3, Options, Columns, Data } from './dashboard-analytic.data';
+import { Data1, Data2, Data3 } from 'Data/chart.data';
+import { Options } from 'Data/settings-chart.data';
+import { DataTable1, Columns1 } from 'Data/table.data';
 
 const { Text } = Typography;
 
@@ -319,7 +320,7 @@ const DashboardAnalyticVariation1 = () => {
                     <CustomCardTitleText>Easy Dynamic Tables</CustomCardTitleText>
                 </CustomCardHeader>
                 <CustomCardBody>
-                    <Table columns={Columns} dataSource={Data} />
+                    <Table columns={Columns1} dataSource={DataTable1} />
                 </CustomCardBody>
             </CustomCard> 
             <div className='grid-2-gap-30 mb-30'>

@@ -20,11 +20,12 @@ import ChartBoxesVariation2 from 'Pages/chart-boxes/chart-boxes-variation-2/char
 import ChartBoxesVariation3 from 'Pages/chart-boxes/chart-boxes-variation-3/chart-boxes-variation-3.component';
 import ProfileBoxes from 'Pages/profile-boxes/profile-boxes.component';
 import DashboardAnalytic from 'Pages/dashboard-analytic/dashboard-analytic.component';
+import DashboardCommerce from 'Pages/dashboard-commerce/dashboard-commerce.component';
 
 const Routing =  () => {
     return (
         <Switch>
-            <Route exact path='/' component={DashboardAnalytic} />
+            <Route exact path='/' component={DashboardCommerce} />
             <Route exact path='/elements/buttons' component={ElementButtons}/>    
             <Route exact path='/elements/badges' component={ElementBadgesAndLabels}/>    
             <Route exact path='/elements/cards' component={ElementCards}/>  
@@ -37,7 +38,8 @@ const Routing =  () => {
             <Route exact path='/chart-boxes/variation-2' component={ChartBoxesVariation2}/>
             <Route exact path='/chart-boxes/variation-3' component={ChartBoxesVariation3}/>
             <Route exact path='/profile-boxes' component={ProfileBoxes} />
-            <Route exact path='/dashboard-analytic' component={DashboardAnalytic}/>
+            <Route exact path='/dashboard-analytics' component={DashboardAnalytic}/>
+            <Route exact path='/dashboard-commerce' component={DashboardCommerce}/>
         </Switch>
     )
 };

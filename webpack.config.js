@@ -8,6 +8,7 @@ module.exports = {
           Assets: path.resolve(__dirname, 'src/assets/'),
           Components: path.resolve(__dirname, 'src/components/'),
           Pages: path.resolve(__dirname, 'src/pages/'),
+          Data: path.resolve(__dirname, 'src/data/'),
           Redux_Component: path.resolve(__dirname, 'src/redux/'),
         }
     },

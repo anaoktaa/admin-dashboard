@@ -18,7 +18,7 @@ const DrawerMenuData = [
         children: [
             {
                 id: 11,
-                url: 'dashboard/analytics',
+                url: '/dashboard-analytics',
                 name: 'Analytics',
                 icon: <PieChartTwoTone />,
                 title: 'Analytics Dashboard',
@@ -27,7 +27,7 @@ const DrawerMenuData = [
             {
                 id: 12,
                 name: 'Commerce',
-                url: 'dashboard/commerce',
+                url: '/dashboard/commerce',
                 icon: <ShoppingTwoTone />,
                 title: 'Commerce Dashboard',
                 description: 'This dashboard was created as an example of the flexibility that ArchitectUI offers.'         

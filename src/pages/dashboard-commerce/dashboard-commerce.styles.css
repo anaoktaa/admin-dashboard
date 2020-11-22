@@ -1,0 +1,17 @@
+.da-commerce-grid-2 {
+    display: grid;
+    grid-template-columns: 550px 1fr;
+    gap: 30px;
+}
+
+@media screen and (max-width: 986px) {
+    .da-commerce-grid-2 {
+        grid-template-columns: 400px 1fr;
+    }   
+}
+
+@media screen and (max-width: 650px) {
+    .da-commerce-grid-2 {
+        grid-template-columns: 1fr
+    }  
+}

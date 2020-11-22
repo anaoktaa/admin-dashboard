@@ -13,7 +13,7 @@ const ChartBoxVar2  = ({ bgColor, defaultValue, mainTitleText, mainTitleColor,
                          descriptionProgressValue, descriptionProgressColor,
                          descriptionProgressArrow, progressBarValue, progressBarColor,
                          trailColor, descriptionProgressBarColor, descriptionProgressDetail,
-                         strokeWidth, ...props }) => {
+                         boxShadow, strokeWidth, ...props }) => {
     let ArrowIcon = null;  
     if (descriptionProgressArrow === 'up') {
         ArrowIcon = <UpOutlined />;     
@@ -28,7 +28,7 @@ const ChartBoxVar2  = ({ bgColor, defaultValue, mainTitleText, mainTitleColor,
         ArrowIcon = <ArrowRightOutlined />;
     } 
     return (
-        <ChartBoxVar2Container bgColor={bgColor}>
+        <ChartBoxVar2Container boxShadow={boxShadow} bgColor={bgColor}>
             <ChartBoxGrid>
                 <div>
                     <MainTitleText mainTitleColor={mainTitleColor}>
@@ -65,3 +65,7 @@ const ChartBoxVar2  = ({ bgColor, defaultValue, mainTitleText, mainTitleColor,
 };
 
 export default ChartBoxVar2;
+
+ChartBoxVar2.defaultProps = {
+    boxShadow:  true,   
+};

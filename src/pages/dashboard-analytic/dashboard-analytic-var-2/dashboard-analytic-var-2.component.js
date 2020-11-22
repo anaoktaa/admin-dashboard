@@ -15,8 +15,10 @@ import ChartBoxVar3 from 'Components/chart-box-var-3/chart-box-var-3.component';
 import ChartBoxGridContainer from 'Components/chart-box-grid/chart-box-grid.component';
 
 import { CustomCard, CustomCardFooter, CustomCardBody, CustomCardHeader, CustomCardTitleText } from 'Components/custom-card/custom-card.styles';
-import { Data5, Data2, Data4, Options, Options2, Options3, Columns, Data } from '../dashboard-analytic-var-1/dashboard-analytic.data';
 import { ChatList2 } from 'Pages/applications-chat/application-chat.data';
+import { Data5, Data2, Data4, } from 'Data/chart.data';
+import { Options, Options2, Options3 } from 'Data/settings-chart.data';
+import { DataTable1, Columns1 } from 'Data/table.data';
 
 const { Text } = Typography;
 
@@ -139,7 +141,7 @@ const DashboardAnalyticVariation2 = () => {
                         <CustomCardTitleText>Easy Dynamic Tables</CustomCardTitleText>
                     </CustomCardHeader>
                     <CustomCardBody>
-                        <Table columns={Columns} dataSource={Data} />
+                        <Table columns={Columns1} dataSource={DataTable1} />
                     </CustomCardBody>
                 </CustomCard>  
             </div>

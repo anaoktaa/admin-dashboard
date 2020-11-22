@@ -141,6 +141,10 @@ a:hover {
     overflow: hidden !important;
 }
 
+.overflow-auto {
+    overflow: auto;
+}
+
 .card-header-container {
     width: 100%;
     box-sizing: border-box;
