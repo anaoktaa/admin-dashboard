@@ -21,6 +21,7 @@ import { ChatList2 } from 'Pages/applications-chat/application-chat.data';
 const { Text } = Typography;
 
 const DashboardAnalyticVariation2 = () => {
+    console.log('TEST')
     return (
         <div>
             <div className='grid-3-gap-30 mb-30'>
