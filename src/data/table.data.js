@@ -168,7 +168,7 @@ export const DataTable2 = [
     }
   },
   {
-    key: '345',
+    key: '347',
     name: {
       nameText: 'Jungkat Jungkit',
       position: 'QA Engineer',
@@ -185,7 +185,7 @@ export const DataTable2 = [
     }
   },
   {
-    key: '347',
+    key: '55',
     name: {
       nameText: 'Silaladungka',
       position: 'Senior Software Engineer',
@@ -202,7 +202,7 @@ export const DataTable2 = [
     }
   },
   {
-    key: '345',
+    key: '321',
     name: {
       nameText: 'Ana Mariana',
       position: 'Front End Engineer',

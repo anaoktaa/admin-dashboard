@@ -84,6 +84,9 @@ export const CardHeaderImg = styled.div`
     background-size: cover;  
     color: white;
     position: relative;
+    overflow-x: hidden;
+    border-top-left-radius: ${({noneBorderRadius}) => noneBorderRadius? '0px' : '5px'};
+    border-top-right-radius: ${({noneBorderRadius}) => noneBorderRadius? '0px' : '5px'};
 `;
 
 export const CardImgOverlay = styled.div`
