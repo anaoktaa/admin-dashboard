@@ -20,7 +20,11 @@ const ChartBoxVar3 = ({ bgColor, boxShadow, borderRadius, defaultValue, mainTitl
             <ChartBoxVar3Grid width={width}>
                 <div className='flex-column justify-content-center'>
                     <MainTitleText mainTitleColor={mainTitleColor} className='fw-bold'>{mainTitleText}</MainTitleText>
-                    <DescriptionText descriptionTextColor={descriptionTextColor} >{descriptionText}</DescriptionText>
+                    {
+                        descriptionText?
+                            <DescriptionText descriptionTextColor={descriptionTextColor} >{descriptionText}</DescriptionText>: null
+                    }
+                   
                 </div>
                 <RightContainer>
                     <DefaultValueText defaultValueColor={defaultValueColor}>{defaultValue}</DefaultValueText>

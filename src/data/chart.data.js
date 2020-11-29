@@ -70,3 +70,66 @@ export const Data6 = {
         }
     ]
 };
+
+export const Data7 = {
+    labels: ['Audi', 'BMW', 'Mercedes', 'Renault', 'Opel'],
+    datasets: [
+        {
+            label: 'uv',
+            data: [4000, 3000, 2000, 2780, 1890],
+            backgroundColor: '#fdebc1',
+            borderColor: '#fad57d',
+            borderWidth: 2,  
+        },
+        {
+            label: 'pv',
+            data: [2400, 1398, 9800, 3908, 4000],
+            backgroundColor: '#dbd9e8',
+            borderColor: '#4e36ea',
+            borderWidth: 2,  
+        }
+    ]
+}
+
+export const Data8= {
+    datasets: [
+    {
+      data: [0.3, 0.4, .5, 0.35, 0.28, 0.3, .43, 0.51, 0.39, 0.45, .41, 0.45],
+      borderWidth: 0,
+      backgroundColor: '#6269d6',
+    },
+    {
+        data: [0.38, 0.42, .45, 0.36, 0.32, 0.45, .44, 0.54, 0.34, 0.49, .37, 0.49],
+        borderWidth: 0,
+        backgroundColor: '#c9cbf9',
+    }
+    ],
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+};
+
+export const Data9 = {
+    labels: ['Audi', 'BMW', 'Mercedes', 'Renault', 'Opel'],
+    datasets: [
+        {
+            label: 'uv',
+            data: [1800, 2300, 2000, 2780, 2390],
+            backgroundColor: 'transparent',
+            borderColor: '#fad57d',
+            borderWidth: 2,  
+        },
+    ]
+}
+
+export const Data10 = {
+    labels: ['Audi', 'BMW', 'Mercedes', 'Renault', 'Opel'],
+    datasets: [
+        {
+            label: 'uv',
+            data: [2400, 2300, 3000, 2280, 2190],
+            backgroundColor: '#7adcaa',
+            borderColor: '#31b16f',
+            borderWidth: 2,  
+        },
+    ]
+}
+

@@ -23,7 +23,7 @@ const ChartBoxGrid = ({ children, col, showBorder, showBoxShadow, ...props }) =>
         if (React.isValidElement(child)) {
             if (child.type.name === 'ChartBoxVar3')  {
                 bgColor = 'white';
-                gap = '20px';
+                gap = '30px';
             }
             return React.cloneElement(child, props);
         }

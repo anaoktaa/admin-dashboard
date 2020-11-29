@@ -1,5 +1,6 @@
 import React from 'react';
 import { Tag, Space, Avatar, Progress  } from 'antd';
+import { AppstoreOutlined } from '@ant-design/icons';
 
 import CustomLabelBadge from 'Components/custom-label-badge/custom-label-badge.component';
 import CustomButton from 'Components/custom-button/custom-button.component';
@@ -219,3 +220,130 @@ export const DataTable2 = [
     }
   },
 ]
+
+export const Columns3 = [
+  {
+    title: '#',
+    dataIndex: 'key',
+    key: 'key',
+    render: text => <span>#{text}</span>,
+  },
+  {
+    title: 'Status',
+    dataIndex: 'status',
+    key: 'status',
+    render: (status) => {
+      return (
+        <div>
+           <CustomLabelBadge pill color={status.color}>
+              {status.text}
+          </CustomLabelBadge>
+        </div>
+      )
+    }
+  },
+  {
+    title:  'Name',
+    dataIndex: 'name',
+    key: 'name',
+    render: (data) => {
+      const { img, nameText, position } = data;
+      return  (
+        <>
+          <div className='tbl-2-name-container'>
+            <Avatar size={38} src={img} />
+            <div className='flex-column'>
+              <p className='no-margin-no-padding fw-bold color5d'>{nameText}</p>
+              <p className='no-margin-no-padding color98'>{position}</p>
+            </div>
+          </div>
+        </>
+      )
+    }
+  },
+  {
+    title: 'City',
+    dataIndex: 'city',
+    key: 'city',
+  },
+  {
+    title: 'Progress',
+    dataIndex: 'progress',
+    key: 'progress',
+    render: (progress) => {
+      const { progressBarColor, percent } = progress;
+      return (
+        <Progress strokeColor={`${colorsPalette[progressBarColor] ? colorsPalette[progressBarColor] : progressBarColor}`}  percent={percent} steps={5} />
+      )
+    }
+  },
+  {
+    title: 'Actions',
+    dataIndex: 'actions',
+    key: 'actions',
+    render: () => (
+      <CustomButton icon={<AppstoreOutlined />} color='light' variant='solid'></CustomButton>
+    )
+  }
+];
+  
+
+export const DataHighlights = [
+  {
+      id: 1,
+      img: 'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80',
+      name: 'Beck Collier',
+      badge: '$152',
+      value: '$752',
+      icon: {
+          type: 'down',
+          color: 'success'
+      }
+  },
+  {
+      id: 2,
+      img: 'https://images.unsplash.com/photo-1551069613-1904dbdcda11?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=356&q=80',
+      name: 'Angelo Hume',
+      badge: '$53',
+      value: '$543',
+      icon: {
+          type: 'up',
+          color: 'danger'
+      }
+  },
+  {
+      id: 3,
+      img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80',
+      name: 'Saim Melendez',
+      badge: '$239',
+      value: '$876',
+      icon: {
+          type: 'down',
+          color: 'warning'
+      }
+  },
+  {
+      id: 4,
+      img: 'https://images.unsplash.com/photo-1560787313-5dff3307e257?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80',
+      name: 'Johan Corbet',
+      badge: '$74',
+      value: '$395',
+      icon: {
+          type: 'down',
+          color: 'dark'
+      }
+  },
+  {
+      id: 5,
+      img: 'https://images.unsplash.com/photo-1542393881816-df51684879df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80',
+      name: 'Kaja Wolve',
+      badge: '$7',
+      value: '$619',
+      icon: {
+          type: 'down',
+          color: 'dark'
+      }
+  },
+]
+
+

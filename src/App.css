@@ -204,6 +204,7 @@ a:hover {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 30px;
+    align-items: flex-start;
 }
 
 .ta-right {
@@ -427,6 +428,14 @@ a:hover {
     width: 100%;
 }
 
+.border {
+    border: 1px solid #98989845;
+}
+
+.br-5 {
+    border-radius: 5px !important;
+}
+
 .flex-column {
     display: flex;
     flex-direction: column!important;
@@ -530,6 +539,14 @@ a:hover {
     margin-bottom: 10px !important;
 }
 
+.mb-8 {
+    margin-bottom: 8px !important;
+}
+
+.mb-6 {
+    margin-bottom: 6px !important;
+}
+
 .justify-items {
     justify-items: center !important;
 }
@@ -539,6 +556,13 @@ a:hover {
     flex-direction: row;
     width: 100%;
 }
+
+.flex-row-fit-content {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+}
+
 
 .align-items-end {
     align-items: flex-end !important;
@@ -633,6 +657,188 @@ a:hover {
     opacity: 0;
     transition: all .5s;
 }
+
+/*Dashboard Analytic CSS*/
+.dashboard-analytic-width-portofolio {
+    width: 100%;
+}
+
+.height-300 {
+    height: 300px;
+    overflow: hidden;
+}
+
+.dashboard-analytic-timeline-container {
+    height: 300px !important;
+    overflow-y: auto !important;
+}
+
+.technical-support-container {
+    position: relative;
+    height: fit-content;
+    height: 230px;
+}
+
+.technical-support-container:hover .button-navigation {
+    visibility: visible;
+    opacity: 1;
+}
+
+.technical-support-container:hover .button-prev {
+    left: -10px;
+}
+.technical-support-container:hover .button-next {
+    right: -10px;
+}
+
+.relative {
+    position: relative !important;
+}
+
+.da-absolute-chart-title-container {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+}
+
+.color5d {
+    color: #5d5d5d !important;
+}
+
+.color6d {
+    color: #6d6d6d !important;
+}
+
+.color98 {
+    color: #989898 !important;
+}
+
+.fs-16 {
+    font-size: 16px;
+}
+
+.da-fs-20-upper {
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 0  !important;
+    padding: 0 !important;
+}
+
+.da-fs-34-bold {
+    font-size: 34px;
+    font-weight: bold;
+    margin-bottom: 0 !important;
+}
+
+.da-fs-30-fw-400 {
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 0 !important;
+}
+
+.da-icon-detail-performance {
+    font-size: 28px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.button-prev {
+    position: absolute !important;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -20px;
+}
+
+.button-next  {
+    position: absolute !important;
+    top: 50%;
+    transform: translateY(-50%);
+    right: -20px;
+}
+
+.button-navigation {
+    border: none;
+    height: 35px;
+    width: 35px;
+    background-color: #545cd8;
+    box-shadow: 2px 0px 12px #6d696957, 0px 3px 6px #e0e0e0;
+    font-size: 12px;
+    color: #ffffff;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+    z-index: 1200;
+    transition: all .8s;
+    opacity: 0;
+}
+
+.button-navigation:hover {
+    box-shadow: 2px 0px 15px #6d696957, 0px 3px 10px #e0e0e0;
+}
+
+.da-task-list-container {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 30px 2fr 1fr;
+}
+
+.da-task-list-hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: all .4s;
+}
+
+.da-tasklist:hover .da-task-list-hidden {
+    visibility: visible;
+    opacity: 1;
+}
+
+.da-relative-container {
+    position: absolute;
+    z-index: 19000;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.da-box-chart-container-fixed {
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 0.46875rem 2.1875rem rgba(8,10,37,.03), 0 0.9375rem 1.40625rem rgba(8,10,37,.03), 0 0.25rem 0.53125rem rgba(8,10,37,.05), 0 0.125rem 0.1875rem rgba(8,10,37,.03);
+    border-radius: 5px;
+}
+
+.da-var-2-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 30px;
+}
+
+@media screen and (max-width: 986px) {
+    .span-grid-column {
+        grid-column: span 2;
+    }    
+}
+
+@media screen and (max-width: 650px) {
+    .dashboard-analytic-width-portofolio {
+        width: 70%;
+    }
+
+    .span-grid-column {
+        grid-column: span 1;
+    } 
+
+    .da-var-2-grid-2 {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-gap: 0px;
+    }
+    
+}
+
+/*end CSS*/
 
 @media screen and (max-width: 1024px) {
     .app-theme-icon-wrapper {

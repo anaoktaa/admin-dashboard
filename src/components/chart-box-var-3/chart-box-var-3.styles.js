@@ -54,4 +54,5 @@ export const ChartBoxVar3Grid = styled.div`
     display: grid;
     grid-template-columns: 1fr minmax(100px, .5fr); 
     width: ${({width}) => width? width : '100%'};
+    align-items: end;
 `;

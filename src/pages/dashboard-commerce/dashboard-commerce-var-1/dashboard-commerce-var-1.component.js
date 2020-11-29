@@ -141,7 +141,7 @@ const DashboardCommerceVariation1 = () => {
                         </div>
                     </CustomCardHeaderWithImage>
                     <CustomCardBody>
-                        <div className='flex-column align-items-center mb-30'>
+                        <div className='flex-column align-items-center'>
                             <Title className='fw-400 color98' level={4}>Month Totals</Title>
                             <Title className='color5d fw-400 no-margin-no-padding' level={5}>
                                 <strong className='danger'>12</strong> new leads, <strong className='success'>$56.4</strong> in sales

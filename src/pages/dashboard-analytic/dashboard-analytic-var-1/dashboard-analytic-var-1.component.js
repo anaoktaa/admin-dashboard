@@ -135,7 +135,7 @@ const DashboardAnalyticVariation1 = () => {
                             <button className='button-navigation button-next' onClick={()=>gotoNext()}>
                                 <RightOutlined />
                             </button>
-                            <div style={{width: '90%'}}>
+                            <div style={{width: '100%'}}>
                                 <Carousel {...sliderSettings} ref={customeSlider}>
                                     <div className='relative'>
                                         <div className='da-absolute-chart-title-container'>

@@ -13,7 +13,7 @@ const ChartBoxVar1 = ({ bgColor, zoom, variant, icon, iconColor, iconBgColor, ic
                         progressValue, progressValueColor, progressValueArrow, defaultValueColor,
                         defaultValueDescColor, border, boxShadow, borderRadius, col,
                         progressBarValue, progressBarColor, trailColor, children,
-                        chart, ...props }) => {
+                        chart, bgOverlay, ...props }) => {
     
     let ArrowIcon = null;  
     if (progressValueArrow === 'up') {
@@ -68,7 +68,7 @@ const ChartBoxVar1 = ({ bgColor, zoom, variant, icon, iconColor, iconBgColor, ic
                     <div className='overflow-hidden'>
                         <div className='chart-box-graph-container'>
                             {chart}
-                            <div className='chart-box-graph-overlay'/>
+                            <div style={{backgroundColor: bgOverlay? bgOverlay : '#ffffffb0'}} className='chart-box-graph-overlay'/>
                         </div>
                         <div className='chart-box-detail-container'>
                             <ChartBoxBasic1Const/> 
