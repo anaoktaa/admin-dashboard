@@ -128,7 +128,7 @@ const DashboardAnalyticVariation1 = () => {
                         <CustomCardTitleText>Techinical Support</CustomCardTitleText>
                     </CustomCardHeader>
                     <CustomCardBody>
-                        <div className='technical-support-container flex-column align-items-center justify-content-center'>
+                        <div className='technical-support-container-2 flex-column align-items-center justify-content-center'>
                             <button className='button-navigation button-prev' onClick={()=>gotoPrev()}>
                                 <LeftOutlined />
                             </button>

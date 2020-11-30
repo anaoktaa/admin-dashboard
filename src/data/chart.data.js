@@ -57,14 +57,14 @@ export const Data6 = {
         {
             label: 'uv',
             data: [2400, 1398, 9800, 3908, 4800, 3800, 4300, 6800, 7908, 9800, 3800, 4300],
-            backgroundColor: '#fff',
+            backgroundColor: 'transparent',
             borderColor: '#f7bdd7',
             borderWidth: 2,  
         },
         {
             label: 'pv',
             data: [4000, 3000, 2000, 2780, 1980, 2390, 3490, 2000, 4780, 2890, 1390, 3490],
-            backgroundColor: '#fff',
+            backgroundColor: 'transparent',
             borderColor: '#e83e8c',
             borderWidth: 2,  
         }
@@ -132,4 +132,14 @@ export const Data10 = {
         },
     ]
 }
+
+export const Data11= {
+    datasets: [{
+      data: [0.3, 0.4, .5, 0.35, 0.28, 0.3, .43, 0.51, 0.39, 0.45, .41, 0.45],
+      borderWidth: 0,
+      backgroundColor: '#90f3d7',
+    }],
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+};
+
 

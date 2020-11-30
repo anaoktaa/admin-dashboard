@@ -13,7 +13,7 @@ const ChartBoxVar1 = ({ bgColor, zoom, variant, icon, iconColor, iconBgColor, ic
                         progressValue, progressValueColor, progressValueArrow, defaultValueColor,
                         defaultValueDescColor, border, boxShadow, borderRadius, col,
                         progressBarValue, progressBarColor, trailColor, children,
-                        chart, bgOverlay, ...props }) => {
+                        chart, bgOverlay, className, ...props }) => {
     
     let ArrowIcon = null;  
     if (progressValueArrow === 'up') {
@@ -30,7 +30,7 @@ const ChartBoxVar1 = ({ bgColor, zoom, variant, icon, iconColor, iconBgColor, ic
     }                
     
     const ChartBoxBasic1Const =  () => (
-        <ChartBox1Basic >
+        <ChartBox1Basic className={className} >
             {
                 icon?
                 <ChartBoxVarIconContainer iconContainerShape={iconContainerShape} iconColor={iconColor} iconBgColor={iconBgColor}>
@@ -62,22 +62,22 @@ const ChartBoxVar1 = ({ bgColor, zoom, variant, icon, iconColor, iconBgColor, ic
     if (variant === 'basic') {
         console.log("border radius", borderRadius)
         return (
-            <ChartBoxVar1Container row={props.row} col={col} border={border} boxShadow={boxShadow} borderRadius={borderRadius} bgColor={bgColor} zoom={zoom}>
+            <ChartBoxVar1Container className={className} row={props.row} col={col} border={border} boxShadow={boxShadow} borderRadius={borderRadius} bgColor={bgColor} zoom={zoom}>
                 {
                     chart?
                     <div className='overflow-hidden'>
                         <div className='chart-box-graph-container'>
                             {chart}
                             <div style={{backgroundColor: bgOverlay? bgOverlay : '#ffffffb0'}} className='chart-box-graph-overlay'/>
-                        </div>
-                        <div className='chart-box-detail-container'>
-                            <ChartBoxBasic1Const/> 
-                            {
-                                progressBarValue?
-                                    <Progress strokeColor={`${colorsPalette[progressBarColor] ? colorsPalette[progressBarColor] : progressBarColor}`} className='progression-bar-style' percent={progressBarValue} status="active" showInfo={false} />
-                                    :
-                                    null
-                            }
+                            <div className='chart-box-detail-container'>
+                                <ChartBoxBasic1Const/> 
+                                {
+                                    progressBarValue?
+                                        <Progress strokeColor={`${colorsPalette[progressBarColor] ? colorsPalette[progressBarColor] : progressBarColor}`} className='progression-bar-style' percent={progressBarValue} status="active" showInfo={false} />
+                                        :
+                                        null
+                                }
+                            </div>
                         </div>
                     </div>
                     :
@@ -138,7 +138,7 @@ const ChartBoxVar1 = ({ bgColor, zoom, variant, icon, iconColor, iconBgColor, ic
     }
     else if (variant === 'progress-circle') {
         return (
-            <ChartBoxVar1Container  row={props.row} col={col} border={border} boxShadow={boxShadow} borderRadius={borderRadius} bgColor={bgColor} zoom={zoom}>
+            <ChartBoxVar1Container className={className} row={props.row} col={col} border={border} boxShadow={boxShadow} borderRadius={borderRadius} bgColor={bgColor} zoom={zoom}>
                 <ChartBoxVar1GridAlignment progress={true} >
                     <div>
                         <Progress status={progressBarColor === 'danger'? 'exception' : null }  strokeColor={colorsPalette[progressBarColor] ? colorsPalette[progressBarColor] : progressBarColor} trailColor={trailColor} percent={progressBarValue} type="circle" width={70} />

@@ -2,8 +2,8 @@ import React, { useRef }  from 'react';
 import { Typography, Avatar, Carousel, Table } from 'antd';
 import { Line, Bar } from 'react-chartjs-2';
 import { DownOutlined, UpOutlined, LeftOutlined, RightOutlined, ScheduleOutlined,
-        SettingOutlined, DesktopOutlined, RocketOutlined, RobotOutlined, AlertOutlined, CrownOutlined,
-        FireOutlined, ClearOutlined  } from '@ant-design/icons';
+        ArrowRightOutlined, AlertOutlined, CrownOutlined,
+        FireOutlined, ClearOutlined, SettingOutlined  } from '@ant-design/icons';
 
 import CustomButton from 'Components/custom-button/custom-button.component';
 import ChartBoxVar1 from 'Components/chart-box-var-1/chart-box-var-1.component';
@@ -16,8 +16,8 @@ import { CustomCardHeaderWithImage } from 'Components/custom-card/custom-card-he
 
 import { ChatList2 } from 'Pages/applications-chat/application-chat.data';
 
-import { Data7, Data8, Data9, Data10, Data5 } from 'Data/chart.data';
-import { Options6, Options4, Options5, Options3 } from 'Data/settings-chart.data';
+import { Data7, Data8, Data9, Data10, Data5, Data11 } from 'Data/chart.data';
+import { Options6, Options4, Options5, Options3, Options } from 'Data/settings-chart.data';
 import { DataTable2, Columns2, DataHighlights, Columns3 } from 'Data/table.data';
 import '../dashboard-commerce.styles.css';
 
@@ -194,77 +194,144 @@ const DashboardCommerceVariation2 = () => {
                 </CustomCardBody>
             </CustomCard> 
             <div className='grid-2-gap-30'>
-                <div className='da-box-chart-container-fixed'>
-                    <ChartBoxVar1
-                        bgColor="linear-gradient(-20deg,#2b5876,#4e4376)"
-                        icon={<ScheduleOutlined />}
-                        iconBgColor='#ffffffd4'
-                        iconColor='primary'
-                        defaultValue='3M'
-                        defaultValueColor='white'
-                        defaultValueDescription='Cash Deposit'
-                        defaultValueDescColor='white'
-                        progressValueArrow='up'
-                        progressValue='176%'
-                        bgOverlay='transparent'
-                        progressValueColor='white'
-                        chart={
-                            <div style={{paddingTop: '100px'}}>
-                                 <Bar 
-                                    data={Data5}
-                                    height={240}
-                                    options={Options3}
-                                />
-                            </div>
-                        }
-                    >
-                        <Text className='fw-bold white'><span className='white'><DownOutlined /> 54.1% </span> down last 30 days</Text>
-                    </ChartBoxVar1>
+                <div>
+                    <div className='da-box-chart-container-fixed-without-shadow mb-30'>
+                        <ChartBoxVar1
+                            bgColor="linear-gradient(-20deg,#2b5876,#4e4376)"
+                            icon={<ScheduleOutlined />}
+                            iconBgColor='#ffffffd4'
+                            iconColor='primary'
+                            defaultValue='3M'
+                            defaultValueColor='white'
+                            defaultValueDescription='Cash Deposit'
+                            defaultValueDescColor='white'
+                            progressValueArrow='up'
+                            progressValue='176%'
+                            bgOverlay='transparent'
+                            progressValueColor='white'
+                            chart={
+                                <div style={{paddingTop: '100px'}}>
+                                    <Bar 
+                                        data={Data5}
+                                        height={240}
+                                        options={Options3}
+                                    />
+                                </div>
+                            }
+                        >
+                            <Text className='fw-bold white'><span className='white'><DownOutlined /> 54.1% </span> down last 30 days</Text>
+                        </ChartBoxVar1>
+                    </div>
+                    <div className='da-box-chart-container-fixed-without-shadow mb-30'>
+                        <ChartBoxVar1
+                            bgColor="linear-gradient(to right, #007991, #78ffd6)"
+                            icon={<ScheduleOutlined />}
+                            iconBgColor='#ffffffd4'
+                            iconColor='#068094'
+                            defaultValue='1.5M'
+                            defaultValueColor='white'
+                            defaultValueDescription='Bugs Fixed'
+                            defaultValueDescColor='white'
+                            progressValueArrow='up'
+                            progressValue='176%'
+                            bgOverlay='transparent'
+                            progressValueColor='white'
+                            chart={
+                                <div style={{paddingTop: '100px'}}>
+                                    <Line 
+                                        data={Data11}
+                                        height={240}
+                                        options={Options}
+                                    />
+                                </div>
+                            }
+                        >
+                            <Text className='fw-bold white'><span className='white'><ArrowRightOutlined /></span> 175.5%</Text>
+                        </ChartBoxVar1>
+                    </div>
                 </div>
-                <CustomCard className='overflow-hidden'>
-                    <CustomCardHeaderWithImage 
-                        backgroundColorOverlay='#0e0e0eb8' 
-                        className='align-items-center flex-column' 
-                        imgUrl={'https://images.unsplash.com/photo-1546629313-ea9c287a8b9f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80'}>
-                        <div className='flex-column align-items-center'>
-                            <Avatar size={45} src="https://images.unsplash.com/photo-1589329482108-e414c7c6b8c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" />
-                            <Title className='white no-margin-no-padding' level={4}>Silaladungka Jungkat Jungkit</Title>
-                            <p className='white no-margin-no-padding'>Lead UX Designer</p>
-                            <CustomButton className='margin-top-8' color='success' variant='solid'>View Profile</CustomButton>
-                        </div>
-                    </CustomCardHeaderWithImage>
-                    <CustomCardBody>
-                        <div className='flex-column align-items-center'>
-                            <Title className='color5d fw-400 no-margin-no-padding' level={4}>
-                                <strong className='danger'>12</strong> new leads, <strong className='success'>$56.4</strong> in sales
-                            </Title>
-                        </div>
-                    </CustomCardBody>
-                    <CustomCardFooter className='flex-column no-margin-no-padding'>
-                        <div className='grid-menu-2-col'>
-                            <div className='grid-row-for-2-col'>
-                                <CustomButton square iconType='vertical' block color='dark' variant='no-outlined' icon={<CrownOutlined />}>
-                                    Automation
-                                </CustomButton>
+                <div>
+                    <CustomCard className='overflow-hidden mb-30'>
+                        <CustomCardHeaderWithImage 
+                            backgroundColorOverlay='#0e0e0eb8' 
+                            className='align-items-center flex-column' 
+                            imgUrl={'https://images.unsplash.com/photo-1546629313-ea9c287a8b9f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80'}>
+                            <div className='flex-row justify-content-space-between align-items-center padding-vertical-20'>
+                                <div className='flex-row-fit-content'>
+                                    <Avatar size={50} className='mr-20' src="https://images.unsplash.com/photo-1589329482108-e414c7c6b8c7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" />
+                                    <div className='flex-column text-align-left'>
+                                        <Title className='white no-margin-no-padding' level={4}>Silaladungka</Title>
+                                        <p className='white no-margin-no-padding'>Lead UX Designer</p>
+                                    </div>
+                                </div>
+                                <CustomButton className='margin-top-8' color='success' variant='solid'>View Profile</CustomButton>
                             </div>
-                            <div className='grid-row-for-2-col'>
-                                <CustomButton square iconType='vertical' block color='danger' variant='no-outlined' icon={<AlertOutlined />}>
-                                    Reports
-                                </CustomButton>
+                        </CustomCardHeaderWithImage>
+                        <CustomCardBody>
+                            <div className='flex-column align-items-center'>
+                                <Title className='color5d fw-400 no-margin-no-padding' level={4}>
+                                    <strong className='danger'>12</strong> new leads, <strong className='success'>$56.4</strong> in sales
+                                </Title>
                             </div>
-                            <div className='grid-row-for-2-col'>
-                                <CustomButton square iconType='vertical' block color='success' variant='no-outlined' icon={<FireOutlined />}>
-                                    Activity
-                                </CustomButton>
+                        </CustomCardBody>
+                        <CustomCardFooter className='flex-column no-margin-no-padding'>
+                            <div className='grid-menu-2-col'>
+                                <div className='grid-row-for-2-col'>
+                                    <CustomButton square iconType='vertical' block color='dark' variant='no-outlined' icon={<CrownOutlined />}>
+                                        Automation
+                                    </CustomButton>
+                                </div>
+                                <div className='grid-row-for-2-col'>
+                                    <CustomButton square iconType='vertical' block color='danger' variant='no-outlined' icon={<AlertOutlined />}>
+                                        Reports
+                                    </CustomButton>
+                                </div>
+                                <div className='grid-row-for-2-col'>
+                                    <CustomButton square iconType='vertical' block color='success' variant='no-outlined' icon={<FireOutlined />}>
+                                        Activity
+                                    </CustomButton>
+                                </div>
+                                <div className='grid-row-for-2-col'>
+                                    <CustomButton square iconType='vertical' block color='dark' variant='no-outlined' icon={<ClearOutlined />}>
+                                        Settings
+                                    </CustomButton>
+                                </div>
                             </div>
-                            <div className='grid-row-for-2-col'>
-                                <CustomButton square iconType='vertical' block color='dark' variant='no-outlined' icon={<ClearOutlined />}>
-                                    Settings
-                                </CustomButton>
+                        </CustomCardFooter>
+                    </CustomCard>
+                    <CustomCard className='overflow-hidden mb-30'>
+                        <CustomCardHeaderWithImage 
+                            backgroundColorOverlay='#0e1a79c2' 
+                            className='align-items-center flex-column' 
+                            imgUrl={'https://images.unsplash.com/photo-1546629313-ea9c287a8b9f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80'}>
+                            <div className='flex-column align-items-center'>
+                                <Title className='white no-margin-no-padding' level={3}>Top Sellers</Title>
+                                <Title className='white no-margin-no-padding fw-400' level={5}>Yet another example of Card Boxes</Title>
+                                <CustomButton className='margin-top-10' color='warning' variant='solid'>View Profile</CustomButton>
                             </div>
-                        </div>
-                    </CustomCardFooter>
-                </CustomCard>
+                        </CustomCardHeaderWithImage>
+                        <CustomCardBody>
+                            <div className='grid-2-gap-30 align-items-center'>
+                                <div className='flex-column align-items-center'>
+                                    <SettingOutlined spin={true} style={style.settingIcon} />
+                                </div>
+                                <div className='border-bottom-container width-100'>
+                                    <div className='border-bottom-item'>
+                                        <Title className='no-margin-no-padding danger' level={1}>$363M</Title>
+                                        <p className='color98'>Sales today</p>
+                                    </div>
+                                    <div className='border-bottom-item'>
+                                        <Title className='no-margin-no-padding primary' level={1}>$187M</Title>
+                                        <p className='color98'>Sales this month</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </CustomCardBody>
+                        <CustomCardFooter >
+                            <CustomButton variant='no-outlined' block color='warning'>Refresh All</CustomButton>
+                        </CustomCardFooter>
+                    </CustomCard>
+                </div>               
             </div>
         </div>
     )
@@ -274,7 +341,10 @@ const style = {
     downIcon: {
         fontSize: '11px',
         marginLeft: '10px'
+    },
+    settingIcon : {
+        fontSize: '79px',
+        color: '#a86799'
     }
 }
-
 export default DashboardCommerceVariation2;

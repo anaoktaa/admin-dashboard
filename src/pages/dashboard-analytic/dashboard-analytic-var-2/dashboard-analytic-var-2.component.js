@@ -38,7 +38,6 @@ const DashboardAnalyticVariation2 = () => {
                         defaultValueDescColor='warning'
                         progressValueArrow='up'
                         progressValue='176%'
-                        className='height-300'
                         progressValueColor='success'
                         chart={
                             <Line 
@@ -60,7 +59,6 @@ const DashboardAnalyticVariation2 = () => {
                         defaultValue='1M'
                         defaultValueDescription='Invested Dividents'
                         defaultValueDescColor='primary'
-                        className='height-300'
                         chart={
                             <Bar 
                                 data={Data5}
