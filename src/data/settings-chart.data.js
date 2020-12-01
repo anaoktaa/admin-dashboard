@@ -164,6 +164,8 @@ export const Options6 = {
     legend: {
         display: false
     },
+    elements: { 
+        point: { radius: 0 } },
     maintainAspectRatio: true,
     label: false,
     scales: {

@@ -67,7 +67,9 @@ const ChartBoxVar1 = ({ bgColor, zoom, variant, icon, iconColor, iconBgColor, ic
                     chart?
                     <div className='overflow-hidden'>
                         <div className='chart-box-graph-container'>
-                            {chart}
+                            <div style={{overflow: 'hidden'}}>
+                                {chart}
+                            </div>
                             <div style={{backgroundColor: bgOverlay? bgOverlay : '#ffffffb0'}} className='chart-box-graph-overlay'/>
                             <div className='chart-box-detail-container'>
                                 <ChartBoxBasic1Const/> 
@@ -150,10 +152,18 @@ const ChartBoxVar1 = ({ bgColor, zoom, variant, icon, iconColor, iconBgColor, ic
                         <DefaultValueText style={{lineHeight: 1}} defaultValueColor={defaultValueColor}>
                             {defaultValue}
                         </DefaultValueText>
-                        <ProgressValueTextContainer justifyContent='flex-start' progressValueColor={progressValueColor}>
-                            <span>{ArrowIcon}</span>
-                            <span>{progressValue}</span>
-                        </ProgressValueTextContainer>
+                        {
+                            children?
+                            <div>
+                                {children}
+                            </div>
+                            :
+                            <ProgressValueTextContainer justifyContent='flex-start' progressValueColor={progressValueColor}>
+                                <span>{ArrowIcon}</span>
+                                <span>{progressValue}</span>
+                            </ProgressValueTextContainer>
+                        }
+                   
                     </div>
                 </ChartBoxVar1GridAlignment>
                 

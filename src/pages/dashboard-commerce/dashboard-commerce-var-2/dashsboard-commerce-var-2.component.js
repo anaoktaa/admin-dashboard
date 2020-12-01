@@ -7,18 +7,15 @@ import { DownOutlined, UpOutlined, LeftOutlined, RightOutlined, ScheduleOutlined
 
 import CustomButton from 'Components/custom-button/custom-button.component';
 import ChartBoxVar1 from 'Components/chart-box-var-1/chart-box-var-1.component';
-import ChartBoxVar2 from 'Components/chart-box-var-2/chart-box-var-2.component';
 import CustomLabelBadge from 'Components/custom-label-badge/custom-label-badge.component';
 import ChartBoxVar3 from 'Components/chart-box-var-3/chart-box-var-3.component';
 import ChartBoxGridContainer from 'Components/chart-box-grid/chart-box-grid.component';
 import { CustomCard, CustomCardFooter, CustomCardBody, CustomCardHeader, CustomCardTitleText } from 'Components/custom-card/custom-card.styles';
 import { CustomCardHeaderWithImage } from 'Components/custom-card/custom-card-header-with-image.component';
 
-import { ChatList2 } from 'Pages/applications-chat/application-chat.data';
-
 import { Data7, Data8, Data9, Data10, Data5, Data11 } from 'Data/chart.data';
 import { Options6, Options4, Options5, Options3, Options } from 'Data/settings-chart.data';
-import { DataTable2, Columns2, DataHighlights, Columns3 } from 'Data/table.data';
+import { DataTable2, DataHighlights, Columns3 } from 'Data/table.data';
 import '../dashboard-commerce.styles.css';
 
 const { Title, Text } = Typography;
@@ -194,7 +191,7 @@ const DashboardCommerceVariation2 = () => {
                 </CustomCardBody>
             </CustomCard> 
             <div className='grid-2-gap-30'>
-                <div>
+                <div className='overflow-hidden'>
                     <div className='da-box-chart-container-fixed-without-shadow mb-30'>
                         <ChartBoxVar1
                             bgColor="linear-gradient(-20deg,#2b5876,#4e4376)"
@@ -214,6 +211,7 @@ const DashboardCommerceVariation2 = () => {
                                     <Bar 
                                         data={Data5}
                                         height={240}
+                                        width={100}
                                         options={Options3}
                                     />
                                 </div>
@@ -241,6 +239,7 @@ const DashboardCommerceVariation2 = () => {
                                     <Line 
                                         data={Data11}
                                         height={240}
+                                        width={100}
                                         options={Options}
                                     />
                                 </div>
@@ -310,7 +309,7 @@ const DashboardCommerceVariation2 = () => {
                                 <CustomButton className='margin-top-10' color='warning' variant='solid'>View Profile</CustomButton>
                             </div>
                         </CustomCardHeaderWithImage>
-                        <CustomCardBody>
+                        <CustomCardBody className='no-margin-no-padding'>
                             <div className='grid-2-gap-30 align-items-center'>
                                 <div className='flex-column align-items-center'>
                                     <SettingOutlined spin={true} style={style.settingIcon} />

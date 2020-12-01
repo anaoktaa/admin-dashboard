@@ -16,10 +16,17 @@
     height: 180px;
     overflow-y: auto;
 }
+.da-highlights-container .da-highlights-item {
+    padding: 10px 20px;
+    border-bottom: 1px solid #98989845;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: none !important;
+}
 
 .da-highlights-item {
     padding: 10px 20px;
-    border-bottom: 1px solid #98989845;
     display: flex;
     align-items: center;
     justify-content: space-between;

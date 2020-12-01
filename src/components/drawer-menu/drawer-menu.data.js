@@ -18,7 +18,7 @@ const DrawerMenuData = [
         children: [
             {
                 id: 11,
-                url: '/dashboard-analytics',
+                url: '/dashboard/analytics',
                 name: 'Analytics',
                 icon: <PieChartTwoTone />,
                 title: 'Analytics Dashboard',
