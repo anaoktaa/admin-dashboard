@@ -1,0 +1,14 @@
+.ds-span-2 {
+    grid-column: 1 / span 2;
+}
+
+.ds-notification-height  {
+    height: 220px;
+    overflow: auto;
+}
+
+@media screen and (max-width: 650px) {
+    .ds-span-2 {
+        grid-column: 1 / span 1;
+    }       
+}

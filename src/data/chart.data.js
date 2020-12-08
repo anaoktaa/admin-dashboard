@@ -142,4 +142,22 @@ export const Data11= {
     labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
 };
 
+export const Data12= {
+    datasets: [
+    {
+      data: [0.3, 0.4, .5, 0.35, 0.28, 0.3, .43, 0.51, 0.39, 0.45, .41, 0.45],
+      borderWidth: 0,
+      backgroundColor: '#f7b924',
+      label: 'Sales'
+    },
+    {
+        data: [0.38, 0.42, .45, 0.36, 0.32, 0.45, .44, 0.54, 0.34, 0.49, .37, 0.49],
+        borderWidth: 0,
+        backgroundColor: '#fdf1d3',
+        label: 'Donwloads'
+    }
+    ],
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+};
+
 

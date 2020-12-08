@@ -1,18 +1,28 @@
 import React from 'react';
-import { Typography, Avatar, Carousel, Table, Progress } from 'antd';
-import { TrophyOutlined, DownOutlined, UpOutlined, LaptopOutlined } from '@ant-design/icons';
-import { Line } from 'react-chartjs-2';
+import { Typography, Avatar, Table, Progress } from 'antd';
+import { TrophyOutlined, DownOutlined, UpOutlined, LaptopOutlined, CheckCircleTwoTone, AntDesignOutlined } from '@ant-design/icons';
+import { Line, Bar } from 'react-chartjs-2';
 
 import { CustomCard, CustomCardFooter, CustomCardBody, CustomCardHeader, CustomCardTitleText } from 'Components/custom-card/custom-card.styles';
 import { CustomCardHeaderWithImage } from 'Components/custom-card/custom-card-header-with-image.component';
 import CustomLabelBadge from 'Components/custom-label-badge/custom-label-badge.component';
 import CustomButton from 'Components/custom-button/custom-button.component';
 import ChartBoxVar1 from 'Components/chart-box-var-1/chart-box-var-1.component';
+import CustomTabsWrapper from 'Components/custom-tabs-wrapper/custom-tabs-wrapper.component';
+import CustomTabPanel from 'Components/custom-tab-panel/custom-tab-panel.component';
+import CustomBadges from 'Components/custom-badges/custom-badges.component';
+import CustomTimeline from 'Components/custom-timeline/custom-timeline.component';
+import CustomTimelineItem from  'Components/custom-timeline-item/custom-timeline-item.component';
+import ChartBoxVar3 from 'Components/chart-box-var-3/chart-box-var-3.component';
+import ChartBoxGridContainer from 'Components/chart-box-grid/chart-box-grid.component';
 
-import { Data1, Data2, Data3 } from 'Data/chart.data';
-import { Options, Options6 } from 'Data/settings-chart.data';
-import { DataTable1, Columns1, DataHighlights2, DataTopPerformanceLaptop } from 'Data/table.data';
+import { Data2, Data3, Data12 } from 'Data/chart.data';
+import { Options6,  Options7 } from 'Data/settings-chart.data';
+import { DataHighlights2, DataTopPerformanceLaptop, ColumnsEasyDynTable, DataEasyDynTable } from 'Data/table.data';
 import { colorsPalette } from 'Components/custom-color/custom-color';
+
+import './dashboard-sales.styles.css';
+
 
 const { Title, Text } = Typography;
 
@@ -132,7 +142,7 @@ const DashboardSales = () => {
                         <CustomButton color='primary' variant='solid'>View All Participants</CustomButton>
                     </CustomCardFooter>
                 </CustomCard>
-                <CustomCard className='span-grid-column'>
+                <CustomCard className='span-grid-column overflow-hidden'>
                     <CustomCardBody>
                         <Title level={4}>Portfolio Performance</Title>
                         <div className='mb-30'>
@@ -164,12 +174,129 @@ const DashboardSales = () => {
                             </ChartBoxVar1>
                         </div>
                         <div className='flex-column align-items-center'>
-                            <Title className='color5d no-margin-no-padding' level={4}>Target Sales</Title>
-                            <Title className='color98 fw-400 no-margin-no-padding' level={5}>Total Performance for this month</Title>
+                            <div className='mb-30 text-align-center'>
+                                <Title className='color5d no-margin-no-padding' level={4}>Target Sales</Title>
+                                <Title className='color98 fw-400 no-margin-no-padding' level={5}>Total Performance for this month</Title>
+                            </div>
+                            <Bar 
+                                data={Data12}
+                                height={260}
+                                options={Options7}
+                            />
+
                         </div>
                     </CustomCardBody>
                 </CustomCard>
+                <CustomCard className='ds-span-2 mb-30'>
+                    <CustomCardHeader>Easy Dynamic Tables</CustomCardHeader>
+                    <CustomCardBody>
+                        <Table columns={ColumnsEasyDynTable} dataSource={DataEasyDynTable} />
+                    </CustomCardBody>
+                </CustomCard>
+                <CustomCard className='span-grid-column mb-30'>
+                    <CustomCardHeader>Technical Support</CustomCardHeader>
+                    <CustomCardHeaderWithImage 
+                            noneBorderRadius={true}
+                            backgroundColorOverlay='#adadade6' 
+                            className='align-items-center flex-column' 
+                            imgUrl={'https://images.unsplash.com/photo-1546629313-ea9c287a8b9f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=80'}>
+                        <Title className='text-align-center' level={4}>Notifications</Title>
+                        <Text>You have <strong className='danger'> 22</strong> notifications unread</Text>
+                    </CustomCardHeaderWithImage>
+                    <CustomCardBody>
+                        <CustomTabsWrapper>
+                            <CustomTabPanel data-key='message' title='Message'>
+                                <div className='ds-notification-height'>
+                                    <CustomTimeline size='small'>
+                                        <CustomTimelineItem color='danger'>
+                                            All Hands Meeting
+                                        </CustomTimelineItem>
+                                        <CustomTimelineItem color='warning'>
+                                            Yet another one, <Text type="success"> at 10.30 AM</Text> 
+                                        </CustomTimelineItem>
+                                        <CustomTimelineItem color='success'>
+                                            Build the productions release 
+                                            <CustomLabelBadge style={{marginLeft: '20px'}} color='danger'>
+                                                NEW
+                                            </CustomLabelBadge>
+                                        </CustomTimelineItem>
+                                        <CustomTimelineItem color='primary'>
+                                            <p>Something not important</p>
+                                            <Avatar.Group maxCount={4} maxStyle={{ color: '#f56a00', backgroundColor: '#fde3cf' }}>
+                                                <Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" />
+                                                <Avatar style={{ backgroundColor: '#f56a00' }}>K</Avatar>
+                                                <Avatar style={{ backgroundColor: '#545cd8' }}>U</Avatar>
+                                                <Avatar style={{ backgroundColor: '#d92550' }}>I</Avatar>
+                                                <Avatar style={{ backgroundColor: '#1890ff' }} icon={<AntDesignOutlined />} />
+                                            </Avatar.Group>
+                                        </CustomTimelineItem>
+                                    </CustomTimeline>
+                                </div>
+                            </CustomTabPanel>
+                            <CustomTabPanel data-key='events' title='Events'>
+                                <div className='ds-notification-height'>
+                                    <CustomTimeline size='regular'>
+                                        <CustomTimelineItem 
+                                            color='success'>
+                                            <Text className='uppercase fs-14 fw-bold'>All hands meeting</Text>
+                                            <p className='no-margin-no-padding'>Lorem ipsum dolor sit amet, today at  <Text type="warning">11.00 PM</Text></p>
+                                        </CustomTimelineItem>
+                                        <CustomTimelineItem 
+                                            color='warning'>
+                                            <p className='no-margin-no-padding'>Another meeting today, at <Text type="danger" className='fw-bold'>12.00 PM</Text></p>
+                                            <p className='no-margin-no-padding'>Yet another one, at <Text type="success">15.00 PM</Text></p>
+                                        </CustomTimelineItem>
+                                        <CustomTimelineItem 
+                                            color='danger'>
+                                            <Text className='uppercase fs-14 fw-bold'>Build the production release</Text>
+                                            <p className='no-margin-no-padding'>
+                                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis 
+                                            </p>
+                                        </CustomTimelineItem>
+                                    </CustomTimeline>
+                                </div>
+                            </CustomTabPanel>
+                            <CustomTabPanel data-key='system-error' title='System Error'>
+                                <div className='flex-column align-items-center mb-30'>
+                                    <CheckCircleTwoTone twoToneColor="#31b16f" style={{fontSize: '80px', marginBottom: '20px'}}/>
+                                    <Title className='fw-400 no-margin-no-padding color98' level={4}>All caught up !</Title> 
+                                    <Title className='fw-400 no-margin-no-padding' level={3}>There are no system errors !</Title>
+                                   
+                                </div>
+                            </CustomTabPanel>
+                        </CustomTabsWrapper>
+                    </CustomCardBody>
+                    <CustomCardFooter className='flex-row align-items-center justify-content-center'>
+                        <CustomBadges className='mrb-10' color='warning' size={12} dot>
+                            <CustomButton color='dark' pill shadow variant='solid'>
+                                View All Messages
+                            </CustomButton>
+                        </CustomBadges>
+                    </CustomCardFooter>
+                </CustomCard>
             </div>  
+            <div className='mb-30'>
+                <ChartBoxGridContainer col={3}>
+                    <ChartBoxVar3
+                        defaultValue="1896"
+                        defaultValueColor='success'
+                        mainTitleText='Total Orders'
+                        descriptionText='Last year expenses'
+                    />   
+                    <ChartBoxVar3
+                        defaultValue="$568"
+                        defaultValueColor='warning'
+                        mainTitleText='Clients'
+                        descriptionText='Total Clients Profit'
+                    />     
+                    <ChartBoxVar3
+                        defaultValue="$14M"
+                        defaultValueColor='danger'
+                        mainTitleText='Products Sold'
+                        descriptionText='Total revenue streams'
+                    /> 
+                </ChartBoxGridContainer>
+            </div>
         </div>
     )
 };

@@ -4,6 +4,7 @@ import { AppstoreOutlined } from '@ant-design/icons';
 
 import CustomLabelBadge from 'Components/custom-label-badge/custom-label-badge.component';
 import CustomButton from 'Components/custom-button/custom-button.component';
+import CustomBadges from 'Components/custom-badges/custom-badges.component';
 import { colorsPalette } from 'Components/custom-color/custom-color';
 import './data.styles.css';
 
@@ -559,6 +560,128 @@ export const DataTopPerformanceLaptop = [
         color: 'success'
     }
   },
-]
+];
+
+
+export const ColumnsEasyDynTable = [
+  {
+    title: 'First Name',
+    dataIndex: 'firstName',
+    key: 'firstName',
+  },
+  {
+    title: 'Last Name',
+    dataIndex: 'lastName',
+    key: 'lastName',
+  },
+  {
+    title: 'Progress',
+    dataIndex: 'progress',
+    key: 'progress',
+    render: (progress) => {
+      const { color, value } = progress;
+      return (
+        <Progress strokeColor={`${colorsPalette[color] ? colorsPalette[color] : color}`}  percent={value}/>
+      )
+    }
+  },
+  {
+    title: 'Status',
+    dataIndex: 'status',
+    key: 'status',
+    render: (status) => {
+      const { type, badge } = status;
+      return (
+        <span>
+            <CustomBadges size={10} color={badge} dot/>&nbsp;
+           {type}
+        </span>
+      )
+    }
+  },
+
+];
+
+export const DataEasyDynTable = [
+  {
+    id: 1,
+    progress: {
+      value: '62',
+      color: 'primary'
+    },
+    firstName: 'Smoke',
+    lastName: 'Flight',
+    status: {
+      badge: 'primary',
+      type: 'Single'
+    }
+  },
+  {
+    id: 2,
+    progress: {
+      value: '35',
+      color: 'warning'
+    },
+    firstName: 'Dad',
+    lastName: 'Mitten',
+    status: {
+      badge: 'success',
+      type: 'Married'
+    }
+  },
+  {
+    id: 3,
+    progress: {
+      value: '80',
+      color: 'danger'
+    },
+    firstName: 'Plough',
+    lastName: 'Quince',
+    status: {
+      badge: 'warning',
+      type: 'Single'
+    }
+  },
+  {
+    id: 4,
+    progress: {
+      value: '56',
+      color: 'success'
+    },
+    firstName: 'Grass',
+    lastName: 'Jar',
+    status: {
+      badge: 'success',
+      type: 'Single'
+    }
+  },
+  {
+    id: 5,
+    progress: {
+      value: '36',
+      color: 'warning'
+    },
+    firstName: 'Beast',
+    lastName: 'Bag',
+    status: {
+      badge: 'danger',
+      type: 'Married'
+    }
+  },
+  {
+    id: 6,
+    progress: {
+      value: '90',
+      color: 'primary'
+    },
+    firstName: 'Waves',
+    lastName: 'Children',
+    status: {
+      badge: 'primary',
+      type: 'Single'
+    }
+  },
+];
+
 
 

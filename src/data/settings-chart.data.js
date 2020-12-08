@@ -189,3 +189,30 @@ export const Options6 = {
     }],
     }
 }
+
+export const Options7 = {
+    legend: { display: true },
+    maintainAspectRatio: true,
+    scales: {
+        xAxes: [{
+            gridLines: {
+                display: false,
+                drawBorder: false 
+            },
+            ticks: {
+                display: false
+            },
+            stacked: true
+        }],
+        yAxes: [{
+            gridLines: {
+                display: false,
+                drawBorder: false 
+            },
+            ticks: {
+                display: false
+            },
+            stacked: true
+        }]
+    }
+};
