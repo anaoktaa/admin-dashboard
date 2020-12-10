@@ -22,11 +22,12 @@ import ProfileBoxes from 'Pages/profile-boxes/profile-boxes.component';
 import DashboardAnalytic from 'Pages/dashboard-analytic/dashboard-analytic.component';
 import DashboardCommerce from 'Pages/dashboard-commerce/dashboard-commerce.component';
 import DashboardSales from 'Pages/dashboard-sales/dashboard-sales.component';
+import DashboardCrm from 'Pages/dashboard-crm/dashboard-crm.component';
 
 const Routing =  () => {
     return (
         <Switch>
-            <Route exact path='/' component={DashboardSales} />
+            <Route exact path='/' component={DashboardCrm} />
             <Route exact path='/elements/buttons' component={ElementButtons}/>    
             <Route exact path='/elements/badges' component={ElementBadgesAndLabels}/>    
             <Route exact path='/elements/cards' component={ElementCards}/>  
@@ -42,6 +43,7 @@ const Routing =  () => {
             <Route exact path='/dashboard/analytics' component={DashboardAnalytic}/>
             <Route exact path='/dashboard/commerce' component={DashboardCommerce}/>
             <Route exact path='/dashboard/sales' component={DashboardSales}/>
+            <Route exact path='/dashboard/crm' component={DashboardCrm}/>
         </Switch>
     )
 };

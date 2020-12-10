@@ -190,6 +190,7 @@ export const Options6 = {
     }
 }
 
+//Bar chart, display label at the top, hidden x and y axes label
 export const Options7 = {
     legend: { display: true },
     maintainAspectRatio: true,

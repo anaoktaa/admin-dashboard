@@ -3,7 +3,7 @@ import { Typography, Avatar, Table, Progress } from 'antd';
 import { TrophyOutlined, DownOutlined, UpOutlined, LaptopOutlined, CheckCircleTwoTone, AntDesignOutlined } from '@ant-design/icons';
 import { Line, Bar } from 'react-chartjs-2';
 
-import { CustomCard, CustomCardFooter, CustomCardBody, CustomCardHeader, CustomCardTitleText } from 'Components/custom-card/custom-card.styles';
+import { CustomCard, CustomCardFooter, CustomCardBody, CustomCardHeader } from 'Components/custom-card/custom-card.styles';
 import { CustomCardHeaderWithImage } from 'Components/custom-card/custom-card-header-with-image.component';
 import CustomLabelBadge from 'Components/custom-label-badge/custom-label-badge.component';
 import CustomButton from 'Components/custom-button/custom-button.component';

@@ -1,0 +1,17 @@
+.dcm-chart-boxes-1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+@media screen and (max-widtth: 986px) {
+    .dcm-chart-boxes-1 {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .dcm-chart-boxes-1 {
+        grid-template-columns: 1fr;
+    }
+}

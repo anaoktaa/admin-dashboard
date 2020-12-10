@@ -18,6 +18,16 @@ const hoverCard = css`
     }
 `;
 
+
+export const BorderBottomCard = styled.div`
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 4px;
+    background-color: ${({bgColor}) => colorsPalette[bgColor]? colorsPalette[bgColor] : bgColor? bgColor : '#5d5d5d'};
+`;
+
 const styleForCard = props => {
     if (props.outlined) {
         return outlinedCard;
