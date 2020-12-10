@@ -68,10 +68,11 @@ export const CustomCardHeader = styled.div`
 export const CustomCardFooter = styled.div`
     padding: 15px;
     ${titleText};
-    border-top: 1px solid #d6d6d6;
+    border-top: ${({bgColor}) => bgColor? 'none' : '1px solid #d6d6d6'} ;
     display: flex;
     align-item: center;
     justify-content: flex-end;
+    background-color:  ${({bgColor}) => colorsPalette[bgColor]? colorsPalette[bgColor] : bgColor? bgColor : '#fff'};
 `;
 
 export const CustomCardTitleText = styled.p`

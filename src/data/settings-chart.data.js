@@ -160,6 +160,8 @@ export const Options5 = {
     }
 };
 
+
+//Line chart no x and y axes label no point
 export const Options6 = {
     legend: {
         display: false
@@ -217,3 +219,34 @@ export const Options7 = {
         }]
     }
 };
+
+//Line chart no x and y axes label no point
+export const Options8 = {
+    legend: {
+        display: false
+    },
+    elements: { 
+        point: { radius: 5 } },
+    maintainAspectRatio: true,
+    label: false,
+    scales: {
+    xAxes: [{
+        gridLines: {
+            display: false,
+            drawBorder: false 
+        },
+        ticks: {
+            display: false
+        },            
+    }],
+    yAxes :[
+    {
+        gridLines: {
+        display: false
+        },
+        ticks: {
+            display: false
+        },
+    }],
+    }
+}

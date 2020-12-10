@@ -35,7 +35,7 @@ const DrawerMenuData = [
             {
                 id: 13,
                 name: 'Sales',
-                url: 'dashboard/sales',
+                url: '/dashboard/sales',
                 icon: <StockOutlined />,
                 title: 'Sales Dashboard',
                 description: 'Example of a Dashboard page built with ArchitectUI.'
@@ -43,7 +43,7 @@ const DrawerMenuData = [
             {
                 id: 14,
                 name: 'Minimal',
-                url: 'dashboard/minimal',
+                url: '/dashboard/minimal',
                 icon: <LikeOutlined />,
                 title: 'Minimal Dashboards',
                 description: 'This dashboard example was created using only the available elements and components, no additional SCSS was written!'

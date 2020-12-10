@@ -4,14 +4,28 @@
     gap: 30px;
 }
 
+.dcm-grid-2-2 {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+}
+
 @media screen and (max-widtth: 986px) {
     .dcm-chart-boxes-1 {
         grid-template-columns: repeat(4, 1fr);
+    }
+
+    .dcm-grid-2-2 {
+        grid-template-columns: 1fr;
     }
 }
 
 @media screen and (max-width: 650px) {
     .dcm-chart-boxes-1 {
+        grid-template-columns: 1fr;
+    }
+
+    .dcm-grid-2-2 {
         grid-template-columns: 1fr;
     }
 }
