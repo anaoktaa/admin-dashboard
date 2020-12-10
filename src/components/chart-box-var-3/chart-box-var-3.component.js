@@ -16,7 +16,7 @@ const ChartBoxVar3 = ({ bgColor, boxShadow, borderRadius, defaultValue, mainTitl
                         ...props }) => {
                         
     return (
-        <ChartBoxVar3Container showBorder={props.showBorder} col={props.col} row={props.row} bgColor={bgColor} boxShadow={boxShadow} borderRadius={borderRadius}>
+        <ChartBoxVar3Container {...props} showBorder={props.showBorder} col={props.col} row={props.row} bgColor={bgColor} boxShadow={boxShadow} borderRadius={borderRadius}>
             <ChartBoxVar3Grid width={width}>
                 <div className='flex-column justify-content-center'>
                     <MainTitleText mainTitleColor={mainTitleColor} className='fw-bold'>{mainTitleText}</MainTitleText>
