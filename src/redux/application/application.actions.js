@@ -42,3 +42,8 @@ export const setProfileHeaderToggle = (data) => ({
     type: ApplicationTypes.SET_PROFILE_HEADER_TOGGLE,
     payload: data
 });
+
+export const setBreadCrumb = (data) => ({
+    type: ApplicationTypes.SET_BREADCRUMB,
+    payload: data
+});

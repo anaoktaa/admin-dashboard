@@ -43,7 +43,7 @@ const DrawerMenuData = [
             {
                 id: 14,
                 name: 'Minimal',
-                url: '/dashboard/minimal',
+                url: '/dashboard/crm',
                 icon: <LikeOutlined />,
                 title: 'Minimal Dashboards',
                 description: 'This dashboard example was created using only the available elements and components, no additional SCSS was written!'
@@ -58,7 +58,7 @@ const DrawerMenuData = [
         children: [
             {
                 id: 21,
-                url: 'pages/login',
+                url: '/pages/login',
                 name: 'Login',
                 icon: null,
                 title: null,
@@ -67,7 +67,7 @@ const DrawerMenuData = [
             {
                 id: 22,
                 name: 'Login Boxed',
-                url: 'pages/login-boxed',
+                url: '/pages/login-boxed',
                 icon: null,
                 title: null,
                 description: null 
@@ -75,7 +75,7 @@ const DrawerMenuData = [
             {
                 id: 23,
                 name: 'Register',
-                url: 'pages/register',
+                url: '/pages/register',
                 icon: null,
                 title: null,
                 description: null
@@ -83,7 +83,7 @@ const DrawerMenuData = [
             {
                 id: 24,
                 name: 'Register Boxed',
-                url: 'pages/register-boxed',
+                url: '/pages/register-boxed',
                 icon: null,
                 title: null,
                 description: null
@@ -91,7 +91,7 @@ const DrawerMenuData = [
             {
                 id: 25,
                 name: 'Forgot Password',
-                url: 'pages/forgot-password',
+                url: '/pages/forgot-password',
                 icon: null,
                 title: null,
                 description: null
@@ -99,7 +99,7 @@ const DrawerMenuData = [
             {
                 id: 26,
                 name: 'Forgot Password Boxed',
-                url: 'pages/forgot-password-boxed',
+                url: '/pages/forgot-password-boxed',
                 icon: null,
                 title: null,
                 description: null

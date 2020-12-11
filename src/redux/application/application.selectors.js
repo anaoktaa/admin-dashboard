@@ -38,3 +38,7 @@ export const selectProfileHeaderToggle = createSelector(
     [selectApp],
     app => app.profileHeaderToggle
 );
+export const selectBreadCrumb = createSelector(
+    [selectApp],
+    app => app.breadCrumb
+);

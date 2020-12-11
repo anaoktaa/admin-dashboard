@@ -9,7 +9,8 @@ const INITIAL_STATE = {
     notifHeaderToggle: false,
     langHeaderToggle: false,
     activeUserHeaderToggle: false,
-    profileHeaderToggle: false
+    profileHeaderToggle: false,
+    breadCrumb: null
 }
 
 const application = (state = INITIAL_STATE, action) => {
@@ -58,6 +59,11 @@ const application = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 profileHeaderToggle: action.payload
+            }
+        case ApplicationTypes.SET_BREADCRUMB:
+            return  {
+                ...state,
+                breadCrumb: action.payload
             }
         default:
             return state;
