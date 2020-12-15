@@ -5,7 +5,6 @@ import { CustomCard, CustomCardBody, CustomCardTitleText } from 'Components/cust
 
 const SolidButtonContainer = () => {
     const handleScroll = () => {
-        console.log('keeatas dodong')
         window.scrollTo(0, 0);
     }
     return (

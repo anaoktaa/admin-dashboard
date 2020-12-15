@@ -1,8 +1,14 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: {
+        main: path.resolve(__dirname, './src/index.js'),
+        dashboardcommerce: path.resolve(__dirname, './src/pages/dashboard-commerce/dashboard-commerce.component.js'),
+        dashboardsales: path.resolve(__dirname, './src/pages/dashboard-sales/dashboard-sales.component'),
+        dashboardanalytic: path.resolve(__dirname, './src/pages/dashboard-analytic/dashboard-analytic.component'),
+    },
     resolve: {
         alias: {
           Assets: path.resolve(__dirname, 'src/assets/'),
@@ -13,10 +19,13 @@ module.exports = {
         }
     },
     output: {
-      path: path.resolve(__dirname, 'dist'),
-      filename: 'main.js',
-      publicPath: '/'
+        path: path.resolve(__dirname, 'dist'),
+        filename: '[name].[contenthash:8].js',
+        publicPath: '/'
     },
+    plugins: [
+        new webpack.HashedModuleIdsPlugin(), // so that file hashes don't change unexpectedly
+    ],
     devServer: {
         historyApiFallback: true,
     },
@@ -74,7 +83,21 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './public/index.html'
-        })
-    ]
+            template: 'public/index.html',
+            favicon: 'public/favicon.ico'
+        }),
+    ],
+    optimization: {
+        runtimeChunk: 'single',
+        splitChunks: {
+            chunks: 'all',
+            maxInitialRequests: Infinity,
+            minSize: 0,
+            cacheGroups: {
+                vendor: {
+                test: /[\\/]node_modules[\\/]/,
+                }
+            },
+        },
+    },
 }

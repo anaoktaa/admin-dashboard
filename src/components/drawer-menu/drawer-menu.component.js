@@ -18,14 +18,24 @@ const DrawerMenu = ({ history, setBreadCrumb }) => {
             const actualLocation = history.location.pathname === '/' ? '/dashboard/analytics' : history.location.pathname ;
 
             DrawerMenuData.map((item) => {
-                item.children.map((itemList) => {
-                    if (itemList.url === actualLocation) {
+                if (item.children.length > 0 ) {
+                    item.children.map((itemList) => {
+                        if (itemList.url === actualLocation) {
+                            const arr = [];
+                            arr.push(String(itemList.id));
+                            setDefaultMenuOpen(arr);
+                            setBreadCrumb(itemList);
+                        }
+                    })
+                }
+                else {
+                    if (item.url === actualLocation ) {
                         const arr = [];
-                        arr.push(String(itemList.id));
+                        arr.push(String(item.id));
                         setDefaultMenuOpen(arr);
-                        setBreadCrumb(itemList);
+                        setBreadCrumb(item);
                     }
-                })
+                }         
             })
         }
         initialMenu();
@@ -39,6 +49,7 @@ const DrawerMenu = ({ history, setBreadCrumb }) => {
         setBreadCrumb(item);
         history.push(item.url);
     }
+
 
     return (
         <div>

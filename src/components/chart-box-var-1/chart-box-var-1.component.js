@@ -60,7 +60,6 @@ const ChartBoxVar1 = ({ bgColor, zoom, variant, icon, iconColor, iconBgColor, ic
     );
 
     if (variant === 'basic') {
-        console.log("border radius", borderRadius)
         return (
             <ChartBoxVar1Container className={className} row={props.row} col={col} border={border} boxShadow={boxShadow} borderRadius={borderRadius} bgColor={bgColor} zoom={zoom}>
                 {

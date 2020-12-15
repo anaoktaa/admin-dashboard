@@ -7,10 +7,10 @@ const onClickOutside = Component => {
 
         const handleClickOutside = (event) => {
             if (ref.current && !ref.current.contains(event.target)) {
-                console.log('ini didalamm')
+                // console.log('ini didalamm')
             }
             else {
-                console.log('ini diluar');
+                // console.log('ini diluar');
             }
         }
 

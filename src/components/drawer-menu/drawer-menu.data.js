@@ -20,7 +20,7 @@ const DrawerMenuData = [
                 id: 11,
                 url: '/dashboard/analytics',
                 name: 'Analytics',
-                icon: <PieChartTwoTone />,
+                icon: <PieChartTwoTone/>,
                 title: 'Analytics Dashboard',
                 description: 'This is an example dashboard created using build-in elements and components.'
             },
@@ -28,7 +28,7 @@ const DrawerMenuData = [
                 id: 12,
                 name: 'Commerce',
                 url: '/dashboard/commerce',
-                icon: <ShoppingTwoTone />,
+                icon: <ShoppingTwoTone twoToneColor='#d92550' />,
                 title: 'Commerce Dashboard',
                 description: 'This dashboard was created as an example of the flexibility that ArchitectUI offers.'         
             },
@@ -36,7 +36,7 @@ const DrawerMenuData = [
                 id: 13,
                 name: 'Sales',
                 url: '/dashboard/sales',
-                icon: <StockOutlined />,
+                icon: <StockOutlined style={{color: '#3ac47d'}}/>,
                 title: 'Sales Dashboard',
                 description: 'Example of a Dashboard page built with ArchitectUI.'
             },
@@ -44,7 +44,7 @@ const DrawerMenuData = [
                 id: 14,
                 name: 'Minimal',
                 url: '/dashboard/crm',
-                icon: <LikeOutlined />,
+                icon: <LikeOutlined style={{color: '#545cd8'}} />,
                 title: 'Minimal Dashboards',
                 description: 'This dashboard example was created using only the available elements and components, no additional SCSS was written!'
             }
@@ -135,6 +135,15 @@ const DrawerMenuData = [
                 icon: <QuestionCircleTwoTone />,
                 title: 'FAQ Section',
                 description: 'Dummy page layout example.'
+            },
+            {
+                id: 35,
+                name: 'Profile Boxes',
+                icon: <IdcardOutlined style={{color: '#545cd8'}} />,
+                url: '/profile-boxes',
+                title: 'Profile Boxes',
+                description: 'These boxes are usually for dashboard elements centered around users and profiles.',
+        
             }
         ]
     },
@@ -148,7 +157,7 @@ const DrawerMenuData = [
                 id: 41,
                 url: '/elements/buttons',
                 name: 'Buttons',
-                icon: <BorderOutlined />,
+                icon: <BorderOutlined style={{color: '#83588a'}} />,
                 title: 'Standard Buttons',
                 description: 'Wide selection of buttons that feature different styles for backgrounds, borders and hover options!                '
             },
@@ -156,7 +165,7 @@ const DrawerMenuData = [
                 id: 42,
                 name: 'Badges',
                 url: '/elements/badges',
-                icon: <UnorderedListOutlined />,
+                icon: <UnorderedListOutlined style={{color: '#5dbdab'}} />,
                 title: 'Standard Badges',
                 description: 'Multiple styles, actions and effects are available for the ArchitectUI dropdown buttons.'         
             },
@@ -164,7 +173,7 @@ const DrawerMenuData = [
                 id: 43,
                 name: 'Cards',
                 url: '/elements/cards',
-                icon: <BugTwoTone />,
+                icon: <BugTwoTone twoToneColor='#d92550'/>,
                 title: 'Cards',
                 description: 'Wide icons selection including from flag icons to FontAwesome and other icons libraries.'
             },
@@ -172,7 +181,7 @@ const DrawerMenuData = [
                 id: 44,
                 name: 'Navigations',
                 url: '/elements/navigations',
-                icon: <SafetyOutlined />,
+                icon: <SafetyOutlined style={{color: '#f7b924'}}/>,
                 title: 'Navigations Menus',
                 description: 'Badges and labels are used to offer extra small pieces of info for your content.'
             },
@@ -193,7 +202,7 @@ const DrawerMenuData = [
         url: '/chart-boxes',
         children: [
             {
-                id: 61,
+                id: 51,
                 url: '/chart-boxes/variation-1',
                 name: 'Variation1',
                 icon: <ProfileTwoTone />,
@@ -201,15 +210,15 @@ const DrawerMenuData = [
                 description: 'Choose between regular React Bootstrap tables or advanced dynamic ones. '
             },
             {
-                id: 62,
+                id: 52,
                 name: 'Variation2',
                 url: '/chart-boxes/variation-2',
-                icon: <UngroupOutlined />,
+                icon: <UngroupOutlined style={{color: '#7a61af'}} />,
                 title: 'Variation 2',
                 description: 'Tables are the backbone of almost all web applications.'         
             },
             {
-                id: 63,
+                id: 53,
                 name: 'Variation3',
                 url: '/chart-boxes/variation-3',
                 icon: <BookTwoTone />,
@@ -218,13 +227,6 @@ const DrawerMenuData = [
             },
         ]
     },
-    {
-        id: 6,
-        name: 'Profile Boxes',
-        icon: <IdcardOutlined />,
-        url: '/profile-boxes',
-        children: []
-    }
 ];
 
 export default DrawerMenuData;

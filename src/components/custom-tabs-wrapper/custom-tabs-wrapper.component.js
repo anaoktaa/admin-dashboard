@@ -26,17 +26,6 @@ const CustomTabsWrapper = ({ actualSize, children, ...props }) => {
         setScrollPositionIdx(index);
     }
 
-    // const handleNext = () =>  {
-    //     if (scrollPositionIdx <= maxChildrenTab-1) {
-    //         handleScrollToRef(scrollPositionIdx+1);
-    //     }
-    // }
-
-    // const handlePrev = () =>  {
-    //     console.log('inii indexx', scrollPositionIdx);
-    //     handleScrollToRef(scrollPositionIdx-1);
-    // }
-
     const findActualLeft = (nodes, currentActiveNode) => {
         //Finding width
         let findActivePanel = false;

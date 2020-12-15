@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import { withRouter } from 'react-router';
 
 import 'antd/dist/antd.less';
@@ -22,7 +22,7 @@ const App = ({ location }) => {
 
     return (
         <div className='app'>
-            <Routing/>
+            <Routing/>     
         </div>
     )
 };

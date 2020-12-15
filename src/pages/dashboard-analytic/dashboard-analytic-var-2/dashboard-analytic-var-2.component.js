@@ -23,7 +23,6 @@ import { DataTable1, Columns1 } from 'Data/table.data';
 const { Text } = Typography;
 
 const DashboardAnalyticVariation2 = () => {
-    console.log('TEST')
     return (
         <div>
             <div className='grid-3-gap-30 mb-30'>

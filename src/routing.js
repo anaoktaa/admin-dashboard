@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
+import Loadable from 'react-loadable';
 
 import SigninPage from 'Pages/signin/signin.component';
 import SigninBoxedPage from 'Pages/signin-boxed/signin-boxed.component';
@@ -25,7 +26,6 @@ import DashboardAnalytic from 'Pages/dashboard-analytic/dashboard-analytic.compo
 import DashboardCommerce from 'Pages/dashboard-commerce/dashboard-commerce.component';
 import DashboardSales from 'Pages/dashboard-sales/dashboard-sales.component';
 import DashboardCrm from 'Pages/dashboard-crm/dashboard-crm.component';
-
 import CustomBreadcrumb from './components/custom-breadcrumb/custom-breadcrumb.component';
 import CustomHeader from './components/custom-header/custom-header.component';
 import CustomDrawer from './components/custom-drawer/custom-drawer.component';
@@ -34,6 +34,7 @@ import FloatingMenuHeader from './components/floating-menu-header/floating-menu-
 import { selectFoldDrawer } from './redux/application/application.selectors';
 
 const Routing =  ({ foldDrawer }) => {
+
     return (
         <Switch>
             <Route exact path='/pages/login' component={SigninPage}/>
