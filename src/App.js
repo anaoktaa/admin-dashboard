@@ -27,5 +27,4 @@ const App = ({ location }) => {
     )
 };
 
-
 export default (withRouter(App));

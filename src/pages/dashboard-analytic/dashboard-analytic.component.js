@@ -9,16 +9,16 @@ import DashboardAnalyticVariation2 from './dashboard-analytic-var-2/dashboard-an
 import './dashboard-analytic.styles.css';
 
 const DashboardAnalytic = () => {
-    return (
-        <CustomTabsWrapper>
-            <CustomTabPanel data-key='variation1' title='Variation 1'>
-                <DashboardAnalyticVariation1/>
-            </CustomTabPanel>
-            <CustomTabPanel data-key='variation2' title='Variation 2'>
-                <DashboardAnalyticVariation2/>
-            </CustomTabPanel>
-        </CustomTabsWrapper>
-    )
+  return (
+    <CustomTabsWrapper>
+      <CustomTabPanel data-key="variation1" title="Variation 1">
+        <DashboardAnalyticVariation1 />
+      </CustomTabPanel>
+      <CustomTabPanel data-key="variation2" title="Variation 2">
+        <DashboardAnalyticVariation2 />
+      </CustomTabPanel>
+    </CustomTabsWrapper>
+  );
 };
 
 export default DashboardAnalytic;

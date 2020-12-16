@@ -1,31 +1,25 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
-const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const AsyncChunkNames = require('webpack-async-chunk-names-plugin');
 
 module.exports = {
-    entry: {
-        main: path.resolve(__dirname, './src/index.js'),
-        dashboardcommerce: path.resolve(__dirname, './src/pages/dashboard-commerce/dashboard-commerce.component.js'),
-        dashboardsales: path.resolve(__dirname, './src/pages/dashboard-sales/dashboard-sales.component'),
-        dashboardanalytic: path.resolve(__dirname, './src/pages/dashboard-analytic/dashboard-analytic.component'),
+    mode: ( process.env.NODE_ENV ? process.env.NODE_ENV : 'development' ),
+    entry: ['babel-polyfill', './src/index.js'],
+    output: {
+        path: path.join(__dirname, 'dist'),
+        filename: '[name].js',
+        chunkFilename: '[name].js',
+        publicPath: '/'
     },
     resolve: {
         alias: {
           Assets: path.resolve(__dirname, 'src/assets/'),
           Components: path.resolve(__dirname, 'src/components/'),
-          Pages: path.resolve(__dirname, 'src/pages/'),
           Data: path.resolve(__dirname, 'src/data/'),
           Redux_Component: path.resolve(__dirname, 'src/redux/'),
+          Loader : path.resolve(__dirname, 'src/loader/')
         }
     },
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: '[name].[contenthash:8].js',
-        publicPath: '/'
-    },
-    plugins: [
-        new webpack.HashedModuleIdsPlugin(), // so that file hashes don't change unexpectedly
-    ],
     devServer: {
         historyApiFallback: true,
     },
@@ -60,11 +54,11 @@ module.exports = {
                 use: [{
                     loader: 'style-loader',
                   }, {
-                    loader: 'css-loader', // translates CSS into CommonJS
+                    loader: 'css-loader', 
                   }, {
-                    loader: 'less-loader', // compiles Less to CSS
+                    loader: 'less-loader',
                     options: {
-                        lessOptions: { // If you are using less-loader@5 please spread the lessOptions to options directly
+                        lessOptions: { 
                         modifyVars: {
                             'primary-color': '#545cd8',
                             'link-color': '#545cd8',
@@ -86,6 +80,7 @@ module.exports = {
             template: 'public/index.html',
             favicon: 'public/favicon.ico'
         }),
+        new AsyncChunkNames()
     ],
     optimization: {
         runtimeChunk: 'single',
