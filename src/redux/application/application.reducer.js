@@ -18,7 +18,7 @@ const application = (state = INITIAL_STATE, action) => {
         case ApplicationTypes.SET_FOLD_DRAWER:
             return {
                 ...state,
-                foldDrawer: !state.foldDrawer
+                foldDrawer: action.payload
             }
         case ApplicationTypes.SET_FLOATING_HEADER_TOOLS:
             return {

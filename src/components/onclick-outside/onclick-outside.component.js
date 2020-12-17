@@ -1,31 +1,20 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 
-const onClickOutside = Component => {
-    const WrappedComponent = (props) => {
-
-        const ref = useRef(null);
-
-        const handleClickOutside = (event) => {
-            if (ref.current && !ref.current.contains(event.target)) {
-                // console.log('ini didalamm')
-            }
-            else {
-                // console.log('ini diluar');
-            }
-        }
-
-        useEffect(() => {
-            document.addEventListener("click", handleClickOutside, true);
-            return () => {
-                document.removeEventListener("click", handleClickOutside, true);
-            };
-        });
+const onClickOutside = (ref, callback, name) => {
     
-        return (
-            <Component ref={ref} {...props} />
-        )
-    }
-  return WrappedComponent;
+    React.useEffect(() => {
+      const handleClick = e => {
+        if (!ref.current || ref.current.contains(e.target)) {
+          return;
+        }
+        callback(name);
+      };
+
+      document.addEventListener('click', handleClick, true);
+      return () => {
+        document.removeEventListener('click', handleClick, true);
+      };
+    });
 };
 
 export default onClickOutside;

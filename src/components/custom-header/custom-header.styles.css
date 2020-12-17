@@ -13,6 +13,57 @@
     box-shadow: 0 0.46875rem 2.1875rem rgba(8, 10, 37, 0.03), 0 0.9375rem 1.40625rem rgba(8, 10, 37, 0.03), 0 0.25rem 0.53125rem rgba(8, 10, 37, 0.05), 0 0.125rem 0.1875rem rgba(8, 10, 37, 0.03);box-shadow: 0 0.46875rem 2.1875rem rgba(8, 10, 37, 0.03), 0 0.9375rem 1.40625rem rgba(8, 10, 37, 0.03), 0 0.25rem 0.53125rem rgba(8, 10, 37, 0.05), 0 0.125rem 0.1875rem rgba(8, 10, 37, 0.03);
 }
 
+.menu-drawer-icon-container {
+    /* background-color: rebeccapurple; */
+    height: 64px;
+    width: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.burger-icon {
+    visibility: visible;
+    opacity: 1;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    transition: all .3s;
+    transition-delay: .1s;
+    z-index: 100;
+}
+
+.hidden-burger-icon {
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s;
+    position: absolute;
+    transition-delay: .1s;
+    transform: rotate(90deg);
+
+}
+
+.close-drawer-icon {
+    visibility: hidden;
+    opacity: 0;
+    transition: all .3s;
+    transition-delay: .1s;
+    position: absolute;
+}
+
+.show-close-drawer-icon {
+    visibility: visible;
+    opacity: 1;
+    transition: all .3s;
+    transition-delay: .1s;
+    transform: rotate(90deg);
+    position: absolute;
+    font-size: 20px;
+    cursor: pointer;
+
+}
+
 .header-styles-drawer-open {
     padding-left: 100px;
 }

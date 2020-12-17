@@ -5,11 +5,11 @@ import { Menu } from 'antd';
 
 import DrawerMenuData from './drawer-menu.data';
 
-import { setBreadCrumb } from 'Redux_Component/application/application.actions';
+import { setBreadCrumb, setFoldDrawer } from 'Redux_Component/application/application.actions';
 
 const { SubMenu } = Menu;
 
-const DrawerMenu = ({ history, setBreadCrumb }) => {
+const DrawerMenu = ({ history, setBreadCrumb, setFoldDrawer }) => {
     const [ defaultMenuOpen, setDefaultMenuOpen ] = useState('11');
 
     useEffect(() => {
@@ -43,11 +43,13 @@ const DrawerMenu = ({ history, setBreadCrumb }) => {
 
 
     const handleRoute = item => {
+        setFoldDrawer(true);
         const arr = [];
         arr.push(String(item.id));
         setDefaultMenuOpen(arr);
         setBreadCrumb(item);
         history.push(item.url);
+       
     }
 
 
@@ -81,7 +83,8 @@ const DrawerMenu = ({ history, setBreadCrumb }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-    setBreadCrumb: (data) => dispatch(setBreadCrumb(data))
+    setBreadCrumb: (data) => dispatch(setBreadCrumb(data)),
+    setFoldDrawer: (data) => dispatch(setFoldDrawer(data)),
 })
 
 export default connect(null, mapDispatchToProps)(withRouter(DrawerMenu));

@@ -1,7 +1,8 @@
 import ApplicationTypes from './application.types';
 
-export const setFoldDrawer = () => ({
-    type: ApplicationTypes.SET_FOLD_DRAWER
+export const setFoldDrawer = (data) => ({
+    type: ApplicationTypes.SET_FOLD_DRAWER,
+    payload: data
 });
 
 export const setFloatingHeaderTools = () => ({

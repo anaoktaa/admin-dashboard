@@ -50,42 +50,6 @@ const RightMenuHeader = ({ setGridDashboardToggle,gridMenuToggle, setNotifHeader
         setActiveUserHeaderToggle(!activeUserMenuToggle);
     }
 
-    const handleClickOutside = event => {
-
-        //Click outside untuk grid menu
-        if (refGridMenu.current && !refGridMenu.current.contains(event.target) && gridMenuToggle) {
-            setGridDashboardToggle(false);
-        }
-
-        //Click outside untuk notif menu
-        if (refNotifMenu.current && !refNotifMenu.current.contains(event.target) && notifMenuToggle) {
-            setNotifHeaderToggle(false);
-        }
-
-        //Click outside untuk lang menu
-        if (refLangMenu.current && !refLangMenu.current.contains(event.target) && langMenuToggle) {
-            setLangHeaderToggle(false);
-        }
-
-         //Click outside untuk active user menu
-         if (refActiveUserMenu.current && !refActiveUserMenu.current.contains(event.target) && activeUserMenuToggle) {
-            setActiveUserHeaderToggle(false);
-        }
-        
-        //Click outside untuk profile menu
-        if (refProfileMenu.current && !refProfileMenu.current.contains(event.target) && profileMenuToggle) {
-            setProfileHeaderToggle(false);
-        }
-
-    };
-
-    useEffect(() => {
-        document.addEventListener("click", handleClickOutside, true);
-        return () => {
-            document.removeEventListener("click", handleClickOutside, true);
-        };
-    });
-
     return (
         <div className='header-right-menu'>
             <div ref={refGridMenu} className='header-avatar-wrap'>
