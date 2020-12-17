@@ -13,6 +13,9 @@ const { Link, Text } = Typography;
 
 const CustomBreadcrumb = ({ breadCrumb }) => {
 
+    const locationArr = breadCrumb? breadCrumb.url.split("/") : [];
+
+    console.log('lokasi breadcrumb', locationArr.slice(1));
     return (
         <div className='app-theme-container'>
             <div className='app-theme-icon-wrapper'>
@@ -29,16 +32,28 @@ const CustomBreadcrumb = ({ breadCrumb }) => {
             </div>
             <div className='app-theme-breadcrumb-container'>
                 <Link href="https://ant.design" target="_blank">
-                    <HomeOutlined />
+                    {breadCrumb? breadCrumb.icon : null} &nbsp;
                 </Link>
-                <span className='slash-breadcrumb-link '> / </span>
-                <Link href="https://ant.design" target="_blank">
-                    Dashboard
-                </Link>
-                <span className='slash-breadcrumb-link '> / </span>
-                <Text>
-                    Example Breadcrumb
-                </Text>
+                {
+                    locationArr.map((path, index) => {
+                        if (index !== locationArr.length - 1 ) {
+                            return (
+                                <Link href="https://ant.design" target="_blank" style={{textTransform: 'capitalize'}}>
+                                    {path} / &nbsp;
+                                </Link>
+                            )
+                        }
+                        else {
+                            return (
+                                <Text style={{textTransform: 'capitalize'}}>
+                                    {path}
+                                </Text>
+                            )
+                        }
+                    })
+                }
+            
+          
             </div>
         </div>       
     )

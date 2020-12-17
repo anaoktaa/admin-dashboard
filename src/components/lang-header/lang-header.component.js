@@ -2,7 +2,6 @@ import React from 'react';
 import { Menu } from 'antd';
 
 import './lang-header.styles.css';
-import '../right-menu-header/right-menu-header.styles.css';
 import '../../App.css';
 
 import germany from '../../assets/flag/germany.png';

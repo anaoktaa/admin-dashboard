@@ -5,7 +5,6 @@ import { RocketOutlined, FundProjectionScreenOutlined, SettingOutlined,
          ReconciliationOutlined, SafetyCertificateOutlined, PhoneOutlined } from '@ant-design/icons';
          
 import './grid-menu.styles.css';
-import '../right-menu-header/right-menu-header.styles.css';
 
 const GridMenu = ({ show }) => {
     return (

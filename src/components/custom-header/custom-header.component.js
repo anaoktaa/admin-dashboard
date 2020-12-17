@@ -14,21 +14,21 @@ import { MenuUnfoldOutlined, GiftOutlined, SettingOutlined,
 
 import { selectFoldDrawer, selectMegaMenuToggle, selectSettingHeaderToggle, selectFloatingHeaderTools,
         selectGridDashboardToggle, selectNotifHeaderToggle, selectLangHeaderToggle, selectActiveUserHeaderToggle,
-        selectProfileHeaderToggle } from '../../redux/application/application.selectors';
+        selectProfileHeaderToggle } from 'Redux_Component/application/application.selectors';
 import { setFoldDrawer, setMegaMenuToggle, setSettingHeaderToggle, setFloatingHeaderTools,
         setGridDashboardToggle, setNotifHeaderToggle, setLangHeaderToggle, setActiveUserHeaderToggle,
-        setProfileHeaderToggle } from '../../redux/application/application.actions';
+        setProfileHeaderToggle } from 'Redux_Component/application/application.actions';
 
-import onClickOutside from '../onclick-outside/onclick-outside.component';
-import withWindowResize from '../with-window-resize/with-window-resize.component';
-import MegaMenu from '../mega-menu/mega-menu.component';
-import SettingHeader from '../setting-header/setting-header.component';
-import SearchHeader from '../search-header/search-header.component';
-import GridMenu from '../grid-menu/grid-menu.component';
-import NotifHeader from '../notif-header/notif-header.component';
-import LangHeader from '../lang-header/lang-header.component';
-import ActiveUserHeader from '../active-user-header/active-user-header.component';
-import ProfileHeader from '../profile-header/profile-header.component';
+import onClickOutside from 'Components/onclick-outside/onclick-outside.component';
+import withWindowResize from 'Components/with-window-resize/with-window-resize.component';
+import MegaMenu from 'Components/mega-menu/mega-menu.component';
+import SettingHeader from 'Components/setting-header/setting-header.component';
+import SearchHeader from 'Components/search-header/search-header.component';
+import GridMenu from 'Components/grid-menu/grid-menu.component';
+import NotifHeader from 'Components/notif-header/notif-header.component';
+import LangHeader from 'Components/lang-header/lang-header.component';
+import ActiveUserHeader from 'Components/active-user-header/active-user-header.component';
+import ProfileHeader from 'Components/profile-header/profile-header.component';
 
 const { Text } = Typography;
 

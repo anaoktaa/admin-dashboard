@@ -3,7 +3,6 @@ import { Typography, Button  } from 'antd';
 import { UserOutlined, SettingOutlined } from '@ant-design/icons';
 
 import './active-user-header.styles.css';
-import '../right-menu-header/right-menu-header.styles.css';
 import '../../App.css';
 
 const { Title, Text } = Typography;

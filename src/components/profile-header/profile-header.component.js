@@ -3,7 +3,6 @@ import { Avatar, Button } from 'antd';
 import { MessageOutlined, TagOutlined } from '@ant-design/icons';
 
 import './profile-header.styles.css';
-import '../right-menu-header/right-menu-header.styles.css';
 import '../../App.css';
 
 const ProfileHeader = ({ show }) => {

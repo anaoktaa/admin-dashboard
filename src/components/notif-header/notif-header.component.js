@@ -3,7 +3,6 @@ import { Timeline } from 'antd';
 import { ClockCircleOutlined } from '@ant-design/icons';
 
 import './notif-header.styles.css';
-import '../right-menu-header/right-menu-header.styles.css';
 import '../../App.css';
 
 const NotifHeader = ({ show }) => {
