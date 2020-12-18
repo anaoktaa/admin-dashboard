@@ -13,5 +13,6 @@ export const LoaderContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  text-align: center;
   padding: 20px;
 `;
