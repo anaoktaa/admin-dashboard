@@ -4,6 +4,10 @@ import { Typography, Form, Input, Button  } from 'antd';
 
 const { Title } = Typography;
 
+import '../signin/signin.styles.css';
+import '../signin-boxed/signin-boxed.styles.css';
+import '../signup/signup.styles.css';
+import '../signup-boxed/signup-boxed.styles.css';
 
 const ForgotPasswordBoxed = () => {
     return (

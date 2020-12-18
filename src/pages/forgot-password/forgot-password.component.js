@@ -2,7 +2,10 @@ import React from 'react';
 
 import { Carousel, Typography, Form, Input, Button  } from 'antd';
 
-import './forgot-password.styles.css';
+import '../signin/signin.styles.css';
+import '../signin-boxed/signin-boxed.styles.css';
+import '../signup/signup.styles.css';
+import '../signup-boxed/signup-boxed.styles.css';
 
 const { Title } = Typography;
 

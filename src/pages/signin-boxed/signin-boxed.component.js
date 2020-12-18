@@ -2,6 +2,7 @@ import React from 'react';
 import { Typography, Form, Input, Checkbox, Button  } from 'antd';
 
 import './signin-boxed.styles.css';
+import '../signin/signin.styles.css';
 
 const { Title } = Typography;
 
@@ -51,7 +52,7 @@ const SigninBoxedPage = () => {
                     <Form.Item>
                         <div className='flex-end signin-footer'>
                             <Button type="link">Recover Password</Button>
-                            <Button type="primary">signin to Dashboard</Button>
+                            <Button type="primary">Signin to Dashboard</Button>
                         </div>
                     </Form.Item>
                 </Form>

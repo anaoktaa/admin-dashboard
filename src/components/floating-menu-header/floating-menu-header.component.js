@@ -4,6 +4,7 @@ import { createStructuredSelector } from 'reselect';
 import { Avatar } from 'antd';
 
 import german from '../../assets/logo/german.png';
+import 'Components/right-menu-header/right-menu-header.styles.css';
 
 import { AppstoreOutlined, BellOutlined, RocketOutlined, DownOutlined  } from '@ant-design/icons';
 

@@ -1,7 +1,10 @@
 import React from 'react';
 import { Carousel, Typography, Form, Input, Checkbox, Button  } from 'antd';
 
+import '../signup-boxed/signup-boxed.styles.css';
+import '../signup/signup.styles.css';
 import './signin.styles.css';
+import '../signin-boxed/signin-boxed.styles.css';
 
 const { Title } = Typography;
 

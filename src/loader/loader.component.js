@@ -117,7 +117,7 @@ export const SignupPage = Loadable({
 });
 
 export const SignupBoxedPage = Loadable({
-  loader: () => import('../pages/signup-boxed/signun-boxed.component'),
+  loader: () => import('../pages/signup-boxed/signup-boxed.component'),
   loading: Loader,
 });
 
@@ -127,7 +127,11 @@ export const ForgotPasswordPage = Loadable({
 });
 
 export const ForgotPasswordBoxedPage = Loadable({
-  loader: () =>
-    import('../pages/forgot-password-boxed/forgot-password-boxed.component'),
+  loader: () => import('../pages/forgot-password-boxed/forgot-password-boxed.component'),
+  loading: Loader,
+});
+
+export const Page404 = Loadable({
+  loader: () => import('../pages/page-404/page-404.component'),
   loading: Loader,
 });

@@ -2,6 +2,9 @@ import React from 'react';
 import { Typography, Form, Input, Checkbox, Button  } from 'antd';
 
 import './signup-boxed.styles.css';
+import '../signin-boxed/signin-boxed.styles.css';
+import '../signup/signup.styles.css';
+import '../signin/signin.styles.css';
 
 const { Title, Text, Link } = Typography;
 
