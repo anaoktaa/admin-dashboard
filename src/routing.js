@@ -1,41 +1,57 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import { DashboardAnalyticPage, DashboardCommercePage, DashboardCrmPage, DashboardSalesPage,
-        ElementBadgesAndLabelsPage, ElementButtonsPage, ElementCardsPage,
-        ElementNavigationMenusPage, ElementTimelinesPage, ApplicationChatPage, 
-        ApplicationFaqPage, ApplicationsMailboxPage, ChartBoxesVariation1Page,
-        ChartBoxesVariation2Page, ChartBoxesVariation3Page, ProfileBoxesPage,
-        SigninBoxedPage, SigninPage, SignupBoxedPage, SignupPage,
-        ForgotPasswordBoxedPage, ForgotPasswordPage, Page404 } from 'Loader/loader.component';
+import { Page404 } from 'Loader/loader.component';
+import SigninPage from './pages/signin/signin.component';
+import SigninBoxedPage from './pages/signin-boxed/signin-boxed.component';
+import SignupPage from './pages/signup/signup.component';
+import SignupBoxed from './pages/signup-boxed/signup-boxed.component';
+import ForgotPassword from './pages/forgot-password/forgot-password.component';
+import ForgotPasswordBoxed from './pages/forgot-password-boxed/forgot-password-boxed.component';
+import ElementButtons from './pages/element-buttons/element-buttons.component';
+import ElementCards from './pages/element-cards/element-cards.component';
+import ElementBadgesAndLabels from './pages/element-badges-and-labels/element-badges-and-labels.component';
+import ElementNavigationMenus from './pages/element-navigation-menus/element-navigation-menus.component';
+import ElementTimelines from './pages/element-timelines/element-timelines.component';
+import ApplicationsMailbox from './pages/applications-mailbox/applications-mailbox.component';
+import ApplicationChat from './pages/applications-chat/applications-chat.component';
+import ApplicationFaq from  './pages/applications-faq/applications-faq.component';
+import ChartBoxesVariation1 from './pages/chart-boxes/chart-boxes-variation-1/chart-boxes-variation-1.component';
+import ChartBoxesVariation2 from './pages/chart-boxes/chart-boxes-variation-2/chart-boxes-variation-2.component';
+import ChartBoxesVariation3 from './pages/chart-boxes/chart-boxes-variation-3/chart-boxes-variation-3.component';
+import ProfileBoxes from './pages/profile-boxes/profile-boxes.component';
+import DashboardAnalytic from './pages/dashboard-analytic/dashboard-analytic.component';
+import DashboardCommerce from './pages/dashboard-commerce/dashboard-commerce.component';
+import DashboardSales from './pages/dashboard-sales/dashboard-sales.component';
+import DashboardCrm from './pages/dashboard-crm/dashboard-crm.component';
 
 const Routing =  () => {
 
     return (
         <Switch>
-            <Route exact path='/' component={DashboardAnalyticPage} />
+            <Route exact path='/' component={DashboardAnalytic} />
             <Route exact path='/pages/login' component={SigninPage}/>
             <Route exact path='/pages/login-boxed' component={SigninBoxedPage}/> 
             <Route exact path='/pages/register' component={SignupPage}/>
-            <Route exact path='/pages/register-boxed' component={SignupBoxedPage}/>  
-            <Route exact path='/pages/forgot-password' component={ForgotPasswordPage}/>
-            <Route exact path='/pages/forgot-password-boxed' component={ForgotPasswordBoxedPage}/>  
-            <Route exact path='/elements/buttons' component={ElementButtonsPage}/>    
-            <Route exact path='/elements/badges' component={ElementBadgesAndLabelsPage}/>    
-            <Route exact path='/elements/cards' component={ElementCardsPage}/>  
-            <Route exact path='/elements/navigations' component={ElementNavigationMenusPage}/> 
-            <Route exact path='/elements/timelines' component={ElementTimelinesPage}/>   
-            <Route exact path='/applications/mailbox' component={ApplicationsMailboxPage}/>
-            <Route exact path='/applications/chat' component={ApplicationChatPage}/>
-            <Route exact path='/applications/faq' component={ApplicationFaqPage}/>
-            <Route exact path='/chart-boxes/variation-1' component={ChartBoxesVariation1Page}/>
-            <Route exact path='/chart-boxes/variation-2' component={ChartBoxesVariation2Page}/>
-            <Route exact path='/chart-boxes/variation-3' component={ChartBoxesVariation3Page}/>
-            <Route exact path='/profile-boxes' component={ProfileBoxesPage} />
-            <Route exact path='/dashboard/analytics' component={DashboardAnalyticPage}/>
-            <Route exact path='/dashboard/commerce' component={DashboardCommercePage}/>
-            <Route exact path='/dashboard/sales' component={DashboardSalesPage}/>
-            <Route exact path='/dashboard/crm' component={DashboardCrmPage}/>
+            <Route exact path='/pages/register-boxed' component={SignupBoxed}/>  
+            <Route exact path='/pages/forgot-password' component={ForgotPassword}/>
+            <Route exact path='/pages/forgot-password-boxed' component={ForgotPasswordBoxed}/>  
+            <Route exact path='/elements/buttons' component={ElementButtons}/>    
+            <Route exact path='/elements/badges' component={ElementBadgesAndLabels}/>    
+            <Route exact path='/elements/cards' component={ElementCards}/>  
+            <Route exact path='/elements/navigations' component={ElementNavigationMenus}/> 
+            <Route exact path='/elements/timelines' component={ElementTimelines}/>   
+            <Route exact path='/applications/mailbox' component={ApplicationsMailbox}/>
+            <Route exact path='/applications/chat' component={ApplicationChat}/>
+            <Route exact path='/applications/faq' component={ApplicationFaq}/>
+            <Route exact path='/chart-boxes/variation-1' component={ChartBoxesVariation1}/>
+            <Route exact path='/chart-boxes/variation-2' component={ChartBoxesVariation2}/>
+            <Route exact path='/chart-boxes/variation-3' component={ChartBoxesVariation3}/>
+            <Route exact path='/profile-boxes' component={ProfileBoxes} />
+            <Route exact path='/dashboard/analytics' component={DashboardAnalytic}/>
+            <Route exact path='/dashboard/commerce' component={DashboardCommerce}/>
+            <Route exact path='/dashboard/sales' component={DashboardSales}/>
+            <Route exact path='/dashboard/crm' component={DashboardCrm}/>
             <Route path='*' exact={true}  component={Page404} />
         
         </Switch>
