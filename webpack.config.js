@@ -4,20 +4,7 @@ const AsyncChunkNames = require('webpack-async-chunk-names-plugin');
 
 module.exports = {
     mode: ( process.env.NODE_ENV ? process.env.NODE_ENV : 'development' ),
-    // entry: ['babel-polyfill', './src/index.js'],
-    entry: {
-        main: path.resolve(__dirname, 'src/index.js'),
-        ApplicationChat: path.resolve(__dirname, 'src/pages/applications-chat/applications-chat.component.js'),
-        ApplicationFaq: path.resolve(__dirname, 'src/pages/applications-faq/applications-faq.component.js'),
-        ApplicationMailbox: path.resolve(__dirname, 'src/pages/applications-mailbox/applications-mailbox.component.js'),
-        // ChartBoxes: path.resolve(__dirname, 'src/pages/chart-boexes/chart-boxes.component.js'),
-        DashboardAnalytic: path.resolve(__dirname, 'src/pages/dashboard-analytic/dashboard-analytic.component.js'),
-        DashboardCommerce: path.resolve(__dirname, 'src/pages/dashboard-commerce/dashboard-commerce.component.js'),
-        DashboardCrm: path.resolve(__dirname, 'src/pages/dashboard-crm/dashboard-crm.component.js'),
-        DashboardSales: path.resolve(__dirname, 'src/pages/dashboard-sales/dashboard-sales.component.js'),
-        
-        
-    },
+    entry: ['babel-polyfill', './src/index.js'],
     output: {
         path: path.join(__dirname, 'dist'),
         filename: '[name].js',
